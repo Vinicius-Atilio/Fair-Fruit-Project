@@ -1,7 +1,8 @@
 package Global.Points.FeiraOnline.controller;
 
 import Global.Points.FeiraOnline.entities.Client;
-import Global.Points.FeiraOnline.repository.Clients;
+import Global.Points.FeiraOnline.repository.ClientRepository;
+import Global.Points.FeiraOnline.service.impl.ClientServiceImpl;
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.ExampleMatcher;
 import org.springframework.http.HttpStatus;
@@ -16,15 +17,15 @@ import java.util.List;
 @RequestMapping("/api/clients")
 public class ClientController {
     //use
-    private Clients clients;
+    private ClientServiceImpl service;
 
-    public ClientController(Clients clients) {
-        this.clients = clients;
+    public ClientController(ClientServiceImpl service) {
+        this.service = service;
     }
 
     @GetMapping("{id}")
     public Client getClientById( @PathVariable Integer id ) {
-        return clients
+        return service
                 .findById(id)
                 .orElseThrow(()->
                         new ResponseStatusException(HttpStatus.NOT_FOUND,
@@ -34,16 +35,16 @@ public class ClientController {
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public Client save( @RequestBody @Valid Client client ){
-        return clients.save(client);
+        return service.save(client);
     }
 
     @DeleteMapping("{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void delete( @PathVariable Integer id ){
-        clients.findById(id)
+        service.findById(id)
                 .map(
                         client -> {
-                            clients.delete(client);
+                            service.delete(client);
                             return client;
                         })
                 .orElseThrow(()->
@@ -55,11 +56,11 @@ public class ClientController {
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void Update( @PathVariable Integer id,
                         @RequestBody @Valid Client client){
-        clients
+        service
                 .findById(id)
                 .map( existsClient ->{
                     client.setId(existsClient.getId());
-                    clients.save(client);
+                    service.save(client);
                     return ResponseEntity.noContent().build();
                 }).orElseThrow(()->
                         new ResponseStatusException(HttpStatus.NOT_FOUND,
@@ -74,6 +75,6 @@ public class ClientController {
                 .withStringMatcher(
                         ExampleMatcher.StringMatcher.CONTAINING);
         Example example = Example.of(filter, matcher);
-        return clients.findAll(example);
+        return service.findAll(example);
     }
 }

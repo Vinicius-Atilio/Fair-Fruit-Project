@@ -9,7 +9,7 @@ import Global.Points.FeiraOnline.entities.Product;
 import Global.Points.FeiraOnline.entities.enums.OrderStatus;
 import Global.Points.FeiraOnline.exception.BusinessRuleException;
 import Global.Points.FeiraOnline.exception.OrderNotFoundException;
-import Global.Points.FeiraOnline.repository.Clients;
+import Global.Points.FeiraOnline.repository.ClientRepository;
 import Global.Points.FeiraOnline.repository.OrderItems;
 import Global.Points.FeiraOnline.repository.Orders;
 import Global.Points.FeiraOnline.repository.Products;
@@ -28,7 +28,7 @@ import java.util.stream.Collectors;
 public class OrderServiceImpl implements OrderService {
 
     private final Orders repository;
-    private final Clients clientsRepository;
+    private final ClientRepository clientsRepository;
     private final Products productsRepository;
     private final OrderItems orderItemsRepository;
 
