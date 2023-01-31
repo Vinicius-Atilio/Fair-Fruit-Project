@@ -1,6 +1,7 @@
 package Global.Points.FeiraOnline.controller;
 
 import Global.Points.FeiraOnline.entities.UserGP;
+import Global.Points.FeiraOnline.exception.UserNotFoundException;
 import Global.Points.FeiraOnline.service.impl.UserServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.h2.engine.User;
@@ -29,9 +30,7 @@ public class UserController {
     @GetMapping("{id}")
     public UserGP getUserById(@PathVariable Integer id){
         return userService
-                .findById(id).orElseThrow(() ->
-                        new ResponseStatusException(HttpStatus.NOT_FOUND,
-                        "User not found"));
+                .findById(id).orElseThrow((UserNotFoundException::new));
     }
     @PostMapping
     @ResponseStatus(CREATED)
@@ -49,8 +48,7 @@ public class UserController {
                         user -> {
                             userService.delete(user);
                             return user;
-                        }).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND,
-                        "User not found"));
+                        }).orElseThrow((UserNotFoundException::new));
     }
 
     @PutMapping("{id}")
@@ -63,9 +61,7 @@ public class UserController {
                                 userGP.setId(existsUser.getId());
                                 userService.save(userGP);
                                 return ResponseEntity.noContent().build();
-                            }).orElseThrow(() ->
-                                    new ResponseStatusException(HttpStatus.NOT_FOUND,
-                                            "User not found"));
+                            }).orElseThrow((UserNotFoundException::new));
     }
 
     @GetMapping

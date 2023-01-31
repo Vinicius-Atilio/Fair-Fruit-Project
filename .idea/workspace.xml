@@ -5,11 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fe5fd53d-8477-49e5-ba74-62b9b3cd5614" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/fair-fruit-project-api/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/exception/CustomizedResponseEntityExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fair-fruit-project-api/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/exception/UserNotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fair-fruit-project-api/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/exception/resource/ErrorDetails.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fair-fruit-project-api/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/fair-fruit-project-api/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fair-fruit-project-api/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/fair-fruit-project-api/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fair-fruit-project-api/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/service/impl/ClientServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/fair-fruit-project-api/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/service/impl/ClientServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fair-fruit-project-api/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/fair-fruit-project-api/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/service/impl/UserServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,8 +19,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -47,6 +47,9 @@
         </option>
       </RecentBranches>
     </option>
+  </component>
+  <component name="JpbToolWindowState">
+    <option name="isToolWindowVisible" value="false" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -110,7 +113,8 @@
       <workItem from="1674764038022" duration="1065000" />
       <workItem from="1674774665240" duration="865000" />
       <workItem from="1674775533588" duration="2258000" />
-      <workItem from="1674818863761" duration="6834000" />
+      <workItem from="1674818863761" duration="8499000" />
+      <workItem from="1675125362544" duration="1656000" />
     </task>
     <servers />
   </component>
