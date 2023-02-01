@@ -66,7 +66,7 @@ public class OrderServiceImpl implements OrderService {
                 .map( order -> {
                     order.setStatus(orderStatus);
                     return repository.save(order);
-                }).orElseThrow(()-> new OrderNotFoundException());
+                }).orElseThrow(OrderNotFoundException::new);
     }
 
     private List<OrderItem> convertItems(Order order, List<OrderItemDTO> items){

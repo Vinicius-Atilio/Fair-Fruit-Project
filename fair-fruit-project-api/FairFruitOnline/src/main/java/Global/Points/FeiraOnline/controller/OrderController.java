@@ -7,6 +7,7 @@ import Global.Points.FeiraOnline.dto.OrderStatusUpdateDTO;
 import Global.Points.FeiraOnline.entities.Order;
 import Global.Points.FeiraOnline.entities.OrderItem;
 import Global.Points.FeiraOnline.entities.enums.OrderStatus;
+import Global.Points.FeiraOnline.exception.OrderNotFoundException;
 import Global.Points.FeiraOnline.service.OrderService;
 import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.*;
@@ -43,8 +44,7 @@ public class OrderController {
         return service
                 .getCompleteOrder(id)
                 .map( p -> converter(p) )
-                .orElseThrow(() ->
-                        new ResponseStatusException(NOT_FOUND, "Order not found."));
+                .orElseThrow(OrderNotFoundException::new);
     }
 
     @PatchMapping("{id}")

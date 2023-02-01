@@ -1,6 +1,7 @@
 package Global.Points.FeiraOnline.controller;
 
 import Global.Points.FeiraOnline.entities.Client;
+import Global.Points.FeiraOnline.exception.ClientNotFoundException;
 import Global.Points.FeiraOnline.repository.ClientRepository;
 import Global.Points.FeiraOnline.service.impl.ClientServiceImpl;
 import org.springframework.data.domain.Example;
@@ -27,9 +28,7 @@ public class ClientController {
     public Client getClientById( @PathVariable Integer id ) {
         return service
                 .findById(id)
-                .orElseThrow(()->
-                        new ResponseStatusException(HttpStatus.NOT_FOUND,
-                                "Client not found"));
+                .orElseThrow(ClientNotFoundException::new);
     }
 
     @PostMapping
@@ -47,9 +46,7 @@ public class ClientController {
                             service.delete(client);
                             return client;
                         })
-                .orElseThrow(()->
-                        new ResponseStatusException(HttpStatus.NOT_FOUND,
-                                "Client not found"));
+                .orElseThrow(ClientNotFoundException::new);
     }
 
     @PutMapping("{id}")
@@ -62,9 +59,7 @@ public class ClientController {
                     client.setId(existsClient.getId());
                     service.save(client);
                     return ResponseEntity.noContent().build();
-                }).orElseThrow(()->
-                        new ResponseStatusException(HttpStatus.NOT_FOUND,
-                                "Client not found"));
+                }).orElseThrow(ClientNotFoundException::new);
     }
 
     @GetMapping
