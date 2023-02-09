@@ -7,7 +7,7 @@ import Product from 'components/Product';
 import { useState } from 'react';
 
 
-function FairFruit({name, id}) {
+function Products({name, id}) {
     const { balance = 0 } = useContext(UserContext);
     const [product, setProduct] = useState([]);
     return (
@@ -34,4 +34,4 @@ function FairFruit({name, id}) {
     );
 }
 
-export default FairFruit;
+export default Products;

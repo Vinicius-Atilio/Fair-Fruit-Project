@@ -22,12 +22,17 @@ export const Header = styled.header`
         justify-content: space-between;
         margin-bottom: 10px;
         > h2 {
-            color: ${titleGray};
-            font-size: 32px;
-            margin-top: 20px;
-        }
+        color: ${titleGray};
+        font-size: 32px;
+        margin-top: 20px;
+    }
         > h3 {
             color: ${titleGray};
+        }
+        h2 {
+            font-size: 32px;
+        }
+        h3 {
             font-size: 26px;
         }
     }
@@ -37,25 +42,14 @@ export const Header = styled.header`
     }
 `;
 
-export const List = styled.section`
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    padding: 5px 0;
-    > h2 {
-        color: ${titleGray};
-        font-size: 32px;
-        margin-top: 20px;
-    }
-`;
 
-export const CustomCard = styled(Card)`
+export const List = styled(Card)`
   align-items: center;
   display: flex;
   justify-content: space-between;
   padding: 20px;
   width: 100%;
-  div {
+div {
     align-items: center;
     display: flex;
     gap: 20px;

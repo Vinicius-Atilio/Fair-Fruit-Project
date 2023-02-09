@@ -8,6 +8,9 @@ const titleGray = '#464646';
 export const Container = styled.main`
     min-height: 100vh;
     padding: 0 20px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
 
     @media (min-width: 768px) {
         margin: 0 auto;
@@ -21,13 +24,14 @@ export const Header = styled.header`
         display: flex;
         justify-content: space-between;
         margin-bottom: 10px;
-        > h2 {
-            color: ${titleGray};
-            font-size: 32px;
-            margin-top: 20px;
-        }
+        > h2,
         > h3 {
             color: ${titleGray};
+        }
+        h2 {
+            font-size: 32px;
+        }
+        h3 {
             font-size: 26px;
         }
     }
@@ -37,25 +41,20 @@ export const Header = styled.header`
     }
 `;
 
-export const List = styled.section`
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    padding: 5px 0;
-    > h2 {
-        color: ${titleGray};
-        font-size: 32px;
-        margin-top: 20px;
-    }
-`;
 
-export const CustomCard = styled(Card)`
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
-  padding: 20px;
-  width: 100%;
-  div {
+export const List = styled(Card)`
+align-items: center;
+display: flex;
+justify-content: space-between;
+flex-direction: column;
+padding: 20px 0;
+width: 100%;
+/* > h2 {
+    color: ${titleGray};
+    font-size: 32px;
+    margin-top: 20px;
+} */
+div {
     align-items: center;
     display: flex;
     gap: 20px;
@@ -69,6 +68,18 @@ export const CustomCard = styled(Card)`
     }
   }
 `;
+
+// export const List = styled.section`
+//     display: flex;
+//     flex-direction: column;
+//     gap: 10px;
+//     padding: 20px 0;
+//     > h2 {
+//         color: ${titleGray};
+//         font-size: 32px;
+//         margin-top: 20px;
+//     }
+// `;
 
 export const Voltar = styled(IconButton).attrs({
     children: <ArrowBackIcon />,

@@ -41,7 +41,7 @@ export const List = styled.section`
     display: flex;
     flex-direction: column;
     gap: 10px;
-    padding: 5px 0;
+    padding: 20px 0;
     > h2 {
         color: ${titleGray};
         font-size: 32px;
@@ -49,7 +49,7 @@ export const List = styled.section`
     }
 `;
 
-export const CustomCard = styled(Card)`
+export const Cady = styled(Card)`
   align-items: center;
   display: flex;
   justify-content: space-between;
