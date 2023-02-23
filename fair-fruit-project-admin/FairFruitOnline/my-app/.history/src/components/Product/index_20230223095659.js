@@ -11,7 +11,6 @@ function Product() {
 
     const [products, setProduct] = useState([]);
     const { cart, addProduct, removeProduct, totalValue, balance } = useCartContext();
-    const [addedProducts, setAddedProducts] = useState([]);
 
     const getProducts = async () => {
         try {

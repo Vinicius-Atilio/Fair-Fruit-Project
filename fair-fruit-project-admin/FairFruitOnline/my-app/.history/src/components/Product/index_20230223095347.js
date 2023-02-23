@@ -7,11 +7,11 @@ import { IconButton } from '@material-ui/core';
 import RemoveIcon from '@material-ui/icons/Remove';
 
 
-function Product() {
+function Product(product) {
 
     const [products, setProduct] = useState([]);
-    const { cart, addProduct, removeProduct, totalValue, balance } = useCartContext();
-    const [addedProducts, setAddedProducts] = useState([]);
+    const { cart, addProduct, removeProduct, totalValue } = useCartContext();
+    const hasItem = cart.find((item) => item.id === product.id);
 
     const getProducts = async () => {
         try {
@@ -29,7 +29,6 @@ function Product() {
     }, [])
 
     const handleAddProduct = (product) => {
-        const hasItem = cart.find((item) => item.id === product.id);
         if (hasItem) {
             addProduct({
                 id: product.id,
@@ -48,7 +47,6 @@ function Product() {
     }
 
     const handleRemoveProduct = (product) => {
-        const hasItem = cart.find((item) => item.id === product.id);
         if (hasItem && hasItem.quantity > 0) {
             removeProduct(product.id)
         }
@@ -78,7 +76,6 @@ function Product() {
                             </IconButton>
                             {cart.find((item) => item.id === product.id)?.quantity || 0}
                             <IconButton
-                            // disabled={totalValue > balance}
                                 onClick={() => handleAddProduct(product)}
                                 color="primary"
                             >

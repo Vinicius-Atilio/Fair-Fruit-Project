@@ -10,8 +10,7 @@ import RemoveIcon from '@material-ui/icons/Remove';
 function Product() {
 
     const [products, setProduct] = useState([]);
-    const { cart, addProduct, removeProduct, totalValue, balance } = useCartContext();
-    const [addedProducts, setAddedProducts] = useState([]);
+    const { cart, addProduct, removeProduct, totalValue } = useCartContext();
 
     const getProducts = async () => {
         try {
@@ -78,7 +77,6 @@ function Product() {
                             </IconButton>
                             {cart.find((item) => item.id === product.id)?.quantity || 0}
                             <IconButton
-                            // disabled={totalValue > balance}
                                 onClick={() => handleAddProduct(product)}
                                 color="primary"
                             >
