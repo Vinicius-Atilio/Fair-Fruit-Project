@@ -1,7 +1,6 @@
 import { createContext, useContext, useEffect, useState } from 'react';
 import { usePayment } from './Payment';
 import { UserContext } from './Client';
-import axios from 'axios';
 
 const CartContext = createContext();
 CartContext.displayName = 'Cart';
@@ -36,33 +35,18 @@ export function useCartContext() {
         setTotalValue,
     } = useContext(CartContext);
 
-    const [product, setProduct] = useState([]);
-
-    const getPosts = async () => {
-        try {
-            const response = await axios.get("/api/products");
-            const data = response.data;
-            setProduct(data);
-        }catch (error) {
-            console.log(error);
-        }
-    }
-
-    useEffect(() => {
-        getPosts();
-    }, [])
-
     const { balance, setBalance } = useContext(UserContext);
 
     const { paymentType } = usePayment();
 
-    const changeQuantity = (id, quantity) => cart.map(item => {
-        if (item.id === id) item.quantity += quantity;
-        return item;
-    });
+    const changeQuantity = (id, quantity) =>
+        cart.map((item) => {
+            if (item.id === id) item.quantity += quantity;
+            return item;
+        });
 
     function addProduct(newProduct) {
-        const hasProduct = cart.some(item => item.id === newProduct.id);
+        const hasProduct = cart.some((item) => item.id === newProduct.id);
         let newCart = [...cart];
         if (!hasProduct) {
             newProduct.quantity = 1;

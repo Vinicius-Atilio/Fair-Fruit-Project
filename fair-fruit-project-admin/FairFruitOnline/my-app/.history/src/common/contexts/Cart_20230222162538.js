@@ -43,6 +43,7 @@ export function useCartContext() {
             const response = await axios.get("/api/products");
             const data = response.data;
             setProduct(data);
+            console.log(data);
         }catch (error) {
             console.log(error);
         }
@@ -56,22 +57,23 @@ export function useCartContext() {
 
     const { paymentType } = usePayment();
 
-    const changeQuantity = (id, quantity) => cart.map(item => {
-        if (item.id === id) item.quantity += quantity;
-        return item;
-    });
+    const changeQuantity = (id, quantity) =>
+        cart.map((item) => {
+            if (item.id === id) item.quantity += quantity;
+            return item;
+        });
 
-    function addProduct(newProduct) {
-        const hasProduct = cart.some(item => item.id === newProduct.id);
-        let newCart = [...cart];
-        if (!hasProduct) {
-            newProduct.quantity = 1;
-            newCart.push(newProduct);
-            return setCart(newCart);
-        }
-        newCart = changeQuantity(newProduct.id, 1);
-        setCart(newCart);
-    }
+    // function addProduct() {
+    //     const hasProduct = cart.some((item) => item.id === product.id);
+    //     let newCart = [...cart];
+    //     if (!hasProduct) {
+    //         product.quantity = 1;
+    //         newCart.push(product);
+    //         return setCart(newCart);
+    //     }
+    //     newCart = changeQuantity(product.id, 1);
+    //     setCart(newCart);
+    // }
 
     function removeProduct(id) {
         const product = cart.find((item) => item.id === id);

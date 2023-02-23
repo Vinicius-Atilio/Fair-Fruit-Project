@@ -43,6 +43,7 @@ export function useCartContext() {
             const response = await axios.get("/api/products");
             const data = response.data;
             setProduct(data);
+            console.log(data);
         }catch (error) {
             console.log(error);
         }

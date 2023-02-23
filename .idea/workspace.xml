@@ -5,13 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fe5fd53d-8477-49e5-ba74-62b9b3cd5614" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/fair-fruit-project-api/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/exception/ClientNotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fair-fruit-project-api/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/exception/ProductNotFoundException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fair-fruit-project-api/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/controller/ClientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/fair-fruit-project-api/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/controller/ClientController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fair-fruit-project-admin/FairFruitOnline/my-app/.vscode/launch.json" beforeDir="false" afterPath="$PROJECT_DIR$/fair-fruit-project-admin/FairFruitOnline/my-app/.vscode/launch.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fair-fruit-project-admin/FairFruitOnline/my-app/src/common/contexts/Cart.js" beforeDir="false" afterPath="$PROJECT_DIR$/fair-fruit-project-admin/FairFruitOnline/my-app/src/common/contexts/Cart.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fair-fruit-project-admin/FairFruitOnline/my-app/src/components/Product/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/fair-fruit-project-admin/FairFruitOnline/my-app/src/components/Product/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fair-fruit-project-admin/FairFruitOnline/my-app/src/pages/Products/NavBarCart/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fair-fruit-project-admin/FairFruitOnline/my-app/src/pages/Products/NavBarCart/styles.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fair-fruit-project-admin/FairFruitOnline/my-app/src/pages/Products/NavBarFruits/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fair-fruit-project-admin/FairFruitOnline/my-app/src/pages/Products/NavBarFruits/styles.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fair-fruit-project-admin/FairFruitOnline/my-app/src/pages/Products/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fair-fruit-project-admin/FairFruitOnline/my-app/src/pages/Products/styles.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fair-fruit-project-admin/FairFruitOnline/my-app/src/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/fair-fruit-project-admin/FairFruitOnline/my-app/src/router.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fair-fruit-project-api/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/fair-fruit-project-api/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/controller/OrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fair-fruit-project-api/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/fair-fruit-project-api/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/controller/ProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fair-fruit-project-api/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/service/impl/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/fair-fruit-project-api/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/service/impl/OrderServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fair-fruit-project-api/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/entities/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/fair-fruit-project-api/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/entities/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fair-fruit-project-api/FairFruitOnline/src/main/resources/messages.properties" beforeDir="false" afterPath="$PROJECT_DIR$/fair-fruit-project-api/FairFruitOnline/src/main/resources/messages.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,11 +125,36 @@
       <workItem from="1674775533588" duration="2258000" />
       <workItem from="1674818863761" duration="8499000" />
       <workItem from="1675125362544" duration="1881000" />
-      <workItem from="1675210523215" duration="742000" />
+      <workItem from="1675210523215" duration="1443000" />
+      <workItem from="1675256890475" duration="36000" />
+      <workItem from="1675283534538" duration="2340000" />
+      <workItem from="1675340907469" duration="656000" />
+      <workItem from="1675814548206" duration="1240000" />
+      <workItem from="1675850392649" duration="4612000" />
+      <workItem from="1675894979445" duration="556000" />
+      <workItem from="1675898017660" duration="110000" />
+      <workItem from="1675944327746" duration="1571000" />
+      <workItem from="1677092326725" duration="1661000" />
+      <workItem from="1677103109658" duration="2328000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/fair-fruit-project-api/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/controller/ProductController.java</url>
+          <line>30</line>
+          <properties class="Global.Points.FeiraOnline.controller.ProductController" method="save">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="5b5c3a22-c9cd-44ac-bb5a-9c7c440bea4e" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FairFruitOnline/my-app/.vscode/launch.json" beforeDir="false" afterPath="$PROJECT_DIR$/FairFruitOnline/my-app/.vscode/launch.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FairFruitOnline/my-app/src/common/contexts/Cart.js" beforeDir="false" afterPath="$PROJECT_DIR$/FairFruitOnline/my-app/src/common/contexts/Cart.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FairFruitOnline/my-app/src/components/Product/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/FairFruitOnline/my-app/src/components/Product/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FairFruitOnline/my-app/src/pages/Products/NavBarCart/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FairFruitOnline/my-app/src/pages/Products/NavBarCart/styles.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FairFruitOnline/my-app/src/pages/Products/NavBarFruits/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FairFruitOnline/my-app/src/pages/Products/NavBarFruits/styles.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FairFruitOnline/my-app/src/pages/Products/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FairFruitOnline/my-app/src/pages/Products/styles.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FairFruitOnline/my-app/src/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/FairFruitOnline/my-app/src/router.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fair-fruit-project-api/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../fair-fruit-project-api/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/controller/OrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fair-fruit-project-api/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/entities/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/../fair-fruit-project-api/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/entities/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fair-fruit-project-api/FairFruitOnline/src/main/resources/messages.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../fair-fruit-project-api/FairFruitOnline/src/main/resources/messages.properties" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="2M6yratUYqK6BhV0byA8H2ch1yY" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/feira/fair-fruit-project-admin",
+    "nodejs_package_manager_path": "yarn",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5b5c3a22-c9cd-44ac-bb5a-9c7c440bea4e" name="Changes" comment="" />
+      <created>1677102525184</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1677102525184</updated>
+      <workItem from="1677102526286" duration="106000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

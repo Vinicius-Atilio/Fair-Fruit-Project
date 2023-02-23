@@ -62,14 +62,14 @@ export function useCartContext() {
     });
 
     function addProduct(newProduct) {
-        const hasProduct = cart.some(item => item.id === newProduct.id);
+        const hasProduct = cart.some(item => item.id === newProduct.product.id);
         let newCart = [...cart];
         if (!hasProduct) {
             newProduct.quantity = 1;
-            newCart.push(newProduct);
+            newCart.push(newProduct.product.id);
             return setCart(newCart);
         }
-        newCart = changeQuantity(newProduct.id, 1);
+        newCart = changeQuantity(newProduct.product.id, 1);
         setCart(newCart);
     }
 

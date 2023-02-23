@@ -11,7 +11,6 @@ import Global.Points.FeiraOnline.exception.OrderNotFoundException;
 import Global.Points.FeiraOnline.service.OrderService;
 import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.server.ResponseStatusException;
 
 import javax.validation.Valid;
 
@@ -74,7 +73,7 @@ public class OrderController {
             return Collections.emptyList();
         }
         return items.stream().map( item -> OderDetailsItemDTO
-                .builder().descriptionProduct(item.getProduct().getDescription())
+                .builder().descriptionProduct(item.getProduct().getName())
                 .unitPrice(item.getProduct().getPrice())
                 .quantity(item.getQuantity())
                 .build()

@@ -43,6 +43,7 @@ export function useCartContext() {
             const response = await axios.get("/api/products");
             const data = response.data;
             setProduct(data);
+            console.log(data);
         }catch (error) {
             console.log(error);
         }
@@ -57,7 +58,10 @@ export function useCartContext() {
     const { paymentType } = usePayment();
 
     const changeQuantity = (id, quantity) => cart.map(item => {
-        if (item.id === id) item.quantity += quantity;
+        if (item.id === id){
+            item.quantity += quantity;
+        }
+           
         return item;
     });
 
