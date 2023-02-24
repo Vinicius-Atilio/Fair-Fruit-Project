@@ -53,14 +53,14 @@ function Product() {
         const hasItem = cart.find((item) => item.id === product.id);
         const last = hasItem.quantity === 1;
         if (hasItem && hasItem.quantity > 0) {
-            removeProduct(product.id);
+          removeProduct(product.id);
         }
         let newAddedProducts;
         if (last) {
-            newAddedProducts = cart.filter((item) => item.id !== product.id);
-            setAddedProducts([...newAddedProducts]);
+          newAddedProducts = addedProducts.filter((item) => item.id !== product.id);
+          setAddedProducts([...newAddedProducts]);
         }
-    }
+      };      
 
     return (
         <>

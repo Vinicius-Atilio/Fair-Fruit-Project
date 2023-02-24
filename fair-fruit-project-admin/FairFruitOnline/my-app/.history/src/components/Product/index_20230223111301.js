@@ -12,7 +12,7 @@ function Product() {
 
     const [products, setProduct] = useState([]);
     const { cart, addProduct, removeProduct, totalValue, balance } = useCartContext();
-    const { addedProducts, setAddedProducts } = useFruitsContext();
+    const [addedProducts, setAddedProducts] = useFruitsContext();
 
     const getProducts = async () => {
         try {
@@ -51,14 +51,9 @@ function Product() {
 
     const handleRemoveProduct = (product) => {
         const hasItem = cart.find((item) => item.id === product.id);
-        const last = hasItem.quantity === 1;
         if (hasItem && hasItem.quantity > 0) {
             removeProduct(product.id);
-        }
-        let newAddedProducts;
-        if (last) {
-            newAddedProducts = cart.filter((item) => item.id !== product.id);
-            setAddedProducts([...newAddedProducts]);
+            setAddedProducts(addedProducts.filter(p => p.id !== product.id));
         }
     }
 

@@ -51,6 +51,9 @@ function Cart() {
         }
       }
       
+      
+    
+
     return (
         <Container>
             <Back onClick={history.goBack} />

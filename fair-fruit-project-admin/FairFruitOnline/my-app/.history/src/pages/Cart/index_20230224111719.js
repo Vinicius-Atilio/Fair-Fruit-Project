@@ -39,18 +39,29 @@ function Cart() {
     }
 
     const handleRemoveHasProduct = (product) => {
-        const hasItem = cart.find((item) => item.id === product.id);
+        const hasItem = addedProducts.find((item) => item.id === product.id);
         const last = hasItem.quantity === 1;
         if (hasItem && hasItem.quantity > 0) {
-          removeProduct(hasItem.id); // update here
+            removeProduct(product.id);
         }
         let newAddedProducts;
         if (last) {
-          newAddedProducts = cart.filter((item) => item.id !== product.id);
-          setAddedProducts([...newAddedProducts]);
+            newAddedProducts = addedProducts.filter((item) => item.id !== product.id);
+        } else {
+            newAddedProducts = addedProducts.map((item) => {
+                if (item.id === product.id) {
+                    return {
+                        ...item,
+                        quantity: item.quantity - 1,
+                    };
+                }
+                return item;
+            });
         }
-      }
-      
+        setAddedProducts([...newAddedProducts]);
+    }
+    
+
     return (
         <Container>
             <Back onClick={history.goBack} />

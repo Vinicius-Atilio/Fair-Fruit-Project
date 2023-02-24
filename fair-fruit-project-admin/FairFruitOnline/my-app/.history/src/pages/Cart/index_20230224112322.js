@@ -39,18 +39,21 @@ function Cart() {
     }
 
     const handleRemoveHasProduct = (product) => {
-        const hasItem = cart.find((item) => item.id === product.id);
+        const hasItem = addedProducts.find((item) => item.id === product.id);
         const last = hasItem.quantity === 1;
         if (hasItem && hasItem.quantity > 0) {
           removeProduct(hasItem.id); // update here
         }
         let newAddedProducts;
         if (last) {
-          newAddedProducts = cart.filter((item) => item.id !== product.id);
+          newAddedProducts = addedProducts.filter((item) => item.id !== product.id);
           setAddedProducts([...newAddedProducts]);
         }
       }
       
+      
+    
+
     return (
         <Container>
             <Back onClick={history.goBack} />

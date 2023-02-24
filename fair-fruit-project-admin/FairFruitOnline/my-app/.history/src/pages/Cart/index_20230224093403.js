@@ -10,82 +10,32 @@ import { useCartContext } from 'common/contexts/Cart';
 import { useFruitsContext } from 'common/contexts/Fruits';
 import { useContext, useMemo, useState } from 'react';
 import { Container, Back, TotalContainer, PaymentContainer, List, CustomCard } from './styles';
-import { IconButton } from '@material-ui/core';
-import AddIcon from '@material-ui/icons/Add';
-import RemoveIcon from '@material-ui/icons/Remove';
 import { useHistory } from 'react-router-dom';
 import { UserContext } from 'common/contexts/Client';
 import { usePayment } from 'common/contexts/Payment';
 
 function Cart() {
-    const { cart, addProduct, removeProduct, quantityCart, buy, totalValue = 0 } = useCartContext();
+    const { cart, quantityCart, buy, totalValue = 0 } = useCartContext();
     const { addedProducts, setAddedProducts } = useFruitsContext();
     const { balance = 0 } = useContext(UserContext);
     const { paymentType, changePayment, paymentTypes } = usePayment();
     const [openSnackbar, setOpenSnackbar] = useState(false);
     const history = useHistory();
     const total = useMemo(() => balance - totalValue, [balance, totalValue]);
-
-    const handleAddHasProduct = (product) => {
-        const hasItem = addedProducts.find((item) => item.id === product.id);
-        if (hasItem) {
-            addProduct({
-                id: product.id,
-                name: product.name,
-                price: product.price,
-                quantity: hasItem.quantity + 1
-            })
-        }
-    }
-
-    const handleRemoveHasProduct = (product) => {
-        const hasItem = cart.find((item) => item.id === product.id);
-        const last = hasItem.quantity === 1;
-        if (hasItem && hasItem.quantity > 0) {
-          removeProduct(hasItem.id); // update here
-        }
-        let newAddedProducts;
-        if (last) {
-          newAddedProducts = cart.filter((item) => item.id !== product.id);
-          setAddedProducts([...newAddedProducts]);
-        }
-      }
-      
     return (
         <Container>
             <Back onClick={history.goBack} />
-            <h2>Cart</h2>
+            {/* {cart.map((product) => (
+                <Product {...product} key={product.id} />
+            ))} */}
             {addedProducts.length > 0 && (
                 <div>
+                    <h2>Cart</h2>
                     <List>
                         <ul>
                             {addedProducts.map(product => (
                                 <CustomCard className="get" key={product.id}>
-                                    <div>
-                                        <img
-                                            src={`${product.image}`}
-                                            alt={`${product.name}`}
-                                            width="80" height="70"
-                                        />
-                                        <p>
-                                            {product.name} - $ {product.price?.toFixed(2)} <span>Kg</span>
-                                        </p>
-                                    </div>
-                                    <div>
-                                        <IconButton
-                                            onClick={() => handleRemoveHasProduct(product)}
-                                            color="secondary"
-                                        >
-                                            <RemoveIcon />
-                                        </IconButton>
-                                        {cart.find((item) => item.id === product.id)?.quantity || 0}
-                                        <IconButton
-                                            onClick={() => handleAddHasProduct(product)}
-                                            color="primary"
-                                        >
-                                            <AddIcon />
-                                        </IconButton>
-                                    </div>
+                                    <li key={product.id}>{product.name}</li>
                                 </CustomCard>
                             ))}
                         </ul>

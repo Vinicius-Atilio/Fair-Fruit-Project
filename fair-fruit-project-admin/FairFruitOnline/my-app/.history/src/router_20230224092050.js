@@ -20,17 +20,22 @@ export default function Routes() {
                             <Route exact path="/">
                                 <User />
                             </Route>
+
                             <Route path="/clients">
                                 <Client />
                             </Route>
+
                             <CartProvider>
                                 <FruitsProvider>
                                     <Route path="/products">
                                         <FairFruit />
                                     </Route>
+
                                     <Route path="/fruits">
                                         <Fruits />
-                                    </Route>                               
+                                    </Route>
+                                
+
                                     <Route path="/orders">
                                         <Cart />
                                     </Route>

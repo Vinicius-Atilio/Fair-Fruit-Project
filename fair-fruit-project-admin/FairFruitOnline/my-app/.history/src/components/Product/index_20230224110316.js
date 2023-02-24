@@ -51,14 +51,14 @@ function Product() {
 
     const handleRemoveProduct = (product) => {
         const hasItem = cart.find((item) => item.id === product.id);
-        const last = hasItem.quantity === 1;
+        const last = product.quantity === 1;
         if (hasItem && hasItem.quantity > 0) {
             removeProduct(product.id);
         }
         let newAddedProducts;
         if (last) {
             newAddedProducts = cart.filter((item) => item.id !== product.id);
-            setAddedProducts([...newAddedProducts]);
+            return setAddedProducts([...newAddedProducts]);
         }
     }
 

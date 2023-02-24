@@ -14,8 +14,6 @@ export default function FruitsProvider({ children }) {
                 setShopping,
                 fruitsList,
                 setFruitsList,
-                addedProducts,
-                setAddedProducts,
             }}
         >
             {children}
@@ -24,22 +22,19 @@ export default function FruitsProvider({ children }) {
 }
 
 export function useFruitsContext() {
-    const { shopping, setShopping, addedProducts, setAddedProducts } = useContext(FruitsContext);
+    const { shopping, setShopping } = useContext(FruitsContext);
 
     function addFruit(newFruit) {
         const hasFruit = shopping.some((item) => item.id === newFruit.id);
         let newShopping = [...shopping];
         if (!hasFruit) {
             newShopping.push(newFruit);
-            setShopping(newShopping);
-            setAddedProducts(prevAddedProducts => [...prevAddedProducts, newFruit]);
+            return setShopping(newShopping);
         }
     }
 
     return {
         shopping,
         addFruit,
-        addedProducts,
-        setAddedProducts,
     };
 }
