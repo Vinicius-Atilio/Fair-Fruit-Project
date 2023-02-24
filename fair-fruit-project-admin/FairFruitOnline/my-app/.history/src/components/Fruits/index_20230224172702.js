@@ -8,7 +8,6 @@ import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
 
 function Fruits() {
     const [products, setProduct] = useState([]);
-    const [removeProduct, setNewProductsList] = useState([]);
     const { shopping, addFruit } = useFruitsContext();
 
     const getProducts = async () => {
@@ -22,22 +21,20 @@ function Fruits() {
         }
     }
 
-    const deleteProduct = async (productId) => {
-        try 
-        {
-          const response = await axios.delete(`/api/products/${productId}`);
-          const data = response.data;
-          console.log(`Product with id ${productId} has been deleted.`);
+    const deleteProducts = async () => {
+        try {
+            const response = await axios.delete("/api/products");
+            const data = response.data;
+            setProduct(data);
+            console.log(data);
         } catch (error) {
-          console.log(error);
+            console.log(error);
         }
-        setNewProductsList([...removeProduct, productId]);
-      };
-      
+    }
 
     useEffect(() => {
         getProducts();
-        deleteProduct();
+        deleteProducts();
     }, [])
 
     return (
@@ -57,7 +54,6 @@ function Fruits() {
                         </div>
                         <div>
                             <IconButton
-                                onClick={() => deleteProduct(product.id)}
                                 color="primary"
                             >
                                 <DeleteForeverIcon />

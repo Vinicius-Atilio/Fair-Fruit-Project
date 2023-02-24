@@ -8,7 +8,6 @@ import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
 
 function Fruits() {
     const [products, setProduct] = useState([]);
-    const [removeProduct, setNewProductsList] = useState([]);
     const { shopping, addFruit } = useFruitsContext();
 
     const getProducts = async () => {
@@ -23,15 +22,13 @@ function Fruits() {
     }
 
     const deleteProduct = async (productId) => {
-        try 
-        {
+        try {
           const response = await axios.delete(`/api/products/${productId}`);
           const data = response.data;
           console.log(`Product with id ${productId} has been deleted.`);
         } catch (error) {
           console.log(error);
         }
-        setNewProductsList([...removeProduct, productId]);
       };
       
 

@@ -65,7 +65,7 @@ function Product() {
 
     return (
         <>
-            {products.length === 0 ? <p>Loading...</p> : (
+            {/* {products.length === 0 ? <p>Loading...</p> : (
                 products.map((product) => (
                     <Container className="get" key={product.id}>
                         <div>
@@ -96,7 +96,8 @@ function Product() {
                         </div>
                     </Container>
                 ))
-            )}
+            )} */}
+            <Fruits />
         </>
     );
 }

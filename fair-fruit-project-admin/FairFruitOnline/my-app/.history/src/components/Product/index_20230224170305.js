@@ -2,7 +2,6 @@ import { Container, Header, CustomCard, List } from './styles';
 import { memo, useContext, useEffect, useState } from 'react';
 import { useCartContext } from 'common/contexts/Cart';
 import { useFruitsContext } from 'common/contexts/Fruits';
-import Fruits from 'components/Fruits';
 import axios from 'axios';
 import AddIcon from '@material-ui/icons/Add';
 import { IconButton } from '@material-ui/core';
@@ -65,7 +64,7 @@ function Product() {
 
     return (
         <>
-            {products.length === 0 ? <p>Loading...</p> : (
+            {/* {products.length === 0 ? <p>Loading...</p> : (
                 products.map((product) => (
                     <Container className="get" key={product.id}>
                         <div>
@@ -96,7 +95,7 @@ function Product() {
                         </div>
                     </Container>
                 ))
-            )}
+            )} */}
         </>
     );
 }

@@ -65,7 +65,7 @@ function Product() {
 
     return (
         <>
-            {products.length === 0 ? <p>Loading...</p> : (
+            {/* {products.length === 0 ? <p>Loading...</p> : (
                 products.map((product) => (
                     <Container className="get" key={product.id}>
                         <div>
@@ -96,7 +96,24 @@ function Product() {
                         </div>
                     </Container>
                 ))
-            )}
+            )} */}
+            <Fruits>
+                <div>
+                    <IconButton
+                        onClick={() => handleRemoveProduct()}
+                        color="secondary"
+                    >
+                        <RemoveIcon />
+                    </IconButton>
+                    <IconButton
+                    // disabled={totalValue > balance}
+                        onClick={() => handleAddProduct()}
+                        color="primary"
+                    >
+                        <AddIcon />
+                    </IconButton>
+                </div>
+            </Fruits>
         </>
     );
 }

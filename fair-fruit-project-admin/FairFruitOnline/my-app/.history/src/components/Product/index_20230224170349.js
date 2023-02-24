@@ -97,6 +97,7 @@ function Product() {
                     </Container>
                 ))
             )}
+            {/* <Fruits /> */}
         </>
     );
 }

@@ -38,7 +38,7 @@ function Cart() {
         }
     }
 
-      const handleRemoveHasProduct = (product) => {
+    const handleRemoveHasProduct = (product) => {
         const hasItem = cart.find((item) => item.id === product.id);
         const last = hasItem.quantity === 1;
         if (hasItem && hasItem.quantity > 0) {
@@ -51,6 +51,7 @@ function Cart() {
         }
     }
     
+      
     return (
         <Container>
             <Back onClick={history.goBack} />
