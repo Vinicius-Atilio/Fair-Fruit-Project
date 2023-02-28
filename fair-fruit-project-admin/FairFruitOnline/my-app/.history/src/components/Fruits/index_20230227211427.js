@@ -6,9 +6,9 @@ import AddIcon from '@material-ui/icons/Add';
 import { useFruitsContext } from 'common/contexts/Fruits';
 import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
 
-function Fruits({ updateProducts }) {
+function Fruits({ products }) {
   const [products, setProducts] = useState([]);
-  const { shopping } = useFruitsContext();
+  const { shopping, addFruit } = useFruitsContext();
 
   const getProducts = async () => {
     try {
@@ -35,7 +35,7 @@ function Fruits({ updateProducts }) {
 
   useEffect(() => {
     getProducts();
-  }, [updateProducts]);
+  }, []);
 
   return (
     <>

@@ -29,7 +29,9 @@ export const CustomCard = styled(Card)`
   padding: 20px;
   width: 70%;
   label {
-    
+    align-items: center;
+    display: flex;
+    gap: 20px;
   };
   div {
     align-items: center;

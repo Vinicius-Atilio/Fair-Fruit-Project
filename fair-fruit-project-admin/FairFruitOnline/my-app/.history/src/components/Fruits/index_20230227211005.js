@@ -8,7 +8,7 @@ import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
 
 function Fruits({ updateProducts }) {
   const [products, setProducts] = useState([]);
-  const { shopping } = useFruitsContext();
+  const { shopping, addFruit } = useFruitsContext();
 
   const getProducts = async () => {
     try {
@@ -35,7 +35,7 @@ function Fruits({ updateProducts }) {
 
   useEffect(() => {
     getProducts();
-  }, [updateProducts]);
+  }, []);
 
   return (
     <>

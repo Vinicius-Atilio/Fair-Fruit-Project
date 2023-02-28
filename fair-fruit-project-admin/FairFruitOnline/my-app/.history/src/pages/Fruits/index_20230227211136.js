@@ -13,7 +13,6 @@ function Fruit() {
   const [productImage, setProductImage] = useState('');
   const { cart, addProduct, removeProduct, totalValue, balance } = useCartContext();
   const { addedProducts, setAddedProducts } = useFruitsContext();
-  const [fruits, setFruits] = useState([]);
 
   const history = useHistory();
 
@@ -29,7 +28,7 @@ function Fruit() {
     setProductImage(event.target.value);
   }
 
-  const handleSubmit = async (event) => {
+  const handleSubmit = async (event, updateProducts) => {
     event.preventDefault();
     const newProduct = {
       name: productName,
@@ -39,7 +38,7 @@ function Fruit() {
     try {
       const response = await axios.post('/api/products', newProduct);
       const data = response.data;
-      setFruits([...fruits, data]);
+      updateProducts(data);
       setProductName('');
       setProductPrice(0);
       setProductImage('');
@@ -52,36 +51,32 @@ function Fruit() {
   }
 
   return (
-    <Container>
-      <Voltar onClick={history.goBack} />
-      <h2>Fruits</h2>
-      <CustomCard>
-        <form onSubmit={handleSubmit}>
-          <div>
-            <label>
-              <h3>Enter product name</h3>
-              <input type="text" value={productName} onChange={handleNameChange} required />
-            </label>
-          </div>
-          <div>
-            <label>
-              Enter product price:
-              <input type="number" value={productPrice} onChange={handlePriceChange} required step="0.01" />
-            </label>
-          </div>
-          <div>
-            <label>
-              Enter product image url:
-              <input type="text" value={productImage} onChange={handleImageChange} required />
-            </label>
-          </div>
-          <button type="submit">Add Product</button>
-        </form>
-      </CustomCard>
-      <Fruits fruits={fruits} setFruits={setFruits} />
-    </Container>
-    
-    );
+        <Container>
+            <Voltar onClick={history.goBack} />
+                <h2>Fruits</h2>
+            <CustomCard>
+                <form onSubmit={(event) => handleSubmit(event, setAddedProducts)}>
+                    <div>
+                        <label>Enter product name:
+                        <input type="text" value={productName} onChange={handleNameChange} required />
+                        </label>
+                    </div>
+                    <div>
+                        <label>Enter product price:
+                        <input type="number" value={productPrice} onChange={handlePriceChange} required step="0.01" />
+                        </label>
+                    </div>
+                    <div>
+                        <label>Enter product image url:
+                        <input type="text" value={productImage} onChange={handleImageChange} required />
+                        </label>
+                    </div>
+                        <button type="submit">Add Product</button>
+                </form>
+            </CustomCard>
+            <Fruits updateProducts={setAddedProducts} />
+        </Container>
+  );
 }
 
 export default Fruit;

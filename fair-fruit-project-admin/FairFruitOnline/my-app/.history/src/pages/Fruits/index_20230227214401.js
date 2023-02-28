@@ -59,8 +59,11 @@ function Fruit() {
         <form onSubmit={handleSubmit}>
           <div>
             <label>
-              <h3>Enter product name</h3>
-              <input type="text" value={productName} onChange={handleNameChange} required />
+              Enter product name:
+              <div>
+                <input type="text" value={productName} onChange={handleNameChange} required />
+              </div>
+              
             </label>
           </div>
           <div>

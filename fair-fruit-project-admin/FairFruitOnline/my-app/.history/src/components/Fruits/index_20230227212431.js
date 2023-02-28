@@ -8,7 +8,7 @@ import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
 
 function Fruits({ updateProducts }) {
   const [products, setProducts] = useState([]);
-  const { shopping } = useFruitsContext();
+  const { shopping, addFruit } = useFruitsContext();
 
   const getProducts = async () => {
     try {
@@ -31,6 +31,10 @@ function Fruits({ updateProducts }) {
     } catch (error) {
       console.log(error);
     }
+  };
+
+  const handleAddToFruitCart = (product) => {
+    addFruit(product);
   };
 
   useEffect(() => {
@@ -58,6 +62,9 @@ function Fruits({ updateProducts }) {
             <div>
               <IconButton onClick={() => deleteProduct(product.id)} color="primary">
                 <DeleteForeverIcon />
+              </IconButton>
+              <IconButton onClick={() => handleAddToFruitCart(product)} color="primary">
+                <AddIcon />
               </IconButton>
             </div>
           </Container>

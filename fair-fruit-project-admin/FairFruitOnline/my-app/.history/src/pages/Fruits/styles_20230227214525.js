@@ -29,7 +29,7 @@ export const CustomCard = styled(Card)`
   padding: 20px;
   width: 70%;
   label {
-    
+    justify-content: space-between;
   };
   div {
     align-items: center;

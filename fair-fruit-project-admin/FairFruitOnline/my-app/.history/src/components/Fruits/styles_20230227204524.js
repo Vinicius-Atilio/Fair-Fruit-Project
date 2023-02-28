@@ -5,8 +5,8 @@ export const Container = styled(Card)`
   align-items: center;
   display: flex;
   justify-content: space-between;
-  padding: 20px;
-  width: 70%;
+  padding: 10px;
+  width: 100%;
   div {
     align-items: center;
     display: flex;

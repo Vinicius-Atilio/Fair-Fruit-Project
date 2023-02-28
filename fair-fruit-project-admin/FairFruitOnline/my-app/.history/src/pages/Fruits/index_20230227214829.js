@@ -1,7 +1,7 @@
 import Fruits from 'components/Fruits';
 import { Voltar, Container, Lista } from './styles';
 import { useHistory } from 'react-router-dom';
-import { CustomCard } from 'pages/FairFruit/styles';
+import { CustomCard, InputContainer } from 'pages/FairFruit/styles';
 import { useCartContext } from 'common/contexts/Cart';
 import { useFruitsContext } from 'common/contexts/Fruits';
 import { useState } from 'react';
@@ -60,7 +60,7 @@ function Fruit() {
           <div>
             <label>
               <h3>Enter product name</h3>
-              <input type="text" value={productName} onChange={handleNameChange} required />
+              <InputContainer type="text" value={productName} onChange={handleNameChange} required />
             </label>
           </div>
           <div>
