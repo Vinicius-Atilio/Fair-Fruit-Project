@@ -11,7 +11,7 @@ export default function NavBarFruits() {
     return (
         <Nav>
             <IconButton
-                onClick={() => history.push('/orgs')}
+                onClick={() => history.push('/fruits')}
                 disabled={isAdmin === false}
             >
                 <Badge overlap="rectangular" badgeContent={isAdmin} color="primary">

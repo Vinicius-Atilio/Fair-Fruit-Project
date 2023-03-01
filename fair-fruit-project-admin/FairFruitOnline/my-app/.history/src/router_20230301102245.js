@@ -28,7 +28,7 @@ export default function Routes() {
                                     <Route path="/products">
                                         <FairFruit />
                                     </Route>
-                                    <Route path="/orgs">
+                                    <Route path="/fruits">
                                         <Orgs />
                                     </Route>                               
                                     <Route path="/orders">

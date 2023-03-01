@@ -25,16 +25,16 @@ export const Container = styled.main`
 export const CustomCard = styled(Card)`
   align-items: center;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  padding: 20px;
-  width: 70%;
-  label {
-    
-  };
+  padding: 30px;
+  width: 100%;
+  position: relative; /* make the container a positioned element */
   div {
     align-items: center;
     display: flex;
     gap: 20px;
+    flex-wrap: wrap; /* allow the input fields to wrap to the next line */
     p {
       font-size: 22px;
       font-weight: bold;
@@ -43,8 +43,25 @@ export const CustomCard = styled(Card)`
     span {
       font-size: 16px;
     }
-  }
+    /* create a new div for the image */
+    .image-container {
+        margin-top: -150px;
+        margin-left: 70%;
+        bottom: 0;
+        transform: translateX(-50%);
+    }
+    img {
+        justify-content: space-between;
+        margin-top: 10px;
+        width: 200px;
+        height: auto;
+    }
+    Button {
+        justify-content: flex-end;
+    }
+}
 `;
+
 
 export const Voltar = styled(IconButton).attrs({
     children: <ArrowBackIcon />,

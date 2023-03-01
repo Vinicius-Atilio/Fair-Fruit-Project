@@ -4,10 +4,17 @@ import { useHistory } from 'react-router-dom';
 import { CustomCard } from 'pages/FairFruit/styles';
 import { useCartContext } from 'common/contexts/Cart';
 import { useFruitsContext } from 'common/contexts/Fruits';
+import SendIcon from '@material-ui/icons/Send';
+import { Button } from '@material-ui/core';
+import InputAdornment from '@mui/material/InputAdornment';
+import TextField from '@mui/material/TextField';
+import ImageList from '@mui/material/ImageList'
+import ImageListItem from '@mui/material/ImageListItem'
 import { useState } from 'react';
 import axios from 'axios';
+import Box from '@mui/material/Box';
 
-function Fruit() {
+function Orgs() {
   const [productName, setProductName] = useState('');
   const [productPrice, setProductPrice] = useState(0);
   const [productImage, setProductImage] = useState('');
@@ -43,6 +50,7 @@ function Fruit() {
       setProductName('');
       setProductPrice(0);
       setProductImage('');
+      console.log(data);
     } catch (error) {
       console.log(error);
     }
@@ -58,24 +66,58 @@ function Fruit() {
       <CustomCard>
         <form onSubmit={handleSubmit}>
           <div>
-            <label>
-              <h3>Enter product name</h3>
-              <input type="text" value={productName} onChange={handleNameChange} required />
-            </label>
+            <TextField
+              label="Name"
+              id="filled-start-adornment"
+              sx={{ m: 1}}
+              type="text" value={productName}
+              onChange={handleNameChange}
+              required
+              InputProps={{
+                startAdornment: <InputAdornment position="start"></InputAdornment>,
+              }}
+              variant="filled"
+          />
           </div>
           <div>
-            <label>
-              Enter product price:
-              <input type="number" value={productPrice} onChange={handlePriceChange} required step="0.01" />
-            </label>
+          <TextField
+              label="Price KG"
+              id="filled-start-adornment"
+              sx={{ m: 1}}
+              value={productPrice}
+              onChange={handlePriceChange}
+              required step="0.01"
+              InputProps={{
+                startAdornment: <InputAdornment position="start"></InputAdornment>,
+              }}
+              variant="filled"
+          />
           </div>
           <div>
-            <label>
-              Enter product image url:
-              <input type="text" value={productImage} onChange={handleImageChange} required />
-            </label>
+          <TextField
+            label="Image URL"
+            id="filled-start-adornment"
+            sx={{ m: 1}}
+            type="text"
+            value={productImage}
+            onChange={handleImageChange}
+            required
+            InputProps={{
+              startAdornment:
+              <InputAdornment position="start">
+              </InputAdornment>,
+            }}
+            variant="filled"
+          />
           </div>
-          <button type="submit">Add Product</button>
+          <Button type="submit" variant="contained" endIcon={<SendIcon />} color="primary">
+            Add
+          </Button>
+          <div>
+            <ImageList sx={{ width: 200, height: 180 }} variant="woven" cols={3} gap={8}>
+              <img src={productImage} alt="" width="160" height="140" />
+            </ImageList>
+          </div>
         </form>
       </CustomCard>
       <Fruits fruits={fruits} setFruits={setFruits} />
@@ -84,4 +126,4 @@ function Fruit() {
     );
 }
 
-export default Fruit;
+export default Orgs;

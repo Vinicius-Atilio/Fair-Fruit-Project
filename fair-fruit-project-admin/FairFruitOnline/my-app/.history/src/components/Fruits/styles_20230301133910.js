@@ -4,9 +4,9 @@ import Card from '@material-ui/core/Card';
 export const Container = styled(Card)`
   align-items: center;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   padding: 20px;
-  width: 100%;
+  width: 70%;
   div {
     align-items: center;
     display: flex;
