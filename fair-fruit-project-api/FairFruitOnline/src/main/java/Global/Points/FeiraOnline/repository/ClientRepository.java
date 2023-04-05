@@ -8,6 +8,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface ClientRepository extends JpaRepository<Client, Integer> {
 
@@ -19,6 +20,8 @@ public interface ClientRepository extends JpaRepository<Client, Integer> {
     void deleteByName(String name);
 
     boolean existsByName(String name);
+
+    Optional<Client> findByLogin(String login);
 
     @Query(" select c from Client c left join fetch c.orders where c.id =:id ")
     Client findClientFetchOrders(@Param("id") Integer id);

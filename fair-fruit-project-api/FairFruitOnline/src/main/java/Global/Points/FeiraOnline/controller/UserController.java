@@ -1,14 +1,18 @@
 package Global.Points.FeiraOnline.controller;
 
-import Global.Points.FeiraOnline.entities.UserGP;
+import Global.Points.FeiraOnline.dto.CredentialsDTO;
+import Global.Points.FeiraOnline.dto.TokenDTO;
+import Global.Points.FeiraOnline.entities.User;
+import Global.Points.FeiraOnline.exception.InvalidPasswordException;
 import Global.Points.FeiraOnline.exception.UserNotFoundException;
+import Global.Points.FeiraOnline.security.jwt.JwtService;
 import Global.Points.FeiraOnline.service.impl.UserServiceImpl;
 import lombok.RequiredArgsConstructor;
-import org.h2.engine.User;
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.ExampleMatcher;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
@@ -21,24 +25,45 @@ import static org.springframework.http.HttpStatus.CREATED;
 
 @RestController
 @RequestMapping("/api/users")
-@RequiredArgsConstructor
+
 public class UserController {
 
     private final UserServiceImpl userService;
     private final PasswordEncoder passwordEncoder;
+    private JwtService jwtService;
+
+    public UserController(UserServiceImpl userService, PasswordEncoder passwordEncoder, JwtService jwtService) {
+        this.userService = userService;
+        this.passwordEncoder = passwordEncoder;
+        this.jwtService = jwtService;
+    }
 
     @GetMapping("{id}")
-    public UserGP getUserById(@PathVariable Integer id){
+    public User getUserById(@PathVariable Integer id){
         return userService
-                .findById(id).orElseThrow((UserNotFoundException::new));
+                .findById(id).orElseThrow(() -> new UserNotFoundException("User not found"));
     }
     @PostMapping
     @ResponseStatus(CREATED)
-    public UserGP save(@RequestBody @Valid UserGP user){
+    public User save(@RequestBody @Valid User user){
         String encryptedPassword = passwordEncoder.encode(user.getPassword());
         user.setPassword(encryptedPassword);
         return userService.save(user);
     }
+
+    @PostMapping("/auth")
+    public TokenDTO auth(@RequestBody CredentialsDTO credentials){
+        try {
+            User user = User.builder()
+                    .login(credentials.getLogin())
+                    .password(credentials.getPassword()).build();
+            UserDetails userAuthenticated = userService.auth(user);
+            String token = jwtService.generateToken(user);
+            return new TokenDTO(user.getLogin(), token);
+        } catch (UserNotFoundException | InvalidPasswordException e){
+            throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, e.getMessage());
+        }
+    };
 
     @DeleteMapping("{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
@@ -48,24 +73,24 @@ public class UserController {
                         user -> {
                             userService.delete(user);
                             return user;
-                        }).orElseThrow((UserNotFoundException::new));
+                        }).orElseThrow(() -> new UserNotFoundException("User not found"));
     }
 
     @PutMapping("{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void Update(@PathVariable Integer id,
-                       @RequestBody @Valid UserGP userGP){
+                       @RequestBody @Valid User userGP){
         userService
-                    .findById(id).map(
-                            existsUser -> {
-                                userGP.setId(existsUser.getId());
-                                userService.save(userGP);
-                                return ResponseEntity.noContent().build();
-                            }).orElseThrow((UserNotFoundException::new));
+                .findById(id).map(
+                        existsUser -> {
+                            userGP.setId(existsUser.getId());
+                            userService.save(userGP);
+                            return ResponseEntity.noContent().build();
+                        }).orElseThrow(() -> new UserNotFoundException("User not found"));
     }
 
     @GetMapping
-    public List<UserGP> find(UserGP filter){
+    public List<User> find(User filter){
         ExampleMatcher matcher = ExampleMatcher
                 .matching()
                 .withIgnoreCase()
@@ -74,5 +99,4 @@ public class UserController {
         Example example = Example.of(filter, matcher);
         return userService.findAll(example);
     }
-
 }

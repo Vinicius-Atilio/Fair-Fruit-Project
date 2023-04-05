@@ -1,10 +1,10 @@
 package Global.Points.FeiraOnline.service.impl;
 
-import Global.Points.FeiraOnline.entities.UserGP;
+import Global.Points.FeiraOnline.entities.User;
+import Global.Points.FeiraOnline.exception.InvalidPasswordException;
 import Global.Points.FeiraOnline.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -26,22 +26,34 @@ public class UserServiceImpl implements UserDetailsService {
     private UserRepository repository;
 
     @Transactional
-    public UserGP save(UserGP user ){
+    public User save(User user ){
         return repository.save(user);
     }
 
-    public Optional<UserGP> findById(Integer id){
-        return repository.findById(id);
+    public UserDetails auth(User user){
+        UserDetails userDetails = loadUserByUsername(user.getLogin());
+        boolean matchPassword = encoder.matches(user.getPassword(), userDetails.getPassword());
+        if (matchPassword){
+            return userDetails;
+        }
+        throw new InvalidPasswordException();
+    }
+    public void delete(User user) {
+        repository.delete(user);
+    }
+
+    public Optional<User> findById(Integer id){
+        return repository.findById(Math.toIntExact(id));
     }
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        UserGP userGP = repository.findByLogin(username)
+        User userGP = repository.findByLogin(username)
                 .orElseThrow(()->new UsernameNotFoundException("User not found in data base"));
 
         String[] roles = userGP.isAdmin() ?
                 new String[]{"ADMIN", "USER"} : new String[]{"USER"};
 
-        return User
+        return org.springframework.security.core.userdetails.User
                 .builder()
                 .username(userGP.getLogin())
                 .password(userGP.getPassword())
@@ -49,11 +61,7 @@ public class UserServiceImpl implements UserDetailsService {
                 .build();
     }
 
-    public void delete(UserGP user) {
-        repository.delete(user);
-    }
-
-    public List<UserGP> findAll(Example example) {
+    public List<User> findAll(Example example) {
         return repository.findAll();
     }
 }
