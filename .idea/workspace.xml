@@ -5,136 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fe5fd53d-8477-49e5-ba74-62b9b3cd5614" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/fair-fruit-project-api/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/dto/TokenDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fair-fruit-project-api/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/security/jwt/JwtAuthFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fair-fruit-project-api/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/security/jwt/JwtService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__antlr_antlr_2_7_7.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_classic_1_2_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_core_1_2_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_classmate_1_5_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_12_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_12_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_12_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_dataformat_jackson_dataformat_yaml_2_12_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jdk8_2_12_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jsr310_2_12_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_module_jackson_module_parameter_names_2_12_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_h2database_h2_1_4_200.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_activation_jakarta_activation_1_2_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_istack_istack_commons_runtime_3_0_12.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_zaxxer_HikariCP_4_0_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_github_classgraph_classgraph_4_8_149.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_swagger_core_v3_swagger_annotations_jakarta_2_2_7.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_swagger_core_v3_swagger_core_jakarta_2_2_7.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_swagger_core_v3_swagger_models_jakarta_2_2_7.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_annotation_jakarta_annotation_api_1_3_5.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_persistence_jakarta_persistence_api_2_2_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_transaction_jakarta_transaction_api_1_3_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_validation_jakarta_validation_api_2_0_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_xml_bind_jakarta_xml_bind_api_2_3_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_8_0_25.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_1_10_22.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_lang3_3_12_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_api_2_14_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_to_slf4j_2_14_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_core_9_0_46.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_el_9_0_46.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_websocket_9_0_46.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_aspectj_aspectjweaver_1_9_6.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_dom4j_dom4j_2_1_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jaxb_jaxb_runtime_2_3_4.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jaxb_txw2_2_3_4.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_common_hibernate_commons_annotations_5_1_2_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_hibernate_core_5_4_32_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_validator_hibernate_validator_6_2_0_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_javassist_javassist_3_27_0_GA.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_jandex_2_2_3_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_logging_jboss_logging_3_4_2_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_projectlombok_lombok_1_18_20.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_jul_to_slf4j_1_7_30.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_30.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springdoc_springdoc_openapi_starter_common_2_0_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springdoc_springdoc_openapi_starter_webmvc_api_2_0_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springdoc_springdoc_openapi_starter_webmvc_ui_2_0_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_2_5_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_autoconfigure_2_5_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_devtools_2_5_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_2_5_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_aop_2_5_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_data_jpa_2_5_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_jdbc_2_5_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_json_2_5_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_logging_2_5_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_security_2_5_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_tomcat_2_5_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_validation_2_5_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_web_2_5_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_commons_2_5_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_jpa_2_5_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_config_5_5_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_core_5_5_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_web_5_5_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_5_3_8.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aspects_5_3_8.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_5_3_8.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_5_3_8.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_5_3_8.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_5_3_8.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jcl_5_3_8.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jdbc_5_3_8.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_orm_5_3_8.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_5_3_8.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_5_3_8.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webmvc_5_3_8.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_webjars_swagger_ui_4_15_5.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_webjars_webjars_locator_core_0_46.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_yaml_snakeyaml_1_28.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fair-fruit-project-admin/FairFruitOnline/my-app/.history/src/pages/Client/index_20220617101836.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fair-fruit-project-admin/FairFruitOnline/my-app/.history/src/pages/Client/index_20230201101427.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fair-fruit-project-admin/FairFruitOnline/my-app/.history/src/pages/Client/index_20230201101432.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fair-fruit-project-admin/FairFruitOnline/my-app/.history/src/pages/FairFruit/index_20230209113538.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fair-fruit-project-admin/FairFruitOnline/my-app/.history/src/pages/FairFruit/index_20230222180116.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fair-fruit-project-admin/FairFruitOnline/my-app/.history/src/router_20220617133533.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fair-fruit-project-admin/FairFruitOnline/my-app/.history/src/router_20230201101427.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fair-fruit-project-admin/FairFruitOnline/my-app/.history/src/router_20230201101432.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fair-fruit-project-admin/FairFruitOnline/my-app/.history/src/router_20230209113539.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fair-fruit-project-admin/FairFruitOnline/my-app/.history/src/router_20230209114347.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fair-fruit-project-admin/FairFruitOnline/my-app/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/fair-fruit-project-admin/FairFruitOnline/my-app/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fair-fruit-project-admin/FairFruitOnline/my-app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/fair-fruit-project-admin/FairFruitOnline/my-app/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fair-fruit-project-admin/FairFruitOnline/my-app/src/components/Fruits/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/fair-fruit-project-admin/FairFruitOnline/my-app/src/components/Fruits/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fair-fruit-project-admin/FairFruitOnline/my-app/src/pages/Client/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/fair-fruit-project-admin/FairFruitOnline/my-app/src/pages/Client/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fair-fruit-project-admin/FairFruitOnline/my-app/src/pages/FairFruit/NavBarCart/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/fair-fruit-project-admin/FairFruitOnline/my-app/src/pages/FairFruit/NavBarCart/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fair-fruit-project-admin/FairFruitOnline/my-app/src/pages/FairFruit/NavBarCart/styles.js" beforeDir="false" afterPath="$PROJECT_DIR$/fair-fruit-project-admin/FairFruitOnline/my-app/src/pages/FairFruit/NavBarCart/styles.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fair-fruit-project-admin/FairFruitOnline/my-app/src/pages/FairFruit/NavBarFruits/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fair-fruit-project-admin/FairFruitOnline/my-app/src/pages/FairFruit/NavBarFruits/styles.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fair-fruit-project-admin/FairFruitOnline/my-app/src/pages/FairFruit/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/fair-fruit-project-admin/FairFruitOnline/my-app/src/pages/FairFruit/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fair-fruit-project-admin/FairFruitOnline/my-app/src/pages/Orgs/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/fair-fruit-project-admin/FairFruitOnline/my-app/src/pages/Orgs/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fair-fruit-project-admin/FairFruitOnline/my-app/src/pages/User/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fair-fruit-project-admin/FairFruitOnline/my-app/src/pages/User/styles.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fair-fruit-project-admin/FairFruitOnline/my-app/src/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/fair-fruit-project-admin/FairFruitOnline/my-app/src/router.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fair-fruit-project-admin/FairFruitOnline/my-app/src/setupProxy.js" beforeDir="false" afterPath="$PROJECT_DIR$/fair-fruit-project-admin/FairFruitOnline/my-app/src/setupProxy.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fair-fruit-project-admin/FairFruitOnline/my-app/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/fair-fruit-project-admin/FairFruitOnline/my-app/yarn.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fair-fruit-project-api/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/fair-fruit-project-api/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fair-fruit-project-api/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/fair-fruit-project-api/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fair-fruit-project-api/FairFruitOnline/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/fair-fruit-project-api/FairFruitOnline/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fair-fruit-project-api/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/fair-fruit-project-api/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fair-fruit-project-api/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/controller/ClientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/fair-fruit-project-api/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/controller/ClientController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fair-fruit-project-api/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/controller/ClientController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fair-fruit-project-api/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/fair-fruit-project-api/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/controller/OrderController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fair-fruit-project-api/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/fair-fruit-project-api/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fair-fruit-project-api/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/dto/CredentialsDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/fair-fruit-project-api/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/dto/CredentialsDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fair-fruit-project-api/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/entities/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/fair-fruit-project-api/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/entities/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fair-fruit-project-api/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/entities/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/fair-fruit-project-api/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/entities/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fair-fruit-project-api/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/entities/UserGP.java" beforeDir="false" afterPath="$PROJECT_DIR$/fair-fruit-project-api/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/entities/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fair-fruit-project-api/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/exception/ClientNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/fair-fruit-project-api/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/exception/ClientNotFoundException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fair-fruit-project-api/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/exception/UserNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/fair-fruit-project-api/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/exception/UserNotFoundException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fair-fruit-project-api/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/repository/ClientRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/fair-fruit-project-api/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/repository/ClientRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fair-fruit-project-api/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/entities/Client.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fair-fruit-project-api/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/entities/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/fair-fruit-project-api/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/entities/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fair-fruit-project-api/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/fair-fruit-project-api/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/entities/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fair-fruit-project-api/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/repository/ClientRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fair-fruit-project-api/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/repository/Orders.java" beforeDir="false" afterPath="$PROJECT_DIR$/fair-fruit-project-api/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/repository/Orders.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fair-fruit-project-api/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/fair-fruit-project-api/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fair-fruit-project-api/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/service/impl/ClientServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/fair-fruit-project-api/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/service/impl/ClientServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fair-fruit-project-api/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/fair-fruit-project-api/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fair-fruit-project-api/FairFruitOnline/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/fair-fruit-project-api/FairFruitOnline/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fair-fruit-project-api/FairFruitOnline/src/main/resources/messages.properties" beforeDir="false" afterPath="$PROJECT_DIR$/fair-fruit-project-api/FairFruitOnline/src/main/resources/messages.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fair-fruit-project-api/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/service/impl/ClientServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fair-fruit-project-api/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/service/impl/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/fair-fruit-project-api/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/service/impl/OrderServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -304,25 +187,11 @@
       <workItem from="1680720455939" duration="9628000" />
       <workItem from="1680734690942" duration="278000" />
       <workItem from="1680735032881" duration="3078000" />
+      <workItem from="1680784122363" duration="6451000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/fair-fruit-project-api/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/controller/UserController.java</url>
-          <line>47</line>
-          <properties class="Global.Points.FeiraOnline.controller.UserController" method="save">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

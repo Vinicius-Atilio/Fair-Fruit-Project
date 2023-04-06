@@ -15,26 +15,28 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table( name= "order_client" )
+@Table( name= "order_user" )
 public class Order {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    //alterei de client para user
     @ManyToOne
-    @JoinColumn(name = "client_id")
-    private Client client;
+    @JoinColumn(name = "user_id")
+    private User user;
 
     @Column(name = "order_data")
     private LocalDate orderData;
 
-    @Column(name = "total", precision = 20, scale = 2)
-    private BigDecimal total;
-
     @Enumerated(EnumType.STRING)
     @Column(name = "status")
     private OrderStatus status;
+
+    @Column(name = "total", precision = 20, scale = 2)
+    private BigDecimal total;
+
 
     @OneToMany(mappedBy = "order")
     private List<OrderItem> items;

@@ -7,6 +7,8 @@ import Global.Points.FeiraOnline.exception.InvalidPasswordException;
 import Global.Points.FeiraOnline.exception.UserNotFoundException;
 import Global.Points.FeiraOnline.security.jwt.JwtService;
 import Global.Points.FeiraOnline.service.impl.UserServiceImpl;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.ExampleMatcher;
@@ -25,23 +27,19 @@ import static org.springframework.http.HttpStatus.CREATED;
 
 @RestController
 @RequestMapping("/api/users")
-
+@NoArgsConstructor
+@AllArgsConstructor
 public class UserController {
 
-    private final UserServiceImpl userService;
-    private final PasswordEncoder passwordEncoder;
+    private UserServiceImpl userService;
+    private PasswordEncoder passwordEncoder;
     private JwtService jwtService;
-
-    public UserController(UserServiceImpl userService, PasswordEncoder passwordEncoder, JwtService jwtService) {
-        this.userService = userService;
-        this.passwordEncoder = passwordEncoder;
-        this.jwtService = jwtService;
-    }
 
     @GetMapping("{id}")
     public User getUserById(@PathVariable Integer id){
         return userService
-                .findById(id).orElseThrow(() -> new UserNotFoundException("User not found"));
+                .findById(id)
+                .orElseThrow(() -> new UserNotFoundException("User not found"));
     }
     @PostMapping
     @ResponseStatus(CREATED)

@@ -2,12 +2,10 @@ package Global.Points.FeiraOnline.config;
 
 import Global.Points.FeiraOnline.security.jwt.JwtAuthFilter;
 import Global.Points.FeiraOnline.security.jwt.JwtService;
-import Global.Points.FeiraOnline.service.impl.ClientServiceImpl;
 import Global.Points.FeiraOnline.service.impl.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpMethod;
-import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
