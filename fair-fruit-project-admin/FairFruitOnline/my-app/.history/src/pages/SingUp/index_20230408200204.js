@@ -56,8 +56,8 @@ function User() {
       return (
         <>
         <ImageContainer>
-          <Image src={MeuOvo} alt="Meu Ovo" />
         </ImageContainer><Container>
+          <Image src={MeuOvo} alt="Meu Ovo" />
 
             <CustomIcon>
               <LockIcon />

@@ -8,8 +8,6 @@ export const Image = styled.img`
 
 export const ImageContainer = styled.div`
   display: flex;
-  align-items: center;
-  justify-content: flex-start;
 `
 
 export const Container = styled.div`

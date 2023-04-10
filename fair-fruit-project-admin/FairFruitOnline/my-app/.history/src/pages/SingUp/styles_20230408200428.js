@@ -8,14 +8,12 @@ export const Image = styled.img`
 
 export const ImageContainer = styled.div`
   display: flex;
-  align-items: center;
-  justify-content: flex-start;
 `
 
 export const Container = styled.div`
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: flex-start;
   padding: 0px;
   min-height: 100vh;
 

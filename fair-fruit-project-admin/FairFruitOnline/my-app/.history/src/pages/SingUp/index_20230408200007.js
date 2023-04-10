@@ -54,44 +54,46 @@ function User() {
       };
 
       return (
-        <>
         <ImageContainer>
           <Image src={MeuOvo} alt="Meu Ovo" />
-        </ImageContainer><Container>
-
-            <CustomIcon>
-              <LockIcon />
-            </CustomIcon>
+        </ImageContainer>
+        <Container>
+          
+          <CustomIcon>
+            <LockIcon />
+          </CustomIcon>
             <Title>Sign In</Title>
-            <InputContainer>
-              <TextField
-                id="outlined-basic"
-                label="Login *"
-                variant="outlined"
-                value={userLogin}
-                type="text"
-                onChange={handleLoginChange} />
-            </InputContainer>
-            <InputContainer>
-              <TextField
-                id="outlined-basic"
-                label="Password *"
-                variant="outlined"
-                value={userPassword}
-                type="password"
-                onChange={handlePasswordChange} />
-            </InputContainer>
-            <StyledButton
-              onSubmit={handleSubmit}
-              type="submit"
-              variant="contained"
-              color="primary"
-              disabled={userLogin.length < 4}
-              onClick={() => history.push('/products')}
-            >
-              Sign In
-            </StyledButton>
-          </Container></>
+          <InputContainer>
+            <TextField
+              id="outlined-basic"
+              label="Login *"
+              variant="outlined"
+              value={userLogin}
+              type="text"
+              onChange={handleLoginChange}
+            />
+          </InputContainer>
+          <InputContainer>
+            <TextField
+              id="outlined-basic"
+              label="Password *"
+              variant="outlined"
+              value={userPassword}
+              type="password"
+              onChange={handlePasswordChange}
+            />
+          </InputContainer>
+          <StyledButton
+            onSubmit={handleSubmit}
+            type="submit"
+            variant="contained"
+            color="primary"
+            disabled={userLogin.length < 4}
+            onClick={() => history.push('/products')}
+          >
+            Sign In
+          </StyledButton>
+        </Container>
       );
     }
 

@@ -1,5 +1,5 @@
 import { Button, StylesProvider } from '@material-ui/core';
-import { Container, Title, ImageContainer, InputContainer, CustomIcon, Image, StyledButton } from './styles';
+import { Container, Title, InputContainer, CustomIcon, Image, StyledButton } from './styles';
 import { useHistory } from 'react-router-dom';
 import { useContext, useState } from 'react';
 import axios from 'axios';
@@ -54,44 +54,43 @@ function User() {
       };
 
       return (
-        <>
-        <ImageContainer>
+        <Container>
           <Image src={MeuOvo} alt="Meu Ovo" />
-        </ImageContainer><Container>
-
-            <CustomIcon>
-              <LockIcon />
-            </CustomIcon>
+          <CustomIcon>
+            <LockIcon />
+          </CustomIcon>
             <Title>Sign In</Title>
-            <InputContainer>
-              <TextField
-                id="outlined-basic"
-                label="Login *"
-                variant="outlined"
-                value={userLogin}
-                type="text"
-                onChange={handleLoginChange} />
-            </InputContainer>
-            <InputContainer>
-              <TextField
-                id="outlined-basic"
-                label="Password *"
-                variant="outlined"
-                value={userPassword}
-                type="password"
-                onChange={handlePasswordChange} />
-            </InputContainer>
-            <StyledButton
-              onSubmit={handleSubmit}
-              type="submit"
-              variant="contained"
-              color="primary"
-              disabled={userLogin.length < 4}
-              onClick={() => history.push('/products')}
-            >
-              Sign In
-            </StyledButton>
-          </Container></>
+          <InputContainer>
+            <TextField
+              id="outlined-basic"
+              label="Login *"
+              variant="outlined"
+              value={userLogin}
+              type="text"
+              onChange={handleLoginChange}
+            />
+          </InputContainer>
+          <InputContainer>
+            <TextField
+              id="outlined-basic"
+              label="Password *"
+              variant="outlined"
+              value={userPassword}
+              type="password"
+              onChange={handlePasswordChange}
+            />
+          </InputContainer>
+          <StyledButton
+            onSubmit={handleSubmit}
+            type="submit"
+            variant="contained"
+            color="primary"
+            disabled={userLogin.length < 4}
+            onClick={() => history.push('/products')}
+          >
+            Sign In
+          </StyledButton>
+        </Container>
       );
     }
 

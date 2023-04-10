@@ -7,22 +7,20 @@ export const Image = styled.img`
 `;
 
 export const ImageContainer = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
+
 `
 
 export const Container = styled.div`
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: flex-start;
   padding: 0px;
   min-height: 100vh;
 
   @media (min-width: 768px) {
     margin: 0 auto;
     margin-top: 0px;
-    width: 100%;
+    width: 20%;
   }
 
   h2 {

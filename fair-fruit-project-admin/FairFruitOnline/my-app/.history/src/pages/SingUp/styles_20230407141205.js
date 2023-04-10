@@ -3,19 +3,13 @@ import FormControl from '@material-ui/core/FormControl';
 import { Button } from '@material-ui/core';
 
 export const Image = styled.img`
-    max-width: 50%;
+    max-width: 100%;
 `;
-
-export const ImageContainer = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-`
 
 export const Container = styled.div`
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: flex-start;
   padding: 0px;
   min-height: 100vh;
 

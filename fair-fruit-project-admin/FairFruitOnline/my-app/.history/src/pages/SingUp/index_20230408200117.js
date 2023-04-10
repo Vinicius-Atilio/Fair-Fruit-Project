@@ -54,10 +54,8 @@ function User() {
       };
 
       return (
-        <>
-        <ImageContainer>
+        <Container>
           <Image src={MeuOvo} alt="Meu Ovo" />
-        </ImageContainer><Container>
 
             <CustomIcon>
               <LockIcon />
@@ -91,7 +89,7 @@ function User() {
             >
               Sign In
             </StyledButton>
-          </Container></>
+          </Container>
       );
     }
 

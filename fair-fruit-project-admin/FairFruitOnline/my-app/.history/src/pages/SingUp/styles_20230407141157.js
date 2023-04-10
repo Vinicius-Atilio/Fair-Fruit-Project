@@ -3,19 +3,13 @@ import FormControl from '@material-ui/core/FormControl';
 import { Button } from '@material-ui/core';
 
 export const Image = styled.img`
-    max-width: 50%;
+    max-width: 100%;
 `;
-
-export const ImageContainer = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-`
 
 export const Container = styled.div`
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: flex-start;
   padding: 0px;
   min-height: 100vh;
 
@@ -66,7 +60,7 @@ export const CustomIcon = styled.div`
     align-items: center;
     justify-content: flex-end;
     margin-left: 20px;
-    margin-bottom: 500px;
+    margin-bottom: 350px;
 
     .MuiSvgIcon-root {
     position: absolute;
