@@ -1,0 +1,80 @@
+import styled from 'styled-components';
+import FormControl from '@material-ui/core/FormControl';
+import { Button } from '@material-ui/core';
+
+export const Image = styled.img`
+    max-width: 200%;
+`;
+
+export const ImageContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex: 1;
+  @media (max-width: 767px) {
+    justify-content: center;
+    height: 50%;
+  }
+`;
+
+export const SignInContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 2;
+
+  margin-right: 50px; /* add some margin to the right */
+  padding: 20px; /* add some padding to the top, right, bottom and left */
+`;
+
+export const Container = styled.main`
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0px;
+  height: 100%;
+
+  @media (min-width: 768px) {
+    display: flex;
+    margin: 0 auto;
+    margin-top: -80px;
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  @media (max-width: 767px) {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -100;
+    margin-top: -800px;
+    align-items: center;
+    & > *:first-child {
+      margin-right: -100;
+      margin-bottom: 20px;
+    }
+  }
+`;
+
+
+export const Title = styled.h2`
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 200px;
+    margin-top: -250px;
+    justify-content: flex-end;
+`;
+
+export const InputContainer = styled(FormControl)`
+    margin-bottom: 30px;
+`;
+
+export const CustomIcon = styled.div`
+    display: flex;
+    margin-bottom: 300px;
+`;
+
+
+export const StyledButton = styled(Button)`
+  margin-top: 20px;
+`;
