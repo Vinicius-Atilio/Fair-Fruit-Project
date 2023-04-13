@@ -8,8 +8,6 @@ import Global.Points.FeiraOnline.exception.UserNotFoundException;
 import Global.Points.FeiraOnline.security.jwt.JwtService;
 import Global.Points.FeiraOnline.service.impl.UserServiceImpl;
 import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.ExampleMatcher;
 import org.springframework.http.HttpStatus;
@@ -27,7 +25,6 @@ import static org.springframework.http.HttpStatus.CREATED;
 
 @RestController
 @RequestMapping("/api/users")
-@NoArgsConstructor
 @AllArgsConstructor
 public class UserController {
 
@@ -36,36 +33,37 @@ public class UserController {
     private JwtService jwtService;
 
     @GetMapping("{id}")
-    public User getUserById(@PathVariable Integer id){
+    public User getUserById(@PathVariable Integer id) {
         return userService
                 .findById(id)
                 .orElseThrow(() -> new UserNotFoundException("User not found"));
     }
     @PostMapping
     @ResponseStatus(CREATED)
-    public User save(@RequestBody @Valid User user){
+    public User save(@RequestBody @Valid User user) {
         String encryptedPassword = passwordEncoder.encode(user.getPassword());
         user.setPassword(encryptedPassword);
         return userService.save(user);
     }
 
     @PostMapping("/auth")
-    public TokenDTO auth(@RequestBody CredentialsDTO credentials){
+    public TokenDTO auth(@RequestBody CredentialsDTO credentials) {
         try {
             User user = User.builder()
                     .login(credentials.getLogin())
                     .password(credentials.getPassword()).build();
+            User userId = userService.findByLogin(credentials.getLogin());
             UserDetails userAuthenticated = userService.auth(user);
             String token = jwtService.generateToken(user);
-            return new TokenDTO(user.getLogin(), token);
-        } catch (UserNotFoundException | InvalidPasswordException e){
+            return new TokenDTO(userId.getId(), user.getLogin(), token);
+        } catch (UserNotFoundException | InvalidPasswordException e) {
             throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, e.getMessage());
         }
     };
 
     @DeleteMapping("{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void delete(@PathVariable Integer id){
+    public void delete(@PathVariable Integer id) {
         userService.findById(id)
                 .map(
                         user -> {
@@ -77,7 +75,7 @@ public class UserController {
     @PutMapping("{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void Update(@PathVariable Integer id,
-                       @RequestBody @Valid User userGP){
+                       @RequestBody @Valid User userGP) {
         userService
                 .findById(id).map(
                         existsUser -> {
@@ -88,7 +86,7 @@ public class UserController {
     }
 
     @GetMapping
-    public List<User> find(User filter){
+    public List<User> find(User filter) {
         ExampleMatcher matcher = ExampleMatcher
                 .matching()
                 .withIgnoreCase()
