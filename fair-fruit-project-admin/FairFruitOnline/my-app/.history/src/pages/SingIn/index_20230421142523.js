@@ -27,9 +27,8 @@ function SingIn() {
       password: userPassword,
     };
     try {
-      // new ApiService();
-      await ApiService.auth('/api/users/auth', userAuthentication);
-      // console.log(token);
+      const token = await ApiService.auth('/api/users/auth', userAuthentication);
+      console.log(token);
       // localStorage.setItem('jwtToken', token);
       // ApiService.api.defaults.headers.common['Authorization'] = `Bearer ${token}`;
       const product = await ApiService.get('/api/products');

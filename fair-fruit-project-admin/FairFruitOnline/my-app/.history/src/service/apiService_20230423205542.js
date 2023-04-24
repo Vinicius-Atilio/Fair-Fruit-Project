@@ -3,13 +3,12 @@ import axios from 'axios';
 class ApiService {
   constructor(jwtToken) {
     // this.jwtToken = localStorage.getItem('jwtToken');
-    this.jwtToken = jwtToken;
+    this.jwtToken = jwtToken || localStorage.getItem('jwtToken');
     console.log(this.jwtToken);
     this.api = axios.create({
       headers: {
         'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*',
-        'Authorization': this.jwtToken ? `Bearer ${this.jwtToken}` : '',
+        'Access-Control-Allow-Origin': '*'
       }
     });
   }
@@ -25,14 +24,15 @@ class ApiService {
     const jwtToken = response.data.token;
     localStorage.setItem('jwtToken', jwtToken);
     this.api.defaults.headers.common['Authorization'] = `Bearer ${jwtToken}`;
-    return this.api = new axios.create({
+    this.jwtToken = jwtToken;
+    this.api = axios.create({
       headers: {
         'Content-Type': 'application/json',
         'Access-Control-Allow-Origin': '*',
-        'Authorization': jwtToken ? `Bearer ${jwtToken}` : '',
+        'Authorization': this.jwtToken ? `Bearer ${this.jwtToken}` : '',
       }
     });
-    // return new ApiService(jwtToken);
+    return jwtToken;
   }
 
   async put(endpoint, data = {}) {

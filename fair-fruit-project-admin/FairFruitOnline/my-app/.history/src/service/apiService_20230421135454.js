@@ -1,9 +1,9 @@
 import axios from 'axios';
+import { useState } from 'react';
 
 class ApiService {
-  constructor(jwtToken) {
-    // this.jwtToken = localStorage.getItem('jwtToken');
-    this.jwtToken = jwtToken;
+  constructor() {
+    this.jwtToken = localStorage.getItem('jwtToken');
     console.log(this.jwtToken);
     this.api = axios.create({
       headers: {
@@ -12,6 +12,7 @@ class ApiService {
         'Authorization': this.jwtToken ? `Bearer ${this.jwtToken}` : '',
       }
     });
+    
   }
 
   async get(endpoint, params = {}) {
@@ -21,18 +22,15 @@ class ApiService {
   }
 
   async auth(endpoint, data = {}) {
+    // localStorage.removeItem('jwtToken');
     const response = await this.api.post(endpoint, data);
     const jwtToken = response.data.token;
     localStorage.setItem('jwtToken', jwtToken);
     this.api.defaults.headers.common['Authorization'] = `Bearer ${jwtToken}`;
-    return this.api = new axios.create({
-      headers: {
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*',
-        'Authorization': jwtToken ? `Bearer ${jwtToken}` : '',
-      }
-    });
-    // return new ApiService(jwtToken);
+    var req = new XMLHttpRequest();
+    req.setRequestHeader("Authorization", '');
+    // new ApiService();
+    return jwtToken;
   }
 
   async put(endpoint, data = {}) {

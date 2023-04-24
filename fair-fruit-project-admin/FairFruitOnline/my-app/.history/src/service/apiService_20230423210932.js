@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 class ApiService {
-  constructor(jwtToken) {
+  constructor() {
     // this.jwtToken = localStorage.getItem('jwtToken');
     this.jwtToken = jwtToken;
     console.log(this.jwtToken);
@@ -25,11 +25,12 @@ class ApiService {
     const jwtToken = response.data.token;
     localStorage.setItem('jwtToken', jwtToken);
     this.api.defaults.headers.common['Authorization'] = `Bearer ${jwtToken}`;
+    this.jwtToken = jwtToken;
     return this.api = new axios.create({
       headers: {
         'Content-Type': 'application/json',
         'Access-Control-Allow-Origin': '*',
-        'Authorization': jwtToken ? `Bearer ${jwtToken}` : '',
+        'Authorization': this.jwtToken ? `Bearer ${this.jwtToken}` : '',
       }
     });
     // return new ApiService(jwtToken);

@@ -25,13 +25,13 @@ class ApiService {
     const jwtToken = response.data.token;
     localStorage.setItem('jwtToken', jwtToken);
     this.api.defaults.headers.common['Authorization'] = `Bearer ${jwtToken}`;
-    return this.api = new axios.create({
+    return this.api = new axios.create((jwtToken) => ({
       headers: {
         'Content-Type': 'application/json',
         'Access-Control-Allow-Origin': '*',
         'Authorization': jwtToken ? `Bearer ${jwtToken}` : '',
       }
-    });
+    }));
     // return new ApiService(jwtToken);
   }
 

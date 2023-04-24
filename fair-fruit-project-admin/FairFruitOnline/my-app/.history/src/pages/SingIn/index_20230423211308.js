@@ -79,7 +79,7 @@ function SingIn() {
                 variant="contained"
                 color="primary"
                 disabled={userLogin.length < 4}
-                onClick={() => history.push('/products')}
+                // onClick={() => history.push('/products')}
               >
                 Sign In
               </StyledButton>
