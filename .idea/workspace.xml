@@ -6,18 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="fe5fd53d-8477-49e5-ba74-62b9b3cd5614" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fair-fruit-project-admin/FairFruitOnline/my-app/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/fair-fruit-project-admin/FairFruitOnline/my-app/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fair-fruit-project-admin/FairFruitOnline/my-app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/fair-fruit-project-admin/FairFruitOnline/my-app/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fair-fruit-project-admin/FairFruitOnline/my-app/src/pages/Client/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/fair-fruit-project-admin/FairFruitOnline/my-app/src/pages/Client/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fair-fruit-project-admin/FairFruitOnline/my-app/src/pages/Client/styles.js" beforeDir="false" afterPath="$PROJECT_DIR$/fair-fruit-project-admin/FairFruitOnline/my-app/src/pages/Client/styles.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fair-fruit-project-admin/FairFruitOnline/my-app/src/pages/SingUp/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/fair-fruit-project-admin/FairFruitOnline/my-app/src/pages/SingUp/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fair-fruit-project-admin/FairFruitOnline/my-app/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/fair-fruit-project-admin/FairFruitOnline/my-app/yarn.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fair-fruit-project-api/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/fair-fruit-project-api/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fair-fruit-project-api/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/controller/ClientController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fair-fruit-project-api/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/fair-fruit-project-api/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/controller/OrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fair-fruit-project-api/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/fair-fruit-project-api/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fair-fruit-project-api/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/entities/Client.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fair-fruit-project-api/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/entities/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/fair-fruit-project-api/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/entities/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fair-fruit-project-api/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/fair-fruit-project-api/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/entities/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fair-fruit-project-api/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/repository/ClientRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fair-fruit-project-api/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/repository/Orders.java" beforeDir="false" afterPath="$PROJECT_DIR$/fair-fruit-project-api/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/repository/Orders.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fair-fruit-project-api/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/fair-fruit-project-api/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fair-fruit-project-api/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/service/impl/ClientServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fair-fruit-project-api/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/service/impl/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/fair-fruit-project-api/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/service/impl/OrderServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,28 +69,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;development&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/feira&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.new.ui&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;cb3896f64808b40dcd1b7568ec697594&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "development",
+    "last_opened_file_path": "C:/ImpactaProject",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "yarn",
+    "settings.editor.selected.configurable": "reference.settings.ide.settings.new.ui",
+    "spring.configuration.checksum": "cb3896f64808b40dcd1b7568ec697594",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="Global.Points.FeiraOnline.exception" />
@@ -188,6 +183,7 @@
       <workItem from="1680734690942" duration="278000" />
       <workItem from="1680735032881" duration="3078000" />
       <workItem from="1680784122363" duration="6451000" />
+      <workItem from="1681504712948" duration="5050000" />
     </task>
     <servers />
   </component>

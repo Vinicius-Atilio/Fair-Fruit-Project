@@ -50,20 +50,20 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure ( HttpSecurity http) throws Exception {
         http
             .csrf().disable()
-            .authorizeRequests()
-                .antMatchers("/api/clients/**")
-                    .hasAnyRole("USER", "ADMIN")
-                .antMatchers("/api/orders/**")
-                    .hasAnyRole("USER", "ADMIN")
-                .antMatchers("/api/products/**")
-                    .hasAnyRole("USER", "ADMIN")
-                .antMatchers(HttpMethod.POST, "/api/users/**")
-                    .permitAll()
-                .anyRequest().authenticated()
-            .and()
-                .sessionManagement()
-                .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-            .and()
-                .addFilterBefore(jwtFilter(), UsernamePasswordAuthenticationFilter.class);
+                .authorizeRequests()
+            .antMatchers("/api/clients/**")
+                .hasAnyRole("USER", "ADMIN")
+            .antMatchers("/api/orders/**")
+                .hasAnyRole("USER", "ADMIN")
+            .antMatchers("/api/products/**")
+                .hasAnyRole("USER", "ADMIN")
+            .antMatchers(HttpMethod.POST, "/api/users/**")
+                .permitAll()
+            .anyRequest().authenticated()
+                .and()
+            .sessionManagement()
+            .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+                .and()
+            .addFilterBefore(jwtFilter(), UsernamePasswordAuthenticationFilter.class);
     }
 }

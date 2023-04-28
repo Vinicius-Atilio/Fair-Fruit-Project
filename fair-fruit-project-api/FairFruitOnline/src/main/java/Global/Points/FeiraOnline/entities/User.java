@@ -1,17 +1,22 @@
 package Global.Points.FeiraOnline.entities;
 
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.validator.constraints.br.CPF;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.Set;
 
@@ -38,7 +43,8 @@ public class User {
 
     @Column(name = "birthdate")
     @Past(message = "{field.birthdate.past}")
-    private LocalDate birthdate;
+    @JsonFormat(pattern = "dd-MM-yyyy")
+    private LocalDate birthDate;
 
     @Column(name = "email", length = 100)
     @NotEmpty(message = "{field.email.required}")
