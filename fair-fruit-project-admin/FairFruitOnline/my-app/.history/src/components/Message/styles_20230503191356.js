@@ -14,12 +14,6 @@ export const Container = styled.div`
     border-color: #f5c6cb;
 `;
 
-export const CustomIcon = styled.div`
-    justify-content: center;
-    padding-right: 5px;
-    align-items: center;
-`
-
 // export const Error = styled.error`
 //     color: #721c24;
 //     background-color: #f8d7da;

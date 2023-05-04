@@ -12,7 +12,6 @@ export const ImageContainer = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  overflow: hidden;
 
   @media (max-width: 2015px) {
         width: 900px;
@@ -62,7 +61,11 @@ export const InputContainer = styled.div`
 
 export const Image = styled.img`
     height: 100%;
+    display: flex;
     justify-content: flex-start;
+
+
+
 `;
 
 

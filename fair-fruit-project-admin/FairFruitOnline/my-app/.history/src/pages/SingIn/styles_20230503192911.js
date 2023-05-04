@@ -2,47 +2,45 @@ import styled from 'styled-components';
 import FormControl from '@material-ui/core/FormControl';
 import { Button } from '@material-ui/core';
 
-export const Container = styled.main`
-  display: flex;
-  align-items: center;
-  height: 100vh; /* set height to auto */
-`;
-
 export const ImageContainer = styled.div`
-  display: flex;
+  flex: 1;
+  display: table-row;
   justify-content: flex-start;
   align-items: center;
-  overflow: hidden;
+  width: 100%; /* set width to 50% */
+  margin-bottom: 20px; /* add some margin at the bottom */
 
-  @media (max-width: 2015px) {
-        width: 900px;
-    }
-    @media (max-width: 1815px) {
-        width: 800px;
-    }
-    @media (max-width: 1700px) {
-        width: 700px;
-    }
-    @media (max-width: 1600px) {
-        width: 600px;
-    }
-    @media (max-width: 1400px) {
-        width: 500px;
-    }
-
-    @media (max-width: 1400px) {
-        width: 400px;
-    }
+  @media (min-width: 768px) {
+    height: 60em; /* set height to 60em */
+    width: 50em; /* set width to 50em */
+  }
 `;
 
-export const FormLoginContainer = styled.div`
+export const Container = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
-  @media (max-width: 1300px) {
-    width: 300px;
+  justify-content: space-between;
+  padding: 50px; /* add some padding */
+  height: auto; /* set height to auto */
+  
+  @media (min-width: 768px) {
+    flex-direction: row;
+    justify-content: center;
+    padding: 0px; /* remove padding */
+    margin: 0px 0px; /* add some margin */
+    height: 60em; /* set height to 60em */
   }
+`;
+
+export const SignInContainer = styled.div`
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 100em; /* add max-width property */
+  margin-left: -400px;
 `;
 
 export const InputContainer = styled.div`
@@ -61,8 +59,8 @@ export const InputContainer = styled.div`
 `;
 
 export const Image = styled.img`
-    height: 100%;
-    justify-content: flex-start;
+    max-width: 67.375em;
+    max-height: 67.375em;
 `;
 
 

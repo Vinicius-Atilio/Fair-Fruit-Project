@@ -62,6 +62,7 @@ export const InputContainer = styled.div`
 
 export const Image = styled.img`
     height: 100%;
+    display: flex;
     justify-content: flex-start;
 `;
 

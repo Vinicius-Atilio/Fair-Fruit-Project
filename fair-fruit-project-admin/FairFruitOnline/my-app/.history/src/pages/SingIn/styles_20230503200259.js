@@ -5,33 +5,19 @@ import { Button } from '@material-ui/core';
 export const Container = styled.main`
   display: flex;
   align-items: center;
-  height: 100vh; /* set height to auto */
+  height: 100%; /* set height to auto */
 `;
 
 export const ImageContainer = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  overflow: hidden;
-
-  @media (max-width: 2015px) {
-        width: 900px;
-    }
-    @media (max-width: 1815px) {
-        width: 800px;
-    }
-    @media (max-width: 1700px) {
-        width: 700px;
-    }
-    @media (max-width: 1600px) {
-        width: 600px;
-    }
-    @media (max-width: 1400px) {
-        width: 500px;
-    }
-
-    @media (max-width: 1400px) {
-        width: 400px;
+    @media (min-width: 768px) {
+      flex-direction: row;
+      justify-content: center;
+      padding: 0px; /* remove padding */
+      margin: 0px 0px; /* add some margin */
+      height: 60em; /* set height to 60em */
     }
 `;
 
@@ -40,9 +26,6 @@ export const FormLoginContainer = styled.div`
   flex-direction: column;
   align-items: center;
   width: 100%;
-  @media (max-width: 1300px) {
-    width: 300px;
-  }
 `;
 
 export const InputContainer = styled.div`
@@ -61,8 +44,6 @@ export const InputContainer = styled.div`
 `;
 
 export const Image = styled.img`
-    height: 100%;
-    justify-content: flex-start;
 `;
 
 

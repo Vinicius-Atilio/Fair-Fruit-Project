@@ -56,9 +56,7 @@ function SingIn() {
   return (
     <>
       <Container>
-        <ImageContainer>
           <Image src={Fruit} alt="Fruit" />
-        </ImageContainer>
           <FormLoginContainer>
             <CustomIcon>
               <LockIcon />

@@ -14,9 +14,8 @@ export const Container = styled.div`
     border-color: #f5c6cb;
 `;
 
-export const CustomIcon = styled.div`
-    justify-content: center;
-    padding-right: 5px;
+export const CustomIcon = styled.Card`
+    justify-content: space-between;
     align-items: center;
 `
 

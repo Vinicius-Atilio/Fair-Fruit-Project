@@ -1,6 +1,5 @@
 import React from 'react'
-import { Container, CustomIcon } from './styles'
-import WarningIcon from '@mui/icons-material/Warning';
+import { Container } from './styles'
 
 export default function ApiErrorMessage({error}) {
 
@@ -10,9 +9,6 @@ export default function ApiErrorMessage({error}) {
 
     return (
         <Container>
-            <CustomIcon>
-                <WarningIcon/>
-            </CustomIcon>
             <p>{error}</p>
         </Container>
     )

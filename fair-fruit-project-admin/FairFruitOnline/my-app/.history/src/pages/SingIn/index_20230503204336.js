@@ -56,9 +56,6 @@ function SingIn() {
   return (
     <>
       <Container>
-        <ImageContainer>
-          <Image src={Fruit} alt="Fruit" />
-        </ImageContainer>
           <FormLoginContainer>
             <CustomIcon>
               <LockIcon />
@@ -102,6 +99,9 @@ function SingIn() {
               <p><a href="http://localhost:3000/singup">Don't have an account? Sign Up</a></p>
             </Messages>
           </FormLoginContainer>
+          <ImageContainer>
+          <Image src={Fruit} alt="Fruit" />
+          </ImageContainer>
       </Container>
     </>
   );

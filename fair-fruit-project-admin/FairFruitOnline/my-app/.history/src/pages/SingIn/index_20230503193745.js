@@ -1,5 +1,5 @@
 import { Container, FormLoginContainer, Title, ImageContainer, InputForm, CustomIcon, 
-StyledForm, Image, StyledButton, InputContainer, Messages } from './styles';
+StyledForm, Image, StyledButton, FormLoginContainer as FormLoginContainer, InputContainer, Messages } from './styles';
 import { useState, useEffect, useContext } from 'react';
 import {TextField} from '@material-ui/core';
 import Fruit from '../../assets/fruit.png';

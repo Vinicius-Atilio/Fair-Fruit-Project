@@ -1,5 +1,5 @@
-import { Container, FormLoginContainer, Title, ImageContainer, InputForm, CustomIcon, 
-StyledForm, Image, StyledButton, InputContainer, Messages } from './styles';
+import { Container, Title, ImageContainer, InputForm, CustomIcon, 
+StyledForm, Image, StyledButton, SignInContainer, InputContainer, Messages } from './styles';
 import { useState, useEffect, useContext } from 'react';
 import {TextField} from '@material-ui/core';
 import Fruit from '../../assets/fruit.png';
@@ -55,11 +55,11 @@ function SingIn() {
 
   return (
     <>
-      <Container>
         <ImageContainer>
           <Image src={Fruit} alt="Fruit" />
         </ImageContainer>
-          <FormLoginContainer>
+        <Container>
+          <SignInContainer>
             <CustomIcon>
               <LockIcon />
             </CustomIcon>
@@ -101,8 +101,9 @@ function SingIn() {
               <p><a href="forgot_password_page.html">Forgot password?</a> </p>
               <p><a href="http://localhost:3000/singup">Don't have an account? Sign Up</a></p>
             </Messages>
-          </FormLoginContainer>
-      </Container>
+              
+          </SignInContainer>
+        </Container>
     </>
   );
 }

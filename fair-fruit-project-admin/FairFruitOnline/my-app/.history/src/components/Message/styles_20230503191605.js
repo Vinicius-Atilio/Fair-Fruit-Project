@@ -15,8 +15,7 @@ export const Container = styled.div`
 `;
 
 export const CustomIcon = styled.div`
-    justify-content: center;
-    padding-right: 5px;
+    justify-content: space-between;
     align-items: center;
 `
 
