@@ -5,7 +5,7 @@ import { Button } from '@material-ui/core';
 export const Container = styled.main`
   display: flex;
   align-items: center;
-  height: 100vh;
+  height: 100vh; /* set height to auto */
 `;
 
 export const ImageContainer = styled.div`
@@ -67,18 +67,18 @@ export const Image = styled.img`
 export const Title = styled.h2`
   display: flex;
   flex-direction: column;
-  margin-bottom: 200px;
-  margin-top: 150px;
+  margin-bottom: 200px; /* reduce margin */
+  margin-top: 150px; /* remove margin */
   
   @media (min-width: 768px) {
-    margin-bottom: 50px;
+    margin-bottom: 50px; /* add some margin */
   }
 `;
 
 export const InputForm = styled(FormControl)`
     display: flex;
     margin-bottom: 30px;
-    width: 50em;
+    width: 50em; /* set width to 100% */
 `;
 
 export const CustomIcon = styled.div`
@@ -95,14 +95,6 @@ export const Messages = styled.div`
     align-items: center;
     margin-top: 10px;
     line-height: 25px;
-`
-export const ErrorContainer = styled.div`
-    display: flex;
-    justify-content: center;
-  `
-export const ButtonContainer = styled.div`
-  display: flex;
-  justify-content: center;
 `
 
 export const StyledButton = styled(Button)`

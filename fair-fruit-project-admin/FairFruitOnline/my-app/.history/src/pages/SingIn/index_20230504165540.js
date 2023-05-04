@@ -1,6 +1,8 @@
 import { Container, FormLoginContainer, Title, ImageContainer, InputForm, CustomIcon, 
 StyledForm, Image, StyledButton, InputContainer, Messages, ErrorContainer, ButtonContainer } from './styles';
 import { useState, useEffect, useContext } from 'react';
+// import {TextField} from '@material-ui/core';
+
 import Fruit from '../../assets/fruit.png';
 import LockIcon from '@mui/icons-material/Lock';
 import { useHistory } from 'react-router';
@@ -15,7 +17,7 @@ import { TextField} from '@mui/material';
 function SingIn() {
   const {userLogin, setUserLogin, userPassword, setUserPassword} =  useContext(LoginContext);
   const {error, setError} = useContext(ErrorContext);
-  const {register, handleSubmit, formState: {errors}} = useForm();
+  const {register, handleSubmit, watch, formState: {errors}} = useForm();
   const {loading} = useSelector((state => state.auth));
   const history = useHistory();
   const dispath = useDispatch();
@@ -84,15 +86,13 @@ function SingIn() {
                 <ErrorContainer>
                   {error && <ApiErrorMessage error={error}/>}
                 </ErrorContainer>
-                <ButtonContainer>
-                  <StyledButton
-                    type="submit"
-                    variant="contained"
-                    color="primary"
-                  >
-                    Sign In
-                  </StyledButton>
-                </ButtonContainer>
+                <StyledButton
+                  type="submit"
+                  variant="contained"
+                  color="primary"
+                >
+                  Sign In
+                </StyledButton>
               </StyledForm> : "Loading..."}
               <Messages>
                 <p><a href="forgot_password_page.html">Forgot password?</a> </p>
