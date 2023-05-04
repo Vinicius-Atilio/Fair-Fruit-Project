@@ -1,6 +1,8 @@
 {
   "name": "feira",
   "version": "0.1.0",
+  "proxy": "http://localhost:8080",
+  "homepage": "http://localhost:3000",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.9.3",
@@ -8,22 +10,37 @@
     "@material-ui/core": "^4.12.1",
     "@material-ui/icons": "^4.11.2",
     "@material-ui/lab": "^4.0.0-alpha.60",
+    "@mui/icons-material": "^5.11.11",
     "@mui/material": "^5.8.4",
+    "@reduxjs/toolkit": "^1.9.5",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "axios": "^0.27.2",
     "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "http": "^0.0.1-security",
+    "httpclient": "^0.1.0",
+    "httpclient.js": "^2.8.1",
+    "https-browserify": "^1.0.0",
+    "picomatch": "^2.3.1",
     "react": "^17.0.2",
     "react-ajax": "^0.1.1",
     "react-dom": "^17.0.2",
     "react-input-mask": "^2.0.4",
     "react-native-masked-text": "^1.12.5",
     "react-query": "^3.39.1",
-    "react-router-dom": "^5.2.0",
+    "react-redux": "^8.0.5",
+    "react-router-dom": "^5.3.4",
     "react-scripts": "^5.0.1",
+    "react-text-mask": "^5.5.0",
+    "redux": "^4.2.1",
+    "stream-browserify": "^3.0.0",
+    "stream-http": "^3.2.0",
     "styled-components": "^5.3.5",
+    "url": "^0.11.0",
     "use-http": "^1.0.26",
+    "util": "^0.12.5",
     "web-vitals": "^1.0.1"
   },
   "scripts": {
@@ -51,7 +68,7 @@
     ]
   },
   "devDependencies": {
-    "http-proxy-middleware": "^2.0.6"
-  },
-  "proxy":"http://localhost:8080"
+    "http-proxy-middleware": "^2.0.6",
+    "webpack": "^5.80.0"
+  }
 }

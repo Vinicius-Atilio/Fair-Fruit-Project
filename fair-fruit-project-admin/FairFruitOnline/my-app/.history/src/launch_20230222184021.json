@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "name": "Debug Node.js",
+      "request": "launch",
+      "program": "./src/index.js",
+      "restart": true,
+      "protocol": "inspector"
+    }
+  ]
+}

@@ -1,6 +1,7 @@
 package Global.Points.FeiraOnline.controller;
 
 import Global.Points.FeiraOnline.entities.Product;
+import Global.Points.FeiraOnline.exception.ProductNotFoundException;
 import Global.Points.FeiraOnline.repository.Products;
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.ExampleMatcher;
@@ -41,9 +42,7 @@ public class ProductController {
                     product.setId(p.getId());
                     repository.save(product);
                     return ResponseEntity.noContent().build();
-                }).orElseThrow(()->
-                        new ResponseStatusException(HttpStatus.NOT_FOUND,
-                                "Product not found"));
+                }).orElseThrow(ProductNotFoundException::new);
     }
 
     @DeleteMapping("{id}")
@@ -54,18 +53,14 @@ public class ProductController {
                     repository.delete(p);
                     return Void.TYPE;
                 })
-                .orElseThrow(()->
-                        new ResponseStatusException(HttpStatus.NOT_FOUND,
-                                "Product not found"));
+                .orElseThrow(ProductNotFoundException::new);
     }
 
     @GetMapping("{id}")
     public Product getById(@PathVariable Integer id ) {
         return repository
                 .findById(id)
-                .orElseThrow(() ->
-                        new ResponseStatusException(HttpStatus.NOT_FOUND,
-                                "Product not found"));
+                .orElseThrow(ProductNotFoundException::new);
     }
     @GetMapping
     public List<Product> find(Product filter ){

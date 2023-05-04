@@ -2,17 +2,11 @@ package Global.Points.FeiraOnline.service.impl;
 
 import Global.Points.FeiraOnline.dto.OrderDTO;
 import Global.Points.FeiraOnline.dto.OrderItemDTO;
-import Global.Points.FeiraOnline.entities.Client;
-import Global.Points.FeiraOnline.entities.Order;
-import Global.Points.FeiraOnline.entities.OrderItem;
-import Global.Points.FeiraOnline.entities.Product;
+import Global.Points.FeiraOnline.entities.*;
 import Global.Points.FeiraOnline.entities.enums.OrderStatus;
 import Global.Points.FeiraOnline.exception.BusinessRuleException;
 import Global.Points.FeiraOnline.exception.OrderNotFoundException;
-import Global.Points.FeiraOnline.repository.Clients;
-import Global.Points.FeiraOnline.repository.OrderItems;
-import Global.Points.FeiraOnline.repository.Orders;
-import Global.Points.FeiraOnline.repository.Products;
+import Global.Points.FeiraOnline.repository.*;
 import Global.Points.FeiraOnline.service.OrderService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -28,7 +22,7 @@ import java.util.stream.Collectors;
 public class OrderServiceImpl implements OrderService {
 
     private final Orders repository;
-    private final Clients clientsRepository;
+    private final UserRepository userRepository;
     private final Products productsRepository;
     private final OrderItems orderItemsRepository;
 
@@ -36,14 +30,14 @@ public class OrderServiceImpl implements OrderService {
     @Transactional
     public Order save(OrderDTO dto) {
         Integer idClient = dto.getClient();
-        Client client = clientsRepository
+        User user = userRepository
                 .findById(idClient)
                 .orElseThrow(() -> new BusinessRuleException("Client code not found."));
 
         Order order = new Order();
         order.setTotal(dto.getTotal());
         order.setOrderData(LocalDate.now());
-        order.setClient(client);
+        order.setUser(user);
         order.setStatus(OrderStatus.Realized);
 
         List<OrderItem> orderItems = convertItems(order, dto.getItems());
@@ -66,7 +60,7 @@ public class OrderServiceImpl implements OrderService {
                 .map( order -> {
                     order.setStatus(orderStatus);
                     return repository.save(order);
-                }).orElseThrow(()-> new OrderNotFoundException());
+                }).orElseThrow(OrderNotFoundException::new);
     }
 
     private List<OrderItem> convertItems(Order order, List<OrderItemDTO> items){

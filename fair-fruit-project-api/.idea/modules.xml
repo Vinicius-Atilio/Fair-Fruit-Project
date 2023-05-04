@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/FeiraOnline.iml" filepath="$PROJECT_DIR$/.idea/FeiraOnline.iml" />
-      <module fileurl="file://$PROJECT_DIR$/FeiraOnline/feira.iml" filepath="$PROJECT_DIR$/FeiraOnline/feira.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/fair-fruit-project-api.iml" filepath="$PROJECT_DIR$/.idea/fair-fruit-project-api.iml" />
     </modules>
   </component>
 </project>
