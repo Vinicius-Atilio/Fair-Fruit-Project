@@ -30,6 +30,8 @@ function SingUp() {
 
 
     const onSubmit = async (data) => {
+        console.log(data);
+        console.log("chamando handdlesubmit");
         const newUser = {
             name: data.name,
             cpf: data.cpf,
@@ -42,7 +44,7 @@ function SingUp() {
         };
         console.log(newUser);
         try {
-            dispath(registerUser(newUser));
+            dispath(register(newUser));
         } catch (error) {
             console.log(error);
         }
@@ -173,8 +175,7 @@ function SingUp() {
                         }}
                         label="Balance *"
                         variant="outlined"
-                        defaultValue={0}
-                        type="decimal"
+                        type="number"
                         {...register("balance")}/>
                 </ExtraInputForm>
                 </InputContainer>

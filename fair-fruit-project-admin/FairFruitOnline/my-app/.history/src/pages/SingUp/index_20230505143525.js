@@ -10,7 +10,7 @@ import axios from 'axios';
 import InputMasked from '../../components/InputMasked/index.js';
 import LockIcon from '@mui/icons-material/Lock';
 import ApiService from '../../service/apiService.js';
-import { registerUser, resetRegister } from 'slices/slice';
+import { register, resetRegister } from 'slices/slice';
 import { useSelector, useDispatch } from 'react-redux';
 import { RegisterContext } from 'common/contexts/Register';
 import { useForm } from 'react-hook-form';
@@ -30,6 +30,8 @@ function SingUp() {
 
 
     const onSubmit = async (data) => {
+        console.log(data);
+        console.log("chamando handdlesubmit");
         const newUser = {
             name: data.name,
             cpf: data.cpf,
@@ -38,11 +40,11 @@ function SingUp() {
             login: data.login,
             password: data.password,
             balance: data.balance,
-            admin: data.type,
+            admin: userType,
         };
         console.log(newUser);
         try {
-            dispath(registerUser(newUser));
+            dispath(register(newUser));
         } catch (error) {
             console.log(error);
         }
@@ -173,8 +175,7 @@ function SingUp() {
                         }}
                         label="Balance *"
                         variant="outlined"
-                        defaultValue={0}
-                        type="decimal"
+                        type="number"
                         {...register("balance")}/>
                 </ExtraInputForm>
                 </InputContainer>

@@ -8,7 +8,7 @@ import { useForm } from 'react-hook-form';
 
 
 
-const InputMasked = (props) => {
+const InputMasked = forwardRef((props) => {
   const [value, setValue] = useState(props.value);
 
   const handleChange = (event) => {
@@ -42,6 +42,6 @@ const InputMasked = (props) => {
       )}
     </InputMask>
   );
-};
+});
 
 export default InputMasked;

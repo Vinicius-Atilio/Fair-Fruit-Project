@@ -32,6 +32,7 @@ const InputMasked = (props) => {
           label={props.label}
           variant={props.variant}
           // value={props.value}
+          register = {props.register}
           error={props.error}
           helperText={props.helperText}
           type={props.type}

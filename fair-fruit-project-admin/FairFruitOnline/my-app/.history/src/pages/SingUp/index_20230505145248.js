@@ -174,7 +174,7 @@ function SingUp() {
                         label="Balance *"
                         variant="outlined"
                         defaultValue={0}
-                        type="decimal"
+                        type="number"
                         {...register("balance")}/>
                 </ExtraInputForm>
                 </InputContainer>

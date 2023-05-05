@@ -10,11 +10,10 @@ import axios from 'axios';
 import InputMasked from '../../components/InputMasked/index.js';
 import LockIcon from '@mui/icons-material/Lock';
 import ApiService from '../../service/apiService.js';
-import { registerUser, resetRegister } from 'slices/slice';
+import { register, resetRegister } from 'slices/slice';
 import { useSelector, useDispatch } from 'react-redux';
 import { RegisterContext } from 'common/contexts/Register';
 import { useForm } from 'react-hook-form';
-import InputMask from 'react-input-mask';
 
 
 function SingUp() {
@@ -23,26 +22,26 @@ function SingUp() {
          setUserBalance, userEmail, setUserEmail, userLogin,
          setUserLogin, userPassword, setUserPassword} = useContext(RegisterContext);
     const dispath = useDispatch();
-    const {register, handleSubmit, formState: {errors}, clearErrors} = useForm();
+    const {register, handleSubmit, formState: {errors}} = useForm();
     const {loading} = useSelector((state => state.auth));
 
     const history = useHistory();
-
-
+    
     const onSubmit = async (data) => {
+        console.log(data);
+        console.log("chamando handdlesubmit");
         const newUser = {
-            name: data.name,
-            cpf: data.cpf,
-            birthDate: data.birthDate,
-            email: data.email,
-            login: data.login,
-            password: data.password,
-            balance: data.balance,
-            admin: data.type,
+            name: userName,
+            cpf: userDoc,
+            birthDate: userBirthDate,
+            email: userEmail,
+            login: userLogin,
+            password: userPassword,
+            balance: userBalance,
+            admin: userType,
         };
-        console.log(newUser);
         try {
-            dispath(registerUser(newUser));
+            dispath(register(newUser));
         } catch (error) {
             console.log(error);
         }
@@ -73,50 +72,40 @@ function SingUp() {
                     helperText={errors.name?.message}/>
                 </InputForm>
                 <InputForm>
-                    <InputMask
-                        mask="999.999.999-99" maskChar=""
+                    <InputMasked
+                        mask="999.999.999-99"
                         id="outlined-cpf"
+                        name="cpf"
+                        label="CPF *"
                         variant="outlined"
                         type="text"
                         {...register("cpf", { required: "A valid Cpf is required." })}
                         error={Boolean(errors.cpf)}
-                        helperText={errors.cpf?.message}>
-                            {(props) => <TextField 
-                                    variant="outlined"
-                                    name="cpf"
-                                    label="CPF *"
-                                    error={props.error}
-                                    helperText={props.helperText}/>}
-                    </InputMask>
+                        helperText={errors.cpf?.message}/>
                 </InputForm>
                 </InputContainer>
                 <InputContainer>
                 <InputForm>
-                    <InputMask
-                        mask="99-99-9999" maskChar=""
+                    <InputMasked
                         id="outlined-birthDate"
+                        name="birthDate"
+                        mask="99-99-9999"
+                        label="Birth Date (dd-MM-yyyy)*"
                         variant="outlined"
                         type="text"
                         {...register("birthDate", { required: "Birth Date is required." })}
                         error={Boolean(errors.birthDate)}
-                        helperText={errors.birthDate?.message}>
-                            {(props) => <TextField 
-                                    variant="outlined"
-                                    name="birthDate"
-                                    label="Birth Date (dd-MM-yyyy)*"
-                                    error={props.error}
-                                    helperText={props.helperText}/>}
-                    </InputMask>
+                        helperText={errors.birthDate?.message}/>
                 </InputForm>
                 <InputForm fullWidth>
                     <InputLabel id="demo-simple-select-label"> Type </InputLabel>
                     <Select
                         id="demo-simple-select"
-                        name="type"
+                        name="isAdmin"
                         labelId="demo-simple-select"
                         defaultValue={false}
                         label="Type"
-                        {...register("type")}>
+                        {...register("isAdmin")}>
                         <MenuItem value={false}>User</MenuItem>
                         <MenuItem value={true}>Admin</MenuItem>
                     </Select>
@@ -173,8 +162,7 @@ function SingUp() {
                         }}
                         label="Balance *"
                         variant="outlined"
-                        defaultValue={0}
-                        type="decimal"
+                        type="number"
                         {...register("balance")}/>
                 </ExtraInputForm>
                 </InputContainer>
@@ -182,6 +170,7 @@ function SingUp() {
                     type="submit"
                     variant="contained"
                     color="primary"
+                    disabled={userName.length < 4}
                     // onClick={() => history.push('/')}
                 >
                     Sign Up

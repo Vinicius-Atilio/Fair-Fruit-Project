@@ -3,10 +3,6 @@ import { TextField } from '@material-ui/core';
 import InputMask from 'react-input-mask';
 import { forwardRef } from 'react';
 import MaskedInput from 'react-text-mask';
-import { useForm } from 'react-hook-form';
-
-
-
 
 const InputMasked = (props) => {
   const [value, setValue] = useState(props.value);

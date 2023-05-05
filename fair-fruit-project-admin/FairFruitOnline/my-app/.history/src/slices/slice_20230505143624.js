@@ -30,6 +30,8 @@ export const registerUser = createAsyncThunk("auth/register", async (user, thunk
     if(data.erros){
         return thunkAPI.rejectWithValue(data.erros)
     }
+
+    return data;
 });
 
 export const logout = createAsyncThunk("auth/logout", async () =>
