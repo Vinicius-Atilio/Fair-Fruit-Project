@@ -7,13 +7,14 @@ async function auth(user) {
     console.log(user);
     try {
         const res = await configAxios.auth('/api/users/auth', user);
+        console.log(res);
         if (res){
             localStorage.setItem("user", (res.data));
         }
 
         console.log(res);
 
-        return res;
+        return res.data;
 
     } catch (error){
         return error;

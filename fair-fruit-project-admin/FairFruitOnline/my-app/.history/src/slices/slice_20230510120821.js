@@ -22,7 +22,7 @@ export const login = createAsyncThunk("auth/login", async (user, thunkAPI) => {
         return thunkAPI.rejectWithValue(res.response.data.message);
     }
     console.log(res);
-    return res.status;
+    return res;
 });
 
 export const registerUser = createAsyncThunk("auth/register", async (user, thunkAPI) => {

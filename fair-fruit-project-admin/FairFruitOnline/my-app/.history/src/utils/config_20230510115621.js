@@ -13,6 +13,7 @@ async function auth(endpoint, params) {
     console.log(response);
     if (response.data.token){
         const jwtToken = response.data.token;
+        console.log(jwtToken);
         api = new axios.create({
             headers: {
                 'Content-Type': 'application/json',
@@ -21,7 +22,7 @@ async function auth(endpoint, params) {
             }
             });
     }
-    return response;
+    return response.data;
 }
 
 async function post(endpoint, params) {

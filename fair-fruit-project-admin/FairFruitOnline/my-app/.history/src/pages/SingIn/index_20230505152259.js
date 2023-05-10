@@ -24,7 +24,7 @@ function SingIn() {
   
 
   const onSubmit = async (data) => {
-    setIsLoading(true);
+
     const userAuthentication = {
       login: data.login,
       password: data.password,
@@ -32,16 +32,15 @@ function SingIn() {
 
     const res = await dispath(login(userAuthentication));
 
-    console.log(res);
-    
-    if (res.payload === 200) {
-      setIsLoading(false);
-      history.push("/products");
-    } else {
+    console.log(res.payload);
+    if (res.error) {
+      console.log('passei error');
       setError(res.payload);
-      setIsLoading(false);
-
     }
+    console.log("error state:", error);
+    console.log(error);
+    history.push("/products");
+
   };
 
   useEffect(() => {

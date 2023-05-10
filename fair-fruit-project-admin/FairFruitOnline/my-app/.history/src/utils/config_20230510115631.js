@@ -21,7 +21,7 @@ async function auth(endpoint, params) {
             }
             });
     }
-    return response;
+    return response.data;
 }
 
 async function post(endpoint, params) {

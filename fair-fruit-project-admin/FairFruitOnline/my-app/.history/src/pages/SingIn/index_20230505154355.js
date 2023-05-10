@@ -31,16 +31,14 @@ function SingIn() {
     };
 
     const res = await dispath(login(userAuthentication));
-
-    console.log(res);
     
-    if (res.payload === 200) {
+    console.log(res.payload);
+    if (res.error) {
+      setIsLoading(false);
+      setError(res.payload);
+    } else {
       setIsLoading(false);
       history.push("/products");
-    } else {
-      setError(res.payload);
-      setIsLoading(false);
-
     }
   };
 

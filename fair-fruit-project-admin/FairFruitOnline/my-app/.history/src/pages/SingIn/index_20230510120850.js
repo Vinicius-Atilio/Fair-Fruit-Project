@@ -34,14 +34,13 @@ function SingIn() {
 
     console.log(res);
     
-    if (res.payload === 200) {
+    if (res.error) {
       setIsLoading(false);
-      history.push("/products");
-    } else {
       setError(res.payload);
-      setIsLoading(false);
+    } 
+    setIsLoading(false);
+    // history.push("/products");
 
-    }
   };
 
   useEffect(() => {

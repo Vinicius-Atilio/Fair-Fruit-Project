@@ -30,18 +30,17 @@ function SingIn() {
       password: data.password,
     };
 
-    const res = await dispath(login(userAuthentication));
+    const res = await login(userAuthentication);
 
     console.log(res);
     
-    if (res.payload === 200) {
+    if (res.error) {
       setIsLoading(false);
-      history.push("/products");
-    } else {
       setError(res.payload);
-      setIsLoading(false);
+    } 
+    setIsLoading(false);
+    // history.push("/products");
 
-    }
   };
 
   useEffect(() => {
