@@ -36,31 +36,31 @@ function Fruits() {
   }, []);
 
   return (
-    <>
-      {/* {products.length === 0 ? ( <p>Insert a new Product!</p> ) : 
-      ( isLoading ? <CircularProgress color="success"/> :
-        products.map((product) => (
-          <Container className="get" key={product.id}>
-            <div>
-              <img
-                src={`${product.image}`}
-                alt={`${product.name}`}
-                width="80"
-                height="70"
-              />
-              <p>
-                {product.name} - $ {product.price?.toFixed(2)} <span>Kg</span>
-              </p>
-            </div>
-            <div>
-              <IconButton onClick={() => deleteProduct(product.id)} color="primary">
-                <DeleteForeverIcon />
-              </IconButton>
-            </div>
-          </Container>
-        ))
-      )} */}
-    </>
+    // <>
+    //   {products.length === 0 ? ( <p>Insert a new Product!</p> ) : 
+    //   ( isLoading ? <CircularProgress color="success"/> :
+    //     products.map((product) => (
+    //       <Container className="get" key={product.id}>
+    //         <div>
+    //           <img
+    //             src={`${product.image}`}
+    //             alt={`${product.name}`}
+    //             width="80"
+    //             height="70"
+    //           />
+    //           <p>
+    //             {product.name} - $ {product.price?.toFixed(2)} <span>Kg</span>
+    //           </p>
+    //         </div>
+    //         <div>
+    //           <IconButton onClick={() => deleteProduct(product.id)} color="primary">
+    //             <DeleteForeverIcon />
+    //           </IconButton>
+    //         </div>
+    //       </Container>
+    //     ))
+    //   )}
+    // </>
   );
 }
 

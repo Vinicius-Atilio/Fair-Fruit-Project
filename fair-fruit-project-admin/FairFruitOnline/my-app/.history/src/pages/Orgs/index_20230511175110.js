@@ -16,9 +16,10 @@ function Orgs() {
     const [productName, setProductName] = useState('');
     const [productPrice, setProductPrice] = useState(0);
     const [productImage, setProductImage] = useState('');
+    const [fruits, setFruits] = useState([]);
     const [products, setProducts] = useState([]);
-    const [updatedProducts, setUpdatedProducts] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
+    const [updatedProducts, setUpdatedProducts] = useState([]);
 
     const history = useHistory();
 
@@ -69,8 +70,8 @@ function Orgs() {
         };
       try {
           const response = await configAxios.post('/api/products', newProduct);
-          console.log(response);
-          setProducts([...products, response]); // add new fruit to the state
+          const data = response.data;
+          setProducts([...products, data]); // add new fruit to the state
       } catch (error) {
           console.log(error);
       }
@@ -151,7 +152,7 @@ function Orgs() {
                 </form>
             </CustomCard>
             <>
-                {products.length === 0 ? ( isLoading ) : 
+                {products.length === 0 ? ( <p>Insert a new Product!</p> ) : 
                 ( isLoading ? <CircularProgress color="success"/> :
                 products.map((product) => (
                     <Container className="get" key={product.id}>

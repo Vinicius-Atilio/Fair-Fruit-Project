@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 class ApiService {
-  constructor() {
+  constructor(jwtToken) {
     this.jwtToken = localStorage.getItem('jwtToken');
     console.log(this.jwtToken);
     this.api = axios.create({
@@ -21,11 +21,11 @@ class ApiService {
   }
 
   async auth(endpoint, data = {}) {
-    localStorage.removeItem('jwtToken');
     const response = await this.api.post(endpoint, data);
     const jwtToken = response.data.token;
     localStorage.setItem('jwtToken', jwtToken);
     console.log(jwtToken);
+    new ApiService(jwtToken);
     return response;
   }
 

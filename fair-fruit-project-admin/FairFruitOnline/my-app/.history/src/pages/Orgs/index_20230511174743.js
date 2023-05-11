@@ -16,8 +16,8 @@ function Orgs() {
     const [productName, setProductName] = useState('');
     const [productPrice, setProductPrice] = useState(0);
     const [productImage, setProductImage] = useState('');
+    const [fruits, setFruits] = useState([]);
     const [products, setProducts] = useState([]);
-    const [updatedProducts, setUpdatedProducts] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
 
     const history = useHistory();
@@ -48,11 +48,11 @@ function Orgs() {
         console.log(productId);
         setIsLoading(true);
     try {
-        const response = await configAxios.del(`/api/products/${productId}`);
+        const response = await configAxios.delete(`/api/products/${productId}`);
         console.log(`Product with id ${productId} has been deleted.`);
         // filter out the deleted product from the products list
-        const updated = products.filter((product) => product.id !== productId);
-        setUpdatedProducts(updated);
+        // const updatedProducts = products.filter((product) => product.id !== productId);
+        // setProducts(updatedProducts);
     } catch (error) {
         console.log(error);
     }
@@ -69,8 +69,8 @@ function Orgs() {
         };
       try {
           const response = await configAxios.post('/api/products', newProduct);
-          console.log(response);
-          setProducts([...products, response]); // add new fruit to the state
+          const data = response.data;
+          setProducts([...products, data]); // add new fruit to the state
       } catch (error) {
           console.log(error);
       }
@@ -79,7 +79,7 @@ function Orgs() {
 
   useEffect(() => {
     getProducts();
-  }, [updatedProducts]);
+  }, []);
   
 
     return (
@@ -151,7 +151,7 @@ function Orgs() {
                 </form>
             </CustomCard>
             <>
-                {products.length === 0 ? ( isLoading ) : 
+                {products.length === 0 ? ( <p>Insert a new Product!</p> ) : 
                 ( isLoading ? <CircularProgress color="success"/> :
                 products.map((product) => (
                     <Container className="get" key={product.id}>

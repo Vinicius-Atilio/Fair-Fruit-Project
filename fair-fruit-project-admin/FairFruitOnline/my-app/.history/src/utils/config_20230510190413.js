@@ -1,12 +1,9 @@
 import axios from 'axios';
 
-var jwtToken = localStorage.getItem('jwtToken');
-
 var api = axios.create({
     headers: {
         'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*',
-        'Authorization': jwtToken ? `Bearer ${jwtToken}` : '',
+        'Access-Control-Allow-Origin': '*'
     }
     });
 

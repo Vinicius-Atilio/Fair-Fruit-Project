@@ -37,7 +37,7 @@ function Fruits() {
 
   return (
     <>
-      {/* {products.length === 0 ? ( <p>Insert a new Product!</p> ) : 
+      {products.length === 0 ? ( <p>Insert a new Product!</p> ) : 
       ( isLoading ? <CircularProgress color="success"/> :
         products.map((product) => (
           <Container className="get" key={product.id}>
@@ -59,7 +59,7 @@ function Fruits() {
             </div>
           </Container>
         ))
-      )} */}
+      )}
     </>
   );
 }

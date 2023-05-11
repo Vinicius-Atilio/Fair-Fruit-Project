@@ -5,7 +5,7 @@ import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
 import configAxios from "utils/config";
 import CircularProgress from '@mui/material/CircularProgress';
 
-function Fruits() {
+function Fruits({ updateFruit }) {
   const [products, setProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -33,11 +33,11 @@ function Fruits() {
 
   useEffect(() => {
     getProducts();
-  }, []);
+  }, [updateFruit]);
 
   return (
     <>
-      {/* {products.length === 0 ? ( <p>Insert a new Product!</p> ) : 
+      {products.length === 0 ? ( <p>Insert a new Product!</p> ) : 
       ( isLoading ? <CircularProgress color="success"/> :
         products.map((product) => (
           <Container className="get" key={product.id}>
@@ -49,7 +49,7 @@ function Fruits() {
                 height="70"
               />
               <p>
-                {product.name} - $ {product.price?.toFixed(2)} <span>Kg</span>
+                {product.name} - $ {product.price?.toFixed(2)} <span>Kg?</span>
               </p>
             </div>
             <div>
@@ -59,7 +59,7 @@ function Fruits() {
             </div>
           </Container>
         ))
-      )} */}
+      )}
     </>
   );
 }

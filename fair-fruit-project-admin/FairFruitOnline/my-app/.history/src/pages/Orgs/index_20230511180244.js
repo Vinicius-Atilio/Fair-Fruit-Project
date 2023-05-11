@@ -70,7 +70,8 @@ function Orgs() {
       try {
           const response = await configAxios.post('/api/products', newProduct);
           console.log(response);
-          setProducts([...products, response]); // add new fruit to the state
+          const data = response.data;
+          setProducts([...products, data]); // add new fruit to the state
       } catch (error) {
           console.log(error);
       }
@@ -151,7 +152,7 @@ function Orgs() {
                 </form>
             </CustomCard>
             <>
-                {products.length === 0 ? ( isLoading ) : 
+                {products.length === 0 ? ( <p>Insert a new Product!</p> ) : 
                 ( isLoading ? <CircularProgress color="success"/> :
                 products.map((product) => (
                     <Container className="get" key={product.id}>

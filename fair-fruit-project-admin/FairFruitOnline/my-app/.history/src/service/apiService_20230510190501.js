@@ -21,11 +21,9 @@ class ApiService {
   }
 
   async auth(endpoint, data = {}) {
-    localStorage.removeItem('jwtToken');
     const response = await this.api.post(endpoint, data);
     const jwtToken = response.data.token;
     localStorage.setItem('jwtToken', jwtToken);
-    console.log(jwtToken);
     return response;
   }
 

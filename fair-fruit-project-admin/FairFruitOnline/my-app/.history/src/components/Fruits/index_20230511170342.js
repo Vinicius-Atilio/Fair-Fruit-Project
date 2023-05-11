@@ -1,17 +1,18 @@
 import { Container } from './styles';
 import { memo, useEffect, useState } from 'react';
+import axios from 'axios';
 import { IconButton } from '@material-ui/core';
 import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
+import ApiService from 'service/apiService';
 import configAxios from "utils/config";
-import CircularProgress from '@mui/material/CircularProgress';
 
-function Fruits() {
+function Fruits({ updateFruit }) {
   const [products, setProducts] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
 
   const getProducts = async () => {
     try {
-      const data = await configAxios.get("/api/products");
+      const response = await configAxios.get("/api/products");
+      const data = response.data;
       setProducts(data);
       console.log(data);
     } catch (error) {
@@ -33,12 +34,13 @@ function Fruits() {
 
   useEffect(() => {
     getProducts();
-  }, []);
+  }, [updateFruit]);
 
   return (
     <>
-      {/* {products.length === 0 ? ( <p>Insert a new Product!</p> ) : 
-      ( isLoading ? <CircularProgress color="success"/> :
+      {products.length === 0 ? (
+        <p>Loading...</p>
+      ) : (
         products.map((product) => (
           <Container className="get" key={product.id}>
             <div>
@@ -59,7 +61,7 @@ function Fruits() {
             </div>
           </Container>
         ))
-      )} */}
+      )}
     </>
   );
 }

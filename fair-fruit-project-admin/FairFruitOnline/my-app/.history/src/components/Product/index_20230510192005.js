@@ -19,7 +19,8 @@ function Product() {
 
     const getProducts = async () => {
         try {
-            const data = await configAxios.get("/api/products");
+            const response = await configAxios.get("/api/products");
+            const data = response;
             setProduct(data);
             console.log(data);
         } catch (error) {

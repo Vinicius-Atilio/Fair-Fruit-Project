@@ -151,7 +151,7 @@ function Orgs() {
                 </form>
             </CustomCard>
             <>
-                {products.length === 0 ? ( isLoading ) : 
+                {products.length === 0 ? ( <p>Insert a new Product!</p> ) : 
                 ( isLoading ? <CircularProgress color="success"/> :
                 products.map((product) => (
                     <Container className="get" key={product.id}>
