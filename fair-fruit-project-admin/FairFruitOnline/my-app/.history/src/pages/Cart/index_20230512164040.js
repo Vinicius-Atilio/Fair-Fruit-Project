@@ -16,7 +16,6 @@ import RemoveIcon from '@material-ui/icons/Remove';
 import { useHistory } from 'react-router-dom';
 import { UserContext } from 'common/contexts/Register';
 import { usePayment } from 'common/contexts/Payment';
-import configAxios from 'utils/config';
 
 function Cart() {
     const { cart, addProduct, removeProduct, quantityCart, buy, totalValue = 0 } = useCartContext();
@@ -30,13 +29,12 @@ function Cart() {
     const handleAddHasProduct = (product) => {
         const hasItem = addedProducts.find((item) => item.id === product.id);
         if (hasItem) {
-            const add = addProduct({
+            addProduct({
                 id: product.id,
                 name: product.name,
                 price: product.price,
                 quantity: hasItem.quantity + 1
             })
-            console.log(add);
         }
     }
 
@@ -53,18 +51,13 @@ function Cart() {
         }
     }
 
-    const onSubmit = async () => {
-
-        const payload = cart.map((p) => ({ product: p.id, quantity: p.quantity}));
+    const onSubmit = (data) => {
 
         const order = {
-            client: userId,
+            id: userId,
             total: totalValue,
-            items: payload
+            items: data.items
         }
-
-        await configAxios.post("/api/orders", order)
-
     }
 
     useEffect(() => {
@@ -143,9 +136,8 @@ function Cart() {
                 onClick={() => {
                     buy();
                     setOpenSnackbar(true);
-                    onSubmit();
                 }}
-                // disabled={quantityCart === 0 || total < 0}
+                disabled={quantityCart === 0 || total < 0}
                 color="primary"
                 variant="contained"
             >

@@ -16,7 +16,6 @@ import RemoveIcon from '@material-ui/icons/Remove';
 import { useHistory } from 'react-router-dom';
 import { UserContext } from 'common/contexts/Register';
 import { usePayment } from 'common/contexts/Payment';
-import configAxios from 'utils/config';
 
 function Cart() {
     const { cart, addProduct, removeProduct, quantityCart, buy, totalValue = 0 } = useCartContext();
@@ -53,18 +52,17 @@ function Cart() {
         }
     }
 
-    const onSubmit = async () => {
+    const onSubmit = () => {
 
         const payload = cart.map((p) => ({ product: p.id, quantity: p.quantity}));
-
+        
         const order = {
-            client: userId,
+            id: userId,
             total: totalValue,
             items: payload
         }
 
-        await configAxios.post("/api/orders", order)
-
+        console.log(order);
     }
 
     useEffect(() => {

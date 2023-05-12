@@ -58,7 +58,7 @@ function Cart() {
         const payload = cart.map((p) => ({ product: p.id, quantity: p.quantity}));
 
         const order = {
-            client: userId,
+            id: userId,
             total: totalValue,
             items: payload
         }
