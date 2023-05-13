@@ -12,9 +12,12 @@ import { IconButton } from '@material-ui/core';
 import DeleteForeverIcon from '@material-ui/icons/DeleteForever'
 import { useForm } from 'react-hook-form';
 import { useFruitsContext } from 'common/contexts/Fruits';
+import { useContext } from 'react';
 
 function Orgs() {
-    const {fruit, updatedFruitList, addFruit, deleteFruit, products} = useFruitsContext();
+    const {fruit, setFruit, addFruit, deleteFruit, products} = useFruitsContext();
+    // const [products, setProducts] = useState([]);
+    const [updatedProducts, setUpdatedProducts] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     const {register, handleSubmit, formState: {errors}} = useForm();
 
@@ -26,7 +29,7 @@ function Orgs() {
 
     const deleteProduct = async (productId) => {
         setIsLoading(true);
-        await deleteFruit(productId);
+        await deleteProduct(productId);
         setIsLoading(false);
     };
 
@@ -44,7 +47,7 @@ function Orgs() {
 
   useEffect(() => {
     getProducts();
-  }, [updatedFruitList]);
+  }, [updatedProducts]);
   
 
     return (

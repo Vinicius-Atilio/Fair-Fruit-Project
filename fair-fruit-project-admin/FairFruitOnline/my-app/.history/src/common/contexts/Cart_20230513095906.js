@@ -71,6 +71,7 @@ export function useCartContext() {
     }
 
     function buy() {
+        console.log("buy")
         setCart([]);
         setUserBalance(userBalance - totalValue);
     }

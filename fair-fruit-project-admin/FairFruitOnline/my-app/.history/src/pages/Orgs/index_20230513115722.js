@@ -14,7 +14,9 @@ import { useForm } from 'react-hook-form';
 import { useFruitsContext } from 'common/contexts/Fruits';
 
 function Orgs() {
-    const {fruit, updatedFruitList, addFruit, deleteFruit, products} = useFruitsContext();
+    const {fruit, setFruit, updatedFruitList, addFruit, deleteFruit, products} = useFruitsContext();
+    // const [products, setProducts] = useState([]);
+    const [updatedProducts, setUpdatedProducts] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     const {register, handleSubmit, formState: {errors}} = useForm();
 
@@ -44,6 +46,7 @@ function Orgs() {
 
   useEffect(() => {
     getProducts();
+    console.log(fruit);
   }, [updatedFruitList]);
   
 

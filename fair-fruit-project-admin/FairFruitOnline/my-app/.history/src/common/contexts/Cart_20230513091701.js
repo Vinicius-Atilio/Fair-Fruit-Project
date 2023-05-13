@@ -44,8 +44,7 @@ export function useCartContext() {
         return item;
     });
 
-    function addProduct(newProduct = {}) {
-        console.log(newProduct);
+    function addProduct(newProduct) {
         const hasProduct = cart.some(item => item.id === newProduct.id);
         let newCart = [...cart];
         if (!hasProduct) {
@@ -71,6 +70,7 @@ export function useCartContext() {
     }
 
     function buy() {
+        console.log("buy")
         setCart([]);
         setUserBalance(userBalance - totalValue);
     }

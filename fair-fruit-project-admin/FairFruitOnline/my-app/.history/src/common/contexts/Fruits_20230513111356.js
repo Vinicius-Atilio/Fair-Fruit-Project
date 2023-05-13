@@ -27,23 +27,11 @@ export default function FruitsProvider({ children }) {
 export function useFruitsContext() {
     const { fruit, setFruit, updatedFruitList, setUpdatedFruitList } = useContext(FruitsContext);
 
-    async function products() {
-        try {
-            const data = await configAxios.get("/api/products");
-            setFruit(data);
-            console.log(data);
-        } catch (error) {
-            console.log(error);
-        }
-    }
-
     async function addFruit(newFruit = {}) {
-        console.log(newFruit);
         if (newFruit != null) {
             try {
                 const response = await configAxios.post('/api/products', newFruit);
-                console.log(response);
-                setFruit([...fruit, response]);
+                setFruit([...newFruit, response]);
             } catch (error) {
                 console.log(error);
             }
@@ -63,7 +51,6 @@ export function useFruitsContext() {
     return {
         fruit,
         updatedFruitList,
-        products,
         addFruit,
         deleteFruit
     };

@@ -7,6 +7,7 @@ import {
 } from '@material-ui/core';
 import MuiAlert from '@material-ui/lab/Alert';
 import { useCartContext } from 'common/contexts/Cart';
+import { useFruitsContext } from 'common/contexts/Fruits';
 import { useContext, useMemo, useState, useEffect } from 'react';
 import { Container, Back, TotalContainer, PaymentContainer, List, CustomCard } from './styles';
 import { IconButton } from '@material-ui/core';
@@ -21,6 +22,7 @@ import CircularProgress from '@mui/material/CircularProgress';
 function Cart() {
     const [isLoading, setIsLoading] = useState(false);
     const { cart, setCart, addProduct, removeProduct, quantityCart, buy, totalValue = 0 } = useCartContext();
+    const { addedProducts, setAddedProducts } = useFruitsContext();
     const {userId, userBalance} = useContext(UserContext);
     const { paymentType, changePayment, paymentTypes } = usePayment();
     const [openSnackbar, setOpenSnackbar] = useState(false);
@@ -28,12 +30,29 @@ function Cart() {
     const total = useMemo(() => userBalance - totalValue, [userBalance, totalValue]);
 
     const handleAddHasProduct = (product) => {
-        addProduct({
+        const hasItem = addedProducts.find((item) => item.id === product.id);
+        if (hasItem) {
+            const add = addProduct({
                 id: product.id,
                 name: product.name,
                 price: product.price,
-                quantity: 1
+                quantity: hasItem.quantity + 1
             })
+            console.log(add);
+        }
+    }
+
+      const handleRemoveHasProduct = (product) => {
+        const hasItem = cart.find((item) => item.id === product.id);
+        const last = hasItem.quantity === 1;
+        if (hasItem && hasItem.quantity > 0) {
+            removeProduct(hasItem.id); // update here
+        }
+        let newAddedProducts;
+        if (last) {
+            newAddedProducts = addedProducts.filter((item) => item.id !== product.id);
+            setAddedProducts([...newAddedProducts]);
+        }
     }
 
     const onSubmit = async () => {
@@ -45,22 +64,23 @@ function Cart() {
             items: payload
         }
         await configAxios.post("/api/orders", order)
-        setIsLoading(false);
+        setCart([]);
+        setIsLoading(true);
     }
 
     useEffect(() => {
-        console.log("cart", cart);
-      },[cart])
+        console.log(addedProducts);
+      },[addedProducts])
     
     return (
         <Container>
             <Back onClick={history.goBack} />
             <h2>Cart</h2>
-            {isLoading? <CircularProgress color="success"/> : cart.length > 0 && (
+            {isLoading? <CircularProgress color="success"/> : addedProducts.length > 0 && (
                 <div>
                     <List>
                         <>
-                            {cart.map(product => (
+                            {addedProducts.map(product => (
                                 <CustomCard className="get" key={product.id}>
                                     <div>
                                         <img
@@ -74,7 +94,7 @@ function Cart() {
                                     </div>
                                     <div>
                                         <IconButton
-                                            onClick={() => removeProduct(product.id)}
+                                            onClick={() => handleRemoveHasProduct(product)}
                                             color="secondary"
                                         >
                                             <RemoveIcon />
@@ -92,13 +112,7 @@ function Cart() {
                         </>
                     </List>
                 </div>
-                // cart.find((product) => (
-                //     console.log("product", product),
-                //     <Product
-                //     {...product}
-                //     key={product.id}/>
-                // )
-                )}
+            )}            
             <PaymentContainer>
                 <InputLabel> Form of payment </InputLabel>
                 <Select

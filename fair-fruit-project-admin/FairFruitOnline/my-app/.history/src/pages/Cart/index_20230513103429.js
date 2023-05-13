@@ -7,6 +7,7 @@ import {
 } from '@material-ui/core';
 import MuiAlert from '@material-ui/lab/Alert';
 import { useCartContext } from 'common/contexts/Cart';
+import { useFruitsContext } from 'common/contexts/Fruits';
 import { useContext, useMemo, useState, useEffect } from 'react';
 import { Container, Back, TotalContainer, PaymentContainer, List, CustomCard } from './styles';
 import { IconButton } from '@material-ui/core';
@@ -17,10 +18,12 @@ import { UserContext } from 'common/contexts/Register';
 import { usePayment } from 'common/contexts/Payment';
 import configAxios from 'utils/config';
 import CircularProgress from '@mui/material/CircularProgress';
+import Product from 'components/Product';
 
 function Cart() {
     const [isLoading, setIsLoading] = useState(false);
     const { cart, setCart, addProduct, removeProduct, quantityCart, buy, totalValue = 0 } = useCartContext();
+    const { addedProducts, setAddedProducts } = useFruitsContext();
     const {userId, userBalance} = useContext(UserContext);
     const { paymentType, changePayment, paymentTypes } = usePayment();
     const [openSnackbar, setOpenSnackbar] = useState(false);
@@ -28,12 +31,30 @@ function Cart() {
     const total = useMemo(() => userBalance - totalValue, [userBalance, totalValue]);
 
     const handleAddHasProduct = (product) => {
-        addProduct({
+        const hasItem = cart.find((item) => item.id === product.id);
+        if (hasItem) {
+            const add = addProduct({
                 id: product.id,
                 name: product.name,
                 price: product.price,
-                quantity: 1
+                quantity: hasItem.quantity + 1
             })
+            console.log(add);
+        }
+    }
+
+      const handleRemoveHasProduct = (product) => {
+        const hasItem = cart.find((item) => item.id === product.id);
+        const last = hasItem.quantity === 1;
+        if (hasItem && hasItem.quantity > 0) {
+            removeProduct(hasItem.id); // update here
+        }
+        let newAddedProducts;
+        if (last) {
+            console.log("last");
+            newAddedProducts = cart.filter((item) => item.id !== product.id);
+            setAddedProducts([...newAddedProducts]);
+        }
     }
 
     const onSubmit = async () => {
@@ -74,7 +95,7 @@ function Cart() {
                                     </div>
                                     <div>
                                         <IconButton
-                                            onClick={() => removeProduct(product.id)}
+                                            onClick={() => handleRemoveHasProduct(product)}
                                             color="secondary"
                                         >
                                             <RemoveIcon />

@@ -14,19 +14,27 @@ import { useForm } from 'react-hook-form';
 import { useFruitsContext } from 'common/contexts/Fruits';
 
 function Orgs() {
-    const {fruit, updatedFruitList, addFruit, deleteFruit, products} = useFruitsContext();
+    const [products, setProducts] = useState([]);
+    const [updatedProducts, setUpdatedProducts] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     const {register, handleSubmit, formState: {errors}} = useForm();
+    const {addFruit, deleteFruit} = useFruitsContext;
 
     const history = useHistory();
 
     const getProducts = async () => {
-        await products();
+        try {
+          const data = await configAxios.get("/api/products");
+          setProducts(data);
+          console.log(data);
+        } catch (error) {
+          console.log(error);
+        }
       };
 
     const deleteProduct = async (productId) => {
         setIsLoading(true);
-        await deleteFruit(productId);
+        await deleteProduct(productId);
         setIsLoading(false);
     };
 
@@ -44,7 +52,7 @@ function Orgs() {
 
   useEffect(() => {
     getProducts();
-  }, [updatedFruitList]);
+  }, [updatedProducts]);
   
 
     return (
@@ -101,9 +109,9 @@ function Orgs() {
                 </InputContainer>
             </CustomCard>
             <>
-                {fruit.length === 0 ? ( isLoading ) : 
+                {products.length === 0 ? ( isLoading ) : 
                 ( isLoading ? <CircularProgress color="success"/> :
-                fruit.map((product) => (
+                products.map((product) => (
                     <ProductsContainer className="get" key={product.id}>
                     <div>
                         <img

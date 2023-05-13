@@ -14,19 +14,27 @@ import { useForm } from 'react-hook-form';
 import { useFruitsContext } from 'common/contexts/Fruits';
 
 function Orgs() {
-    const {fruit, updatedFruitList, addFruit, deleteFruit, products} = useFruitsContext();
+    const {fruit, setFruit, addFruit, deleteFruit} = useFruitsContext;
+    // const [products, setProducts] = useState([]);
+    const [updatedProducts, setUpdatedProducts] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     const {register, handleSubmit, formState: {errors}} = useForm();
 
     const history = useHistory();
 
     const getProducts = async () => {
-        await products();
+        try {
+          const data = await configAxios.get("/api/products");
+          setFruit(data);
+          console.log(data);
+        } catch (error) {
+          console.log(error);
+        }
       };
 
     const deleteProduct = async (productId) => {
         setIsLoading(true);
-        await deleteFruit(productId);
+        await deleteProduct(productId);
         setIsLoading(false);
     };
 
@@ -44,7 +52,7 @@ function Orgs() {
 
   useEffect(() => {
     getProducts();
-  }, [updatedFruitList]);
+  }, [updatedProducts]);
   
 
     return (

@@ -1,16 +1,21 @@
 import { Container } from './styles';
 import { memo, useEffect, useState } from 'react';
 import { useCartContext } from 'common/contexts/Cart';
+import { useFruitsContext } from 'common/contexts/Fruits';
+import Fruits from 'components/Fruits';
+import axios from 'axios';
 import AddIcon from '@material-ui/icons/Add';
 import { IconButton } from '@material-ui/core';
 import RemoveIcon from '@material-ui/icons/Remove';
+import apiService from 'service/apiService';
 import configAxios from 'utils/config';
 
 
 function Product() {
 
     const [products, setProduct] = useState([]);
-    const { cart, addProduct, removeProduct, totalValue, balance } = useCartContext();
+    const { cart, setCart, addProduct, removeProduct, totalValue, balance } = useCartContext();
+    const { addedProducts, setAddedProducts } = useFruitsContext();
 
     const getProducts = async () => {
         try {
@@ -34,6 +39,40 @@ function Product() {
             image: product.image,
             quantity: 1
         });
+        // console.log(product);
+        // const hasItem = cart.find((item) => item.id === product.id);
+        // console.log(hasItem);
+        // if (hasItem) {
+        //     addProduct({
+        //         id: product.id,
+        //         name: product.name,
+        //         price: product.price,
+        //         quantity: hasItem.quantity + 1
+        //     })
+        // } else {
+        //     addProduct({
+        //         id: product.id,
+        //         name: product.name,
+        //         price: product.price,
+        //         quantity: 1
+        //     })
+            // setCart([...cart, product]);
+            // setAddedProducts([...addedProducts, product]);
+        // }
+    }
+
+    const handleRemoveProduct = (product) => {
+        const hasItem = cart.find((item) => item.id === product.id);
+        const last = hasItem.quantity === 1;
+        if (hasItem && hasItem.quantity > 0) {
+            removeProduct(product.id);
+        }
+        let newAddedProducts;
+        if (last) {
+            newAddedProducts = cart.filter((item) => item.id !== product.id);
+            setCart([...newAddedProducts])
+            // setAddedProducts([...newAddedProducts]);
+        }
     }
 
     return (
@@ -53,8 +92,7 @@ function Product() {
                         </div>
                         <div>
                             <IconButton
-                                // disabled={cart.find((item) => item.id === product.id) === 0}
-                                onClick={() => removeProduct(product.id)}
+                                onClick={() => handleRemoveProduct(product)}
                                 color="secondary"
                             >
                                 <RemoveIcon />

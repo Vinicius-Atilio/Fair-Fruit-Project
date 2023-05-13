@@ -38,12 +38,11 @@ export function useFruitsContext() {
     }
 
     async function addFruit(newFruit = {}) {
-        console.log(newFruit);
         if (newFruit != null) {
             try {
                 const response = await configAxios.post('/api/products', newFruit);
                 console.log(response);
-                setFruit([...fruit, response]);
+                setFruit(response);
             } catch (error) {
                 console.log(error);
             }

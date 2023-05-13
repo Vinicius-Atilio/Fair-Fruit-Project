@@ -11,40 +11,56 @@ import CircularProgress from '@mui/material/CircularProgress';
 import { IconButton } from '@material-ui/core';
 import DeleteForeverIcon from '@material-ui/icons/DeleteForever'
 import { useForm } from 'react-hook-form';
-import { useFruitsContext } from 'common/contexts/Fruits';
 
 function Orgs() {
-    const {fruit, updatedFruitList, addFruit, deleteFruit, products} = useFruitsContext();
+    const [products, setProducts] = useState([]);
+    const [updatedProducts, setUpdatedProducts] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     const {register, handleSubmit, formState: {errors}} = useForm();
 
     const history = useHistory();
 
     const getProducts = async () => {
-        await products();
+        try {
+          const data = await configAxios.get("/api/products");
+          setProducts(data);
+          console.log(data);
+        } catch (error) {
+          console.log(error);
+        }
       };
 
     const deleteProduct = async (productId) => {
         setIsLoading(true);
-        await deleteFruit(productId);
+    try {
+        await configAxios.del(`/api/products/${productId}`);
+        const updated = products.filter((product) => product.id !== productId);
+        setUpdatedProducts(updated);
+    } catch (error) {
+        console.log(error);
+    }
         setIsLoading(false);
     };
 
     const onSubmit = async (data) => {
         setIsLoading(true);
-
-        await addFruit({
+        const newProduct = {
             name: data.name,
             price: data.price,
-            image: data.image
-        });
-        
-        setIsLoading(false);
+            image: data.image,
+        };
+      try {
+          const response = await configAxios.post('/api/products', newProduct);
+          setProducts([...products, response]);
+      } catch (error) {
+          console.log(error);
+      }
+      setIsLoading(false);
   };
 
   useEffect(() => {
     getProducts();
-  }, [updatedFruitList]);
+  }, [updatedProducts]);
   
 
     return (
@@ -101,9 +117,9 @@ function Orgs() {
                 </InputContainer>
             </CustomCard>
             <>
-                {fruit.length === 0 ? ( isLoading ) : 
+                {products.length === 0 ? ( isLoading ) : 
                 ( isLoading ? <CircularProgress color="success"/> :
-                fruit.map((product) => (
+                products.map((product) => (
                     <ProductsContainer className="get" key={product.id}>
                     <div>
                         <img

@@ -43,7 +43,7 @@ export function useFruitsContext() {
             try {
                 const response = await configAxios.post('/api/products', newFruit);
                 console.log(response);
-                setFruit([...fruit, response]);
+                setFruit(response);
             } catch (error) {
                 console.log(error);
             }

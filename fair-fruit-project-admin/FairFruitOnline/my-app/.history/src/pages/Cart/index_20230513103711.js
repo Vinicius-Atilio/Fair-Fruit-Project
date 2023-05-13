@@ -7,6 +7,7 @@ import {
 } from '@material-ui/core';
 import MuiAlert from '@material-ui/lab/Alert';
 import { useCartContext } from 'common/contexts/Cart';
+import { useFruitsContext } from 'common/contexts/Fruits';
 import { useContext, useMemo, useState, useEffect } from 'react';
 import { Container, Back, TotalContainer, PaymentContainer, List, CustomCard } from './styles';
 import { IconButton } from '@material-ui/core';
@@ -17,10 +18,12 @@ import { UserContext } from 'common/contexts/Register';
 import { usePayment } from 'common/contexts/Payment';
 import configAxios from 'utils/config';
 import CircularProgress from '@mui/material/CircularProgress';
+import Product from 'components/Product';
 
 function Cart() {
     const [isLoading, setIsLoading] = useState(false);
     const { cart, setCart, addProduct, removeProduct, quantityCart, buy, totalValue = 0 } = useCartContext();
+    const { addedProducts, setAddedProducts } = useFruitsContext();
     const {userId, userBalance} = useContext(UserContext);
     const { paymentType, changePayment, paymentTypes } = usePayment();
     const [openSnackbar, setOpenSnackbar] = useState(false);

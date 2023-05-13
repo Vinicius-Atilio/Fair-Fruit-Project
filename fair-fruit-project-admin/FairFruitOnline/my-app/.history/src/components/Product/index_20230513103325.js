@@ -1,9 +1,13 @@
 import { Container } from './styles';
 import { memo, useEffect, useState } from 'react';
 import { useCartContext } from 'common/contexts/Cart';
+import { useFruitsContext } from 'common/contexts/Fruits';
+import Fruits from 'components/Fruits';
+import axios from 'axios';
 import AddIcon from '@material-ui/icons/Add';
 import { IconButton } from '@material-ui/core';
 import RemoveIcon from '@material-ui/icons/Remove';
+import apiService from 'service/apiService';
 import configAxios from 'utils/config';
 
 
