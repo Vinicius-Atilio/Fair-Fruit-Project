@@ -35,7 +35,7 @@ function Cart() {
             client: userId,
             total: totalValue,
             items: items
-        };
+        }
         await order(data);
         setIsLoading(false);
     }

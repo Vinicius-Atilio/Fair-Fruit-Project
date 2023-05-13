@@ -30,13 +30,13 @@ function Cart() {
 
     const onSubmit = async () => {
         setIsLoading(true);
-        const items = cart.map((p) => ({ product: p.id, quantity: p.quantity}));
+        const payload = cart.map((p) => ({ product: p.id, quantity: p.quantity}));
         const data = {
             client: userId,
             total: totalValue,
-            items: items
-        };
-        await order(data);
+            items: payload
+        }
+        
         setIsLoading(false);
     }
 

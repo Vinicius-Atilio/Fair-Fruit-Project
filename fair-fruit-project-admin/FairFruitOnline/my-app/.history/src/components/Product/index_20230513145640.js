@@ -1,9 +1,10 @@
 import { Container } from './styles';
-import { memo} from 'react';
+import { memo, useEffect, useState } from 'react';
 import { useCartContext } from 'common/contexts/Cart';
 import AddIcon from '@material-ui/icons/Add';
 import { IconButton } from '@material-ui/core';
 import RemoveIcon from '@material-ui/icons/Remove';
+import configAxios from 'utils/config';
 
 
 function Product({
@@ -13,7 +14,22 @@ function Product({
     price,
 }) {
 
+    const [products, setProduct] = useState([]);
     const { cart, addProduct, removeProduct, totalValue, balance } = useCartContext();
+
+    const getProducts = async () => {
+        try {
+            const data = await configAxios.get("/api/products");
+            setProduct(data);
+            console.log(data);
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    useEffect(() => {
+        getProducts();
+    }, [])
 
     const handleAddProduct = (product) => {
         console.log(product);

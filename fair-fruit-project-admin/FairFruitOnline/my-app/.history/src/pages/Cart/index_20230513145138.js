@@ -21,22 +21,31 @@ import Product from 'components/Product';
 
 function Cart() {
     const [isLoading, setIsLoading] = useState(false);
-    const { cart, buy, order, totalValue = 0 } = useCartContext();
+    const { cart, setCart, addProduct, removeProduct, quantityCart, buy, totalValue = 0 } = useCartContext();
     const {userId, userBalance} = useContext(UserContext);
     const { paymentType, changePayment, paymentTypes } = usePayment();
     const [openSnackbar, setOpenSnackbar] = useState(false);
     const history = useHistory();
     const total = useMemo(() => userBalance - totalValue, [userBalance, totalValue]);
 
+    const handleAddHasProduct = (product) => {
+        addProduct({
+                id: product.id,
+                name: product.name,
+                price: product.price,
+                quantity: 1
+            })
+    }
+
     const onSubmit = async () => {
         setIsLoading(true);
-        const items = cart.map((p) => ({ product: p.id, quantity: p.quantity}));
-        const data = {
+        const payload = cart.map((p) => ({ product: p.id, quantity: p.quantity}));
+        const order = {
             client: userId,
             total: totalValue,
-            items: items
-        };
-        await order(data);
+            items: payload
+        }
+        await configAxios.post("/api/orders", order)
         setIsLoading(false);
     }
 
@@ -49,12 +58,56 @@ function Cart() {
             <Back onClick={history.goBack} />
             <h2>Cart</h2>
             {isLoading? <CircularProgress color="success"/> : cart.length > 0 && (
-                <List>
-                    {cart.map((product) => 
-                    <Product
-                    {...product}
-                    key = {product.id}/>)}
-                </List>)}
+                <div>
+                    {/* <List>
+                        <>
+                            {cart.map(product => (
+                                <CustomCard className="get" key={product.id}>
+                                    <div>
+                                        <img
+                                            src={`${product.image}`}
+                                            alt={`${product.name}`}
+                                            width="80" height="70"
+                                        />
+                                        <p>
+                                            {product.name} - $ {product.price?.toFixed(2)} <span>Kg</span>
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <IconButton
+                                            onClick={() => removeProduct(product.id)}
+                                            color="secondary"
+                                        >
+                                            <RemoveIcon />
+                                        </IconButton>
+                                        {cart.find((item) => item.id === product.id)?.quantity || 0}
+                                        <IconButton
+                                            onClick={() => handleAddHasProduct(product)}
+                                            color="primary"
+                                        >
+                                            <AddIcon />
+                                        </IconButton>
+                                    </div>
+                                </CustomCard>
+                            ))}
+                        </>
+                    </List> */}
+                    <List>
+                        {cart.map((product) => 
+                        <Product
+                        {...product}
+                        key = {product.id}/>)}
+                    </List>
+                    
+                </div>
+                // cart.find((product) => (
+                //     console.log("product", product),
+                //     <Product
+                //     {...product}
+                //     key={product.id}/>
+                // )
+                
+                )}
             <PaymentContainer>
                 <InputLabel> Form of payment </InputLabel>
                 <Select

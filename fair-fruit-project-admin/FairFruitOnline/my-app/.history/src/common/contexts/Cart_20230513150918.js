@@ -77,9 +77,12 @@ export function useCartContext() {
     }
 
     async function order(data){
-        try {
+        
+        try
+        {
             await configAxios.post("/api/orders", data);
-        } catch (error) {
+        } catch (error)
+        {
             console.log(error);
         }
     }
@@ -101,6 +104,5 @@ export function useCartContext() {
         quantityCart,
         totalValue,
         buy,
-        order
     };
 }

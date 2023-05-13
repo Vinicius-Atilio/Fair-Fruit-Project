@@ -1,9 +1,11 @@
 import { Container } from './styles';
-import { memo} from 'react';
+import { memo, useEffect, useState } from 'react';
 import { useCartContext } from 'common/contexts/Cart';
 import AddIcon from '@material-ui/icons/Add';
 import { IconButton } from '@material-ui/core';
 import RemoveIcon from '@material-ui/icons/Remove';
+import configAxios from 'utils/config';
+import { useFruitsContext } from 'common/contexts/Fruits';
 
 
 function Product({
@@ -13,7 +15,16 @@ function Product({
     price,
 }) {
 
+    const {fruit, setFruit, products} = useFruitsContext();
     const { cart, addProduct, removeProduct, totalValue, balance } = useCartContext();
+
+    // const getProducts = async () => {
+    //     await products();
+    // }
+
+    // useEffect(() => {
+    //     // getProducts();
+    // }, [])
 
     const handleAddProduct = (product) => {
         console.log(product);

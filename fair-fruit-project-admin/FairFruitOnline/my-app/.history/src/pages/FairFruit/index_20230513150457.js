@@ -1,12 +1,14 @@
 import { Container, Header, List } from './styles';
 import { useContext } from 'react';
+import { LoginContext } from 'common/contexts/Login';
 import NavBarCart from './NavBarCart';
 import NavBarFruits from './NavBarOrgs';
 import Product from 'components/Product';
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import NavBarClient from './NavBarClient';
 import { UserContext } from 'common/contexts/Register';
 import { useFruitsContext } from 'common/contexts/Fruits';
+import configAxios from 'utils/config';
 
 function FairFruit() {
     const {fruit, products} = useFruitsContext();
@@ -34,6 +36,12 @@ function FairFruit() {
                     <h2>Products:</h2>
                 </div>
             </Header>
+                {/* <List>
+                    <Product
+                    {...product}
+                    key={product.id}
+                    />
+                </List> */}
                 <List>
                     {fruit.map(product => (
                         <Product

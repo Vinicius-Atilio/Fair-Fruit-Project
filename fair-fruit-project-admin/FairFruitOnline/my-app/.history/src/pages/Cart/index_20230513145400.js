@@ -21,7 +21,7 @@ import Product from 'components/Product';
 
 function Cart() {
     const [isLoading, setIsLoading] = useState(false);
-    const { cart, buy, order, totalValue = 0 } = useCartContext();
+    const { cart, setCart, quantityCart, buy, totalValue = 0 } = useCartContext();
     const {userId, userBalance} = useContext(UserContext);
     const { paymentType, changePayment, paymentTypes } = usePayment();
     const [openSnackbar, setOpenSnackbar] = useState(false);
@@ -30,13 +30,13 @@ function Cart() {
 
     const onSubmit = async () => {
         setIsLoading(true);
-        const items = cart.map((p) => ({ product: p.id, quantity: p.quantity}));
-        const data = {
+        const payload = cart.map((p) => ({ product: p.id, quantity: p.quantity}));
+        const order = {
             client: userId,
             total: totalValue,
-            items: items
-        };
-        await order(data);
+            items: payload
+        }
+        await configAxios.post("/api/orders", order)
         setIsLoading(false);
     }
 
