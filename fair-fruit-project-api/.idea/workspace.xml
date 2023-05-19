@@ -4,14 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="908e2ba4-1142-4493-bad2-7bb13713c65f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jpa-buddy.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="908e2ba4-1142-4493-bad2-7bb13713c65f" name="Changes" comment="refatoracao">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/controller/OrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/controller/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/entities/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FairFruitOnline/src/main/resources/messages.properties" beforeDir="false" afterPath="$PROJECT_DIR$/FairFruitOnline/src/main/resources/messages.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/service/impl/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/service/impl/OrderServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/service/impl/UserServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +19,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitToolBoxStore">
+    <option name="projectConfigVersion" value="5" />
   </component>
   <component name="JpbToolWindowState">
     <option name="isToolWindowVisible" value="false" />
@@ -83,26 +85,42 @@
       <workItem from="1682519610482" duration="2072000" />
       <workItem from="1682555100335" duration="1213000" />
       <workItem from="1682600253899" duration="2390000" />
-      <workItem from="1682682105528" duration="10684000" />
+      <workItem from="1682682105528" duration="10806000" />
+      <workItem from="1682708328077" duration="18000" />
+      <workItem from="1682708467062" duration="42000" />
+      <workItem from="1682711369711" duration="2645000" />
+      <workItem from="1682723769834" duration="4353000" />
+      <workItem from="1683116367477" duration="3369000" />
+      <workItem from="1683148417885" duration="1839000" />
+      <workItem from="1683204212791" duration="2505000" />
+      <workItem from="1683288720631" duration="5103000" />
+      <workItem from="1683729833137" duration="2556000" />
+      <workItem from="1683834848670" duration="692000" />
+      <workItem from="1683843248763" duration="20000" />
+      <workItem from="1683896555007" duration="3862000" />
+      <workItem from="1683978343283" duration="3496000" />
+      <workItem from="1683998619661" duration="1680000" />
+      <workItem from="1684258566583" duration="3847000" />
     </task>
+    <task id="LOCAL-00001" summary="refatoracao">
+      <created>1682707848148</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1682707848148</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="refatoracao" />
+    <option name="LAST_COMMIT_MESSAGE" value="refatoracao" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/controller/UserController.java</url>
-          <line>42</line>
-          <properties class="Global.Points.FeiraOnline.controller.UserController" method="save">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-      </breakpoints>
       <breakpoints-defaults>
         <breakpoint suspend="THREAD" type="java-line" />
       </breakpoints-defaults>

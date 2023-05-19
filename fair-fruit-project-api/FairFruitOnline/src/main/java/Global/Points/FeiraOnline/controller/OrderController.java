@@ -8,7 +8,11 @@ import Global.Points.FeiraOnline.entities.Order;
 import Global.Points.FeiraOnline.entities.OrderItem;
 import Global.Points.FeiraOnline.entities.enums.OrderStatus;
 import Global.Points.FeiraOnline.exception.OrderNotFoundException;
+import Global.Points.FeiraOnline.exception.UserNotFoundException;
 import Global.Points.FeiraOnline.service.OrderService;
+import Global.Points.FeiraOnline.service.impl.UserServiceImpl;
+import org.springframework.data.domain.Example;
+import org.springframework.data.domain.ExampleMatcher;
 import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.*;
 
@@ -26,6 +30,7 @@ import static org.springframework.http.HttpStatus.*;
 public class OrderController {
 
     private OrderService service;
+    private UserServiceImpl userService;
 
     public OrderController(OrderService service) {
         this.service = service;
@@ -45,6 +50,15 @@ public class OrderController {
                 .map( p -> converter(p) )
                 .orElseThrow(OrderNotFoundException::new);
     }
+
+//    @GetMapping("/user/{id}")
+//    public List<OrderDetailsDTO> getOrderByUserId(@PathVariable Integer id){
+//        userService.findById(id).orElseThrow(() -> new UserNotFoundException("User not found"));
+//        return service
+//                .getCompleteOrder(id)
+//                .map( p -> converter(p) )
+//                .orElseThrow(OrderNotFoundException::new);
+//    }
 
     @PatchMapping("{id}")
     @ResponseStatus(NO_CONTENT)

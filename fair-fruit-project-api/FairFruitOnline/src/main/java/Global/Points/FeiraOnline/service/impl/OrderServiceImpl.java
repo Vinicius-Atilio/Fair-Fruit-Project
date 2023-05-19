@@ -29,9 +29,9 @@ public class OrderServiceImpl implements OrderService {
     @Override
     @Transactional
     public Order save(OrderDTO dto) {
-        Integer idClient = dto.getClient();
+        Integer idUser = dto.getClient();
         User user = userRepository
-                .findById(idClient)
+                .findById(idUser)
                 .orElseThrow(() -> new BusinessRuleException("Client code not found."));
 
         Order order = new Order();

@@ -61,7 +61,7 @@ public class User {
     //user
 
     @Column(name = "balance", length = 10000)
-    private Integer balance;
+    private Float balance;
 
     @Column(name = "admin")
     private boolean admin;
@@ -70,4 +70,19 @@ public class User {
     @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
     private Set<Order> orders;
 
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", cpf='" + cpf + '\'' +
+                ", birthDate=" + birthDate +
+                ", email='" + email + '\'' +
+                ", login='" + login + '\'' +
+                ", password='" + password + '\'' +
+                ", balance=" + balance +
+                ", admin=" + admin +
+                ", orders=" + orders +
+                '}';
+    }
 }
