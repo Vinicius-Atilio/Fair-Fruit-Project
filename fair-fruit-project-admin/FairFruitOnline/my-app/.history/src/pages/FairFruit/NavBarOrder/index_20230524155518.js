@@ -1,18 +1,19 @@
 import { Nav } from './styles';
-import { ReactComponent as Logo } from 'assets/logo.svg';
+import GroupAddIcon from '@mui/icons-material/GroupAdd';
 import IconButton from '@material-ui/core/IconButton';
 import Badge from '@material-ui/core/Badge';
 import { useHistory } from 'react-router-dom';
 
-export default function NavBarFruits() {
+export default function NavBarOrder() {
     const history = useHistory();
     return (
         <Nav>
             <IconButton
-                onClick={() => history.push('/org')}
+                onClick={() => history.push('/order')}
+                // disabled={isAdmin === false}
             >
                 <Badge overlap="rectangular" color="primary">
-                    <Logo />
+                    <GroupAddIcon color="primary"/>
                 </Badge>
             </IconButton>
         </Nav>

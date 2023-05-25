@@ -12,7 +12,7 @@ import { useAuth } from 'hooks/useAuth';
 import RegisterProvider from 'common/contexts/Register';
 import ErrorProvider from 'common/contexts/Error';
 import OrderProvider from 'common/contexts/Order';
-import Orders from 'pages/Order';
+import Order from 'components/Order';
 
 export default function Routes() {
 
@@ -47,7 +47,7 @@ export default function Routes() {
                                                     <Cart/>
                                                 </Route>
                                                 <Route path="/order">
-                                                    <Orders/>
+                                                    <Order/>
                                                 </Route>                          
                                             </FruitsProvider>
                                         </CartProvider>

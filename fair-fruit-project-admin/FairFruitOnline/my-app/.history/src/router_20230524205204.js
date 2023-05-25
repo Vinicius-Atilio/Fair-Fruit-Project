@@ -12,7 +12,6 @@ import { useAuth } from 'hooks/useAuth';
 import RegisterProvider from 'common/contexts/Register';
 import ErrorProvider from 'common/contexts/Error';
 import OrderProvider from 'common/contexts/Order';
-import Orders from 'pages/Order';
 
 export default function Routes() {
 
@@ -37,18 +36,15 @@ export default function Routes() {
                                                 <Route path="/singup">
                                                     <SingUp />
                                                 </Route>
-                                                <Route path="/product">
+                                                <Route path="/products">
                                                     <FairFruit/>
                                                 </Route>
-                                                <Route path = "/org">
+                                                <Route path = "/orgs">
                                                     <Orgs/>
                                                 </Route>
                                                 <Route path="/cart"> 
                                                     <Cart/>
-                                                </Route>
-                                                <Route path="/order">
-                                                    <Orders/>
-                                                </Route>                          
+                                                </Route>                            
                                             </FruitsProvider>
                                         </CartProvider>
                                 </LoginProvider>
