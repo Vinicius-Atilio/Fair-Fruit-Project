@@ -24,12 +24,10 @@ function Orders() {
     return (
         <Container>
             <Back onClick={history.goBack} />
-            <Header>
-                <div>
-                    <ShoppingBasketIcon color="primary"/>
-                    <h2>My Orders</h2>
-                </div>
-            </Header>
+            <div>
+                <ShoppingBasketIcon color="primary"/>
+                <h2>My Orders</h2>
+            </div>
             <List>
                 {order.map(o => (
                     <Order

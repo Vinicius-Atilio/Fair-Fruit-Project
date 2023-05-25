@@ -1,10 +1,9 @@
 import Order from "components/Order";
 import { useContext, useEffect } from "react";
-import { Container, List, Back, Header } from './styles';
+import { Container, List, Back } from './styles';
 import { useHistory } from 'react-router-dom';
 import { UserContext } from 'common/contexts/Register';
 import { useOrderContext } from "common/contexts/Order";
-import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
 
 function Orders() {
     const {order, orders} = useOrderContext();
@@ -24,12 +23,8 @@ function Orders() {
     return (
         <Container>
             <Back onClick={history.goBack} />
-            <Header>
-                <div>
-                    <ShoppingBasketIcon color="primary"/>
-                    <h2>My Orders</h2>
-                </div>
-            </Header>
+            ShoppingBasketIcon
+            <h2>My Orders</h2>
             <List>
                 {order.map(o => (
                     <Order

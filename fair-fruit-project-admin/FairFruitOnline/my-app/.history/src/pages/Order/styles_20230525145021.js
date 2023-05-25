@@ -16,11 +16,10 @@ export const Container = styled.main`
 
 export const Header = styled.header`
     > div {
-        align-items: baseline;
+        align-items: center;
         display: flex;
         justify-content: space-between;
         margin-bottom: 10px;
-        margin-right: 400px;
         > h2 {
             color: ${titleGray};
             font-size: 32px;
@@ -43,6 +42,11 @@ export const List = styled.section`
     gap: 10px;
     padding: 5px 0;
     margin-top: 20px;
+    > h2 {
+        color: ${titleGray};
+        font-size: 32px;
+        margin-top: 20px;
+    }
 `;
 
 export const Back = styled(IconButton).attrs({

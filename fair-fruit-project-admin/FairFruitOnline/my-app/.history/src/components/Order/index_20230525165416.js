@@ -27,8 +27,7 @@ function Order({
             </div>
             <div>
                 <h2>PAYMENT</h2>
-                <p>{payment}</p>
-                
+                {payment}
             </div>
             <div>
                 <h3>Details</h3>

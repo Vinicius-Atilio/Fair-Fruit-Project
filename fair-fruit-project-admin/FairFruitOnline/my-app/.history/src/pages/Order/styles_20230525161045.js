@@ -40,7 +40,7 @@ export const Header = styled.header`
 export const List = styled.section`
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 20px;
     padding: 5px 0;
     margin-top: 20px;
 `;

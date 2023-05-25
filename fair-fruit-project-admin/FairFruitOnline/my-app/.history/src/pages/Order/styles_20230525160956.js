@@ -43,6 +43,11 @@ export const List = styled.section`
     gap: 10px;
     padding: 5px 0;
     margin-top: 20px;
+    > h2 {
+        color: ${titleGray};
+        font-size: 50px;
+        margin-top: 20px;
+    }
 `;
 
 export const Back = styled(IconButton).attrs({

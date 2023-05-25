@@ -39,10 +39,15 @@ export const Header = styled.header`
 
 export const List = styled.section`
     display: flex;
-    flex-direction: column;
+    flex-direction: row-reverse;
     gap: 10px;
     padding: 5px 0;
     margin-top: 20px;
+    > h2 {
+        color: ${titleGray};
+        font-size: 32px;
+        margin-top: 20px;
+    }
 `;
 
 export const Back = styled(IconButton).attrs({

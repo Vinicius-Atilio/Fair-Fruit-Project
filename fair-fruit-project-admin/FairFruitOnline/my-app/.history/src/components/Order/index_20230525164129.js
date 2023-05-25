@@ -19,16 +19,21 @@ function Order({
             </div>
             <div>
                 <h2>STATUS</h2>
-                {status}
+                <div>
+                    {status}
+                </div>
             </div>
             <div>
                 <h2>DATA</h2>
-                {orderData}
+                <div>
+                    {orderData}
+                </div>
             </div>
             <div>
                 <h2>PAYMENT</h2>
-                <p>{payment}</p>
-                
+                <div>
+                    {payment}
+                </div>
             </div>
             <div>
                 <h3>Details</h3>

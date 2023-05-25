@@ -15,23 +15,30 @@ function Order({
         <Container className="get" key={code}>
             <div>
                 <h2>CODE</h2>
-                {code}
+                <div>
+                    {code}
+                </div>
             </div>
             <div>
                 <h2>STATUS</h2>
-                {status}
+                <div>
+                    {status}
+                </div>
             </div>
             <div>
                 <h2>DATA</h2>
-                {orderData}
+                <div>
+                    {orderData}
+                </div>
             </div>
             <div>
                 <h2>PAYMENT</h2>
-                <p>{payment}</p>
-                
+                <div>
+                    {payment}
+                </div>
             </div>
             <div>
-                <h3>Details</h3>
+                <h2>Details</h2>
                 <ExpandMoreIcon color="primary"/>
             </div>
         </Container>

@@ -41,7 +41,7 @@ export const List = styled.section`
     display: flex;
     flex-direction: column;
     gap: 10px;
-    padding: 5px 0;
+    padding: 5px;
     margin-top: 20px;
 `;
 

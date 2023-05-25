@@ -13,27 +13,34 @@ function Order({
 
     return (
         <Container className="get" key={code}>
-            <div>
+            <Info>
                 <h2>CODE</h2>
-                {code}
-            </div>
-            <div>
+                <div>
+                    {code}
+                </div>
+            </Info>
+            <Info>
                 <h2>STATUS</h2>
-                {status}
-            </div>
-            <div>
+                <div>
+                    {status}
+                </div>
+            </Info>
+            <Info>
                 <h2>DATA</h2>
-                {orderData}
-            </div>
-            <div>
+                <div>
+                    {orderData}
+                </div>
+            </Info>
+            <Info>
                 <h2>PAYMENT</h2>
-                <p>{payment}</p>
-                
-            </div>
-            <div>
+                <div>
+                    {payment}
+                </div>
+            </Info>
+            <Details>
                 <h3>Details</h3>
                 <ExpandMoreIcon color="primary"/>
-            </div>
+            </Details>
         </Container>
     );
 }
