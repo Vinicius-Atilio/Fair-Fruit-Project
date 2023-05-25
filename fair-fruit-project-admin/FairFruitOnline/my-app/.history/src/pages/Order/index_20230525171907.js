@@ -29,10 +29,8 @@ function Orders() {
                     <CustomIcon>
                         <ShoppingBasketIcon color="primary"/>
                     </CustomIcon>
-                </div>
-                <Title>
                     <h2>My Orders</h2>
-                </Title>
+                </div>
             </Header>
             <List>
                 {order.map(o => (

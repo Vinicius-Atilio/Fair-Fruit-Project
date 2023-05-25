@@ -37,18 +37,6 @@ export const Header = styled.header`
     }
 `;
 
-export const Title = styled.h2`
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 200px;
-  margin-top: 15px;
-  margin-left: 215px;
-  
-  @media (min-width: 768px) {
-    margin-bottom: 50px;
-  }
-`;
-
 export const List = styled.section`
     display: flex;
     flex-direction: column;
@@ -68,8 +56,7 @@ export const Back = styled(IconButton).attrs({
 
 export const CustomIcon = styled.div`
     display: flex;
-    margin-left: 292px;
-    margin-top: 15px;
+    margin-right: 255px;
     svg {
         font-size: 3rem;
     }

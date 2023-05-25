@@ -1,6 +1,6 @@
 import Order from "components/Order";
 import { useContext, useEffect } from "react";
-import { Container, List, Back, Header, CustomIcon, Title } from './styles';
+import { Container, List, Back, Header, CustomIcon } from './styles';
 import { useHistory } from 'react-router-dom';
 import { UserContext } from 'common/contexts/Register';
 import { useOrderContext } from "common/contexts/Order";
@@ -26,13 +26,9 @@ function Orders() {
             <Back onClick={history.goBack} />
             <Header>
                 <div>
-                    <CustomIcon>
-                        <ShoppingBasketIcon color="primary"/>
-                    </CustomIcon>
-                </div>
-                <Title>
+                    <ShoppingBasketIcon color="primary"/>
                     <h2>My Orders</h2>
-                </Title>
+                </div>
             </Header>
             <List>
                 {order.map(o => (

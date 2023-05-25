@@ -41,8 +41,7 @@ export const Title = styled.h2`
   display: flex;
   flex-direction: column;
   margin-bottom: 200px;
-  margin-top: 15px;
-  margin-left: 215px;
+  margin-top: 150px;
   
   @media (min-width: 768px) {
     margin-bottom: 50px;
