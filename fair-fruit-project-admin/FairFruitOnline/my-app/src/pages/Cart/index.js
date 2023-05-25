@@ -34,8 +34,10 @@ function Cart() {
         const data = {
             client: userId,
             total: totalValue,
+            payment: paymentType.name,
             items: items
         };
+        console.log(paymentType.name);
         await order(data);
         setIsLoading(false);
     }

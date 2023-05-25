@@ -7,39 +7,56 @@ import {
 } from '@material-ui/core';
 import MuiAlert from '@material-ui/lab/Alert';
 import { useCartContext } from 'common/contexts/Cart';
-import { useFruitsContext } from 'common/contexts/Fruits';
-import Product from 'components/Product';
-import { useContext, useMemo, useState } from 'react';
-import { Container, Back, TotalContainer, PaymentContainer } from './styles';
+import { useContext, useMemo, useState, useEffect } from 'react';
+import { Container, Back, TotalContainer, PaymentContainer, List, CustomCard } from './styles';
+import { IconButton } from '@material-ui/core';
+import AddIcon from '@material-ui/icons/Add';
+import RemoveIcon from '@material-ui/icons/Remove';
 import { useHistory } from 'react-router-dom';
-import { UserContext } from 'common/contexts/Client';
+import { UserContext } from 'common/contexts/Register';
 import { usePayment } from 'common/contexts/Payment';
+import configAxios from 'utils/config';
+import CircularProgress from '@mui/material/CircularProgress';
+import Product from 'components/Product';
 
 function Cart() {
-    const { cart, quantityCart, buy, totalValue = 0 } = useCartContext();
-    const { addedProducts, setAddedProducts } = useFruitsContext();
-    const { balance = 0 } = useContext(UserContext);
+    const [isLoading, setIsLoading] = useState(false);
+    const { cart, buy, order, totalValue = 0 } = useCartContext();
+    const {userId, userBalance} = useContext(UserContext);
     const { paymentType, changePayment, paymentTypes } = usePayment();
     const [openSnackbar, setOpenSnackbar] = useState(false);
     const history = useHistory();
-    const total = useMemo(() => balance - totalValue, [balance, totalValue]);
+    const total = useMemo(() => userBalance - totalValue, [userBalance, totalValue]);
+
+    const onSubmit = async () => {
+        setIsLoading(true);
+        const items = cart.map((p) => ({ product: p.id, quantity: p.quantity}));
+        const data = {
+            client: userId,
+            total: totalValue,
+            payment: paymentType.name,
+            items: items
+        };
+        console.log(paymentType.name);
+        await order(data);
+        setIsLoading(false);
+    }
+
+    useEffect(() => {
+        console.log("cart", cart);
+      },[cart])
+    
     return (
         <Container>
             <Back onClick={history.goBack} />
             <h2>Cart</h2>
-            {/* {cart.map((product) => (
-                <Product {...product} key={product.id} />
-            ))} */}
-            {addedProducts.length > 0 && (
-                <div>
-                    <h2>Added Products:</h2>
-                    <ul>
-                        {addedProducts.map(product => (
-                            <li key={product.id}>{product.name}</li>
-                        ))}
-                    </ul>
-                </div>
-            )}            
+            {isLoading? <CircularProgress color="success"/> : cart.length > 0 && (
+                <List>
+                    {cart.map((product) => 
+                    <Product
+                    {...product}
+                    key = {product.id}/>)}
+                </List>)}
             <PaymentContainer>
                 <InputLabel> Form of payment </InputLabel>
                 <Select
@@ -56,11 +73,11 @@ function Cart() {
             <TotalContainer>
                 <div>
                     <h2>Total in Cart: </h2>
-                    <span>R$ {totalValue.toFixed(2)}</span>
+                    <span> $ {totalValue.toFixed(2)}</span>
                 </div>
                 <div>
                     <h2> Balance: </h2>
-                    <span> $ {balance.toFixed(2)} </span>
+                    <span> $ {userBalance.toFixed(2)} </span>
                 </div>
                 <div>
                     <h2> Total balance: </h2>
@@ -71,8 +88,9 @@ function Cart() {
                 onClick={() => {
                     buy();
                     setOpenSnackbar(true);
+                    onSubmit();
                 }}
-                disabled={quantityCart === 0 || total < 0}
+                // disabled={quantityCart === 0 || total < 0}
                 color="primary"
                 variant="contained"
             >
