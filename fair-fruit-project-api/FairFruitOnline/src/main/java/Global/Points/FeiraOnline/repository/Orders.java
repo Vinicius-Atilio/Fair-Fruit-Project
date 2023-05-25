@@ -14,4 +14,7 @@ public interface Orders extends JpaRepository<Order, Integer> {
 
     @Query(" select p from Order p left join fetch p.items where p.id = :id ")
     Optional<Order> findByIdFetchItems(@Param("id") Integer id);
+
+    @Query(" select distinct u from Order u left join fetch u.items where u.user.id = :id ")
+    List<Order> findAllByIdFetchItems(@Param("id") Integer id);
 }

@@ -7,10 +7,10 @@
     <list default="true" id="908e2ba4-1142-4493-bad2-7bb13713c65f" name="Changes" comment="refatoracao">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/controller/OrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/entities/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/exception/UserNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/exception/UserNotFoundException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/repository/Orders.java" beforeDir="false" afterPath="$PROJECT_DIR$/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/repository/Orders.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/service/OrderService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/service/impl/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/service/impl/OrderServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/service/impl/UserServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,6 +101,10 @@
       <workItem from="1683978343283" duration="3496000" />
       <workItem from="1683998619661" duration="1680000" />
       <workItem from="1684258566583" duration="3847000" />
+      <workItem from="1684492929353" duration="163000" />
+      <workItem from="1684934997121" duration="6247000" />
+      <workItem from="1684972234522" duration="337000" />
+      <workItem from="1685019308381" duration="1067000" />
     </task>
     <task id="LOCAL-00001" summary="refatoracao">
       <created>1682707848148</created>

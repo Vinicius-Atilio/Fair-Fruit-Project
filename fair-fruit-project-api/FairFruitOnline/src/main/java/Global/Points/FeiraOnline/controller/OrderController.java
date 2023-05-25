@@ -6,11 +6,13 @@ import Global.Points.FeiraOnline.dto.OrderDetailsDTO;
 import Global.Points.FeiraOnline.dto.OrderStatusUpdateDTO;
 import Global.Points.FeiraOnline.entities.Order;
 import Global.Points.FeiraOnline.entities.OrderItem;
+import Global.Points.FeiraOnline.entities.User;
 import Global.Points.FeiraOnline.entities.enums.OrderStatus;
 import Global.Points.FeiraOnline.exception.OrderNotFoundException;
 import Global.Points.FeiraOnline.exception.UserNotFoundException;
 import Global.Points.FeiraOnline.service.OrderService;
 import Global.Points.FeiraOnline.service.impl.UserServiceImpl;
+import lombok.AllArgsConstructor;
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.ExampleMatcher;
 import org.springframework.util.CollectionUtils;
@@ -21,20 +23,18 @@ import javax.validation.Valid;
 import java.time.format.DateTimeFormatter;
 import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 import static org.springframework.http.HttpStatus.*;
 
 @RestController
 @RequestMapping("/api/orders")
+@AllArgsConstructor
 public class OrderController {
 
     private OrderService service;
     private UserServiceImpl userService;
-
-    public OrderController(OrderService service) {
-        this.service = service;
-    }
 
     @PostMapping
     @ResponseStatus(CREATED)
@@ -51,15 +51,6 @@ public class OrderController {
                 .orElseThrow(OrderNotFoundException::new);
     }
 
-//    @GetMapping("/user/{id}")
-//    public List<OrderDetailsDTO> getOrderByUserId(@PathVariable Integer id){
-//        userService.findById(id).orElseThrow(() -> new UserNotFoundException("User not found"));
-//        return service
-//                .getCompleteOrder(id)
-//                .map( p -> converter(p) )
-//                .orElseThrow(OrderNotFoundException::new);
-//    }
-
     @PatchMapping("{id}")
     @ResponseStatus(NO_CONTENT)
     public void updateStatus( @PathVariable Integer id,
@@ -67,6 +58,18 @@ public class OrderController {
         String newStatus = dto.getNewStatus();
         service.StatusUpdate(id, OrderStatus.valueOf(newStatus));
 
+    }
+
+    @GetMapping("/user/{id}")
+    public List<OrderDetailsDTO> getCompleteOrdersByUserId(@PathVariable Integer id) {
+        userService.findById(id).orElseThrow(() -> new UserNotFoundException("User not found"));
+        List<Order> completeOrders = service.getAllCompleteOrder(id);
+        if (CollectionUtils.isEmpty(completeOrders)) {
+            throw new OrderNotFoundException();
+        }
+        return completeOrders.stream()
+                .map(this::converter)
+                .collect(Collectors.toList());
     }
 
     private OrderDetailsDTO converter(Order order){

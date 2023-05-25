@@ -53,6 +53,11 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
+    public List<Order> getAllCompleteOrder(Integer id) {
+        return repository.findAllByIdFetchItems(id);
+    }
+
+    @Override
     @Transactional
     public void StatusUpdate(Integer id, OrderStatus orderStatus) {
         repository
