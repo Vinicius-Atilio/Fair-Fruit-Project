@@ -5,17 +5,82 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="908e2ba4-1142-4493-bad2-7bb13713c65f" name="Changes" comment="refatoracao">
+      <change beforePath="$PROJECT_DIR$/../fair-fruit-project-admin/FairFruitOnline/my-app/.history/src/pages/Cart/index_20220617101829.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fair-fruit-project-admin/FairFruitOnline/my-app/.history/src/pages/Cart/index_20230201101427.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fair-fruit-project-admin/FairFruitOnline/my-app/.history/src/pages/Cart/index_20230201101432.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fair-fruit-project-admin/FairFruitOnline/my-app/.history/src/pages/Cart/index_20230208122945.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fair-fruit-project-admin/FairFruitOnline/my-app/.history/src/pages/Cart/index_20230223100202.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fair-fruit-project-admin/FairFruitOnline/my-app/.history/src/pages/Cart/index_20230223100233.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fair-fruit-project-admin/FairFruitOnline/my-app/.history/src/pages/Cart/index_20230223100325.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fair-fruit-project-admin/FairFruitOnline/my-app/.history/src/pages/Cart/index_20230223100345.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fair-fruit-project-admin/FairFruitOnline/my-app/.history/src/pages/Cart/index_20230223100408.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fair-fruit-project-admin/FairFruitOnline/my-app/.history/src/pages/Cart/index_20230223100453.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fair-fruit-project-admin/FairFruitOnline/my-app/.history/src/pages/Cart/index_20230223100836.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fair-fruit-project-admin/FairFruitOnline/my-app/.history/src/pages/Cart/index_20230223101548.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fair-fruit-project-admin/FairFruitOnline/my-app/.history/src/pages/Cart/index_20230223101633.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fair-fruit-project-admin/FairFruitOnline/my-app/.history/src/pages/Cart/index_20230223101658.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fair-fruit-project-admin/FairFruitOnline/my-app/.history/src/pages/Cart/index_20230223101931.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fair-fruit-project-admin/FairFruitOnline/my-app/.history/src/pages/Cart/index_20230223105935.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fair-fruit-project-admin/FairFruitOnline/my-app/.history/src/pages/Cart/index_20230223111555.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fair-fruit-project-admin/FairFruitOnline/my-app/.history/src/pages/Cart/index_20230224090018.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fair-fruit-project-admin/FairFruitOnline/my-app/.history/src/pages/Cart/index_20230224090457.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fair-fruit-project-admin/FairFruitOnline/my-app/.history/src/pages/Cart/index_20230224090510.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fair-fruit-project-admin/FairFruitOnline/my-app/.history/src/pages/Cart/index_20230224090526.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fair-fruit-project-admin/FairFruitOnline/my-app/.history/src/pages/Cart/index_20230224090535.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fair-fruit-project-admin/FairFruitOnline/my-app/.history/src/pages/Cart/index_20230224090929.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fair-fruit-project-admin/FairFruitOnline/my-app/.history/src/pages/Cart/index_20230224091927.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fair-fruit-project-admin/FairFruitOnline/my-app/.history/src/pages/Cart/index_20230224092503.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fair-fruit-project-admin/FairFruitOnline/my-app/.history/src/pages/Cart/index_20230224092955.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fair-fruit-project-admin/FairFruitOnline/my-app/.history/src/pages/Cart/index_20230224093312.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fair-fruit-project-admin/FairFruitOnline/my-app/.history/src/pages/Cart/index_20230224093348.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fair-fruit-project-admin/FairFruitOnline/my-app/.history/src/pages/Cart/index_20230224093403.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fair-fruit-project-admin/FairFruitOnline/my-app/.history/src/pages/Cart/index_20230224093431.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fair-fruit-project-admin/FairFruitOnline/my-app/.history/src/pages/Cart/index_20230224094044.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fair-fruit-project-admin/FairFruitOnline/my-app/.history/src/pages/Cart/index_20230224094833.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fair-fruit-project-admin/FairFruitOnline/my-app/.history/src/pages/Cart/index_20230224101525.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fair-fruit-project-admin/FairFruitOnline/my-app/.history/src/pages/Cart/index_20230224101535.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fair-fruit-project-admin/FairFruitOnline/my-app/.history/src/pages/Cart/index_20230224101543.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fair-fruit-project-admin/FairFruitOnline/my-app/.history/src/pages/Cart/index_20230224101558.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fair-fruit-project-admin/FairFruitOnline/my-app/.history/src/pages/Cart/index_20230224103444.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fair-fruit-project-admin/FairFruitOnline/my-app/.history/src/pages/Cart/index_20230224103635.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fair-fruit-project-admin/FairFruitOnline/my-app/.history/src/pages/Cart/index_20230224104249.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fair-fruit-project-admin/FairFruitOnline/my-app/.history/src/pages/Cart/index_20230224104334.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fair-fruit-project-admin/FairFruitOnline/my-app/.history/src/pages/Cart/index_20230224111134.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fair-fruit-project-admin/FairFruitOnline/my-app/.history/src/pages/Cart/index_20230224111207.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fair-fruit-project-admin/FairFruitOnline/my-app/.history/src/pages/Cart/index_20230224111719.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fair-fruit-project-admin/FairFruitOnline/my-app/.history/src/pages/Cart/index_20230224111908.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fair-fruit-project-admin/FairFruitOnline/my-app/.history/src/pages/Cart/index_20230224112004.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fair-fruit-project-admin/FairFruitOnline/my-app/.history/src/pages/Cart/index_20230224112121.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fair-fruit-project-admin/FairFruitOnline/my-app/.history/src/pages/Cart/index_20230224112309.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fair-fruit-project-admin/FairFruitOnline/my-app/.history/src/pages/Cart/index_20230224112321.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fair-fruit-project-admin/FairFruitOnline/my-app/.history/src/pages/Cart/index_20230224112322.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fair-fruit-project-admin/FairFruitOnline/my-app/.history/src/pages/Cart/index_20230224113008.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fair-fruit-project-admin/FairFruitOnline/my-app/.history/src/pages/Cart/index_20230224113137.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fair-fruit-project-admin/FairFruitOnline/my-app/.history/src/pages/Cart/index_20230224121100.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fair-fruit-project-admin/FairFruitOnline/my-app/.history/src/pages/Cart/index_20230224164548.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fair-fruit-project-admin/FairFruitOnline/my-app/.history/src/pages/Cart/index_20230224164722.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fair-fruit-project-admin/FairFruitOnline/my-app/.history/src/pages/Cart/index_20230224164728.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fair-fruit-project-admin/FairFruitOnline/my-app/src/common/contexts/Payment.js" beforeDir="false" afterPath="$PROJECT_DIR$/../fair-fruit-project-admin/FairFruitOnline/my-app/src/common/contexts/Payment.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fair-fruit-project-admin/FairFruitOnline/my-app/src/pages/Cart/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../fair-fruit-project-admin/FairFruitOnline/my-app/src/pages/Cart/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/controller/OrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/exception/UserNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/exception/UserNotFoundException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/repository/Orders.java" beforeDir="false" afterPath="$PROJECT_DIR$/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/repository/Orders.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/service/OrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/dto/OrderDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/dto/OrderDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/dto/OrderDetailsDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/dto/OrderDetailsDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/entities/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/entities/Order.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/service/impl/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/service/impl/OrderServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FairFruitOnline/src/main/resources/messages.properties" beforeDir="false" afterPath="$PROJECT_DIR$/FairFruitOnline/src/main/resources/messages.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -104,7 +169,7 @@
       <workItem from="1684492929353" duration="163000" />
       <workItem from="1684934997121" duration="6247000" />
       <workItem from="1684972234522" duration="337000" />
-      <workItem from="1685019308381" duration="1067000" />
+      <workItem from="1685019308381" duration="5950000" />
     </task>
     <task id="LOCAL-00001" summary="refatoracao">
       <created>1682707848148</created>
@@ -125,6 +190,17 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/controller/OrderController.java</url>
+          <line>40</line>
+          <properties class="Global.Points.FeiraOnline.controller.OrderController" method="save">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
       <breakpoints-defaults>
         <breakpoint suspend="THREAD" type="java-line" />
       </breakpoints-defaults>

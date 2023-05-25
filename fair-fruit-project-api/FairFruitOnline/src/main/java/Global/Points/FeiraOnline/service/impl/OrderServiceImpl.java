@@ -38,6 +38,7 @@ public class OrderServiceImpl implements OrderService {
         order.setTotal(dto.getTotal());
         order.setOrderData(LocalDate.now());
         order.setUser(user);
+        order.setPayment(dto.getPayment());
         order.setStatus(OrderStatus.Realized);
 
         List<OrderItem> orderItems = convertItems(order, dto.getItems());

@@ -34,9 +34,11 @@ public class Order {
     @Column(name = "status")
     private OrderStatus status;
 
+    @Column(name = "payment")
+    private String payment;
+
     @Column(name = "total", precision = 20, scale = 2)
     private BigDecimal total;
-
 
     @OneToMany(mappedBy = "order")
     private List<OrderItem> items;

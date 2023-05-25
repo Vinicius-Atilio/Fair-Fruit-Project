@@ -80,6 +80,7 @@ public class OrderController {
                 .cpf(order.getUser().getCpf())
                 .clientName(order.getUser().getName())
                 .total(order.getTotal())
+                .payment(order.getPayment())
                 .status(order.getStatus().name())
                 .items(converter(order.getItems()))
                 .build();

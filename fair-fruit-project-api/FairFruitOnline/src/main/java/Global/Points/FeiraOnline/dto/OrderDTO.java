@@ -20,6 +20,9 @@ public class OrderDTO {
     @NotNull(message = "{field.order-total.required}")
     private BigDecimal total;
 
+    @NotNull(message = "{field.payment.required}")
+    private String payment;
+
     @NotEmptyList(message = "{field.items-order.required}")
     private List<OrderItemDTO> items;
 
