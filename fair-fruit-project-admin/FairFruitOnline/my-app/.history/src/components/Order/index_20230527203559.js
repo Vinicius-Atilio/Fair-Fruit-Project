@@ -1,4 +1,4 @@
-import { Container, Info, DetailsContainer, ProductContainer } from './styles';
+import { Container, Info, DetailsContainer } from './styles';
 import { DetailsSection } from 'components/DetailsSection';
 import { memo} from 'react';
 import { useOrderContext } from "common/contexts/Order";
@@ -6,7 +6,6 @@ import { IconButton } from '@material-ui/core';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import useDetails from "hooks/details";
-import { ExpandButton } from "components/ExpendableButton";
 
 function Order({
     code,
@@ -16,7 +15,6 @@ function Order({
     payment,
     items
 }) {
-    const { open, toggle } = useDetails(false);
 
     return (
         <>
@@ -40,33 +38,14 @@ function Order({
                 </div>
                 <div>
                     <h3>Details</h3>
-                    <ExpandButton open={open} toggle={toggle} />
-                    {/* <DetailsSection {...items}/> */}
+                    <DetailsSection {...items}/>
                 {/* {items.map(orderDetails => (
                     
                 ))} */}
                 </div>
             </Container>
-            { open && <DetailsContainer items={items}>
-            {items.map(it => 
-                <ProductContainer>
-                    <div>
-                        <h2>PRODUCT</h2>
-                        {it.descriptionProduct}
-                    </div>
-                    <div>
-                        <h2>QUANTITY</h2>
-                        {it.quantity}
-                    </div>
-                    <div>
-                        <h2>UNIT PRICE</h2>
-                        {it.unitPrice}
-                    </div>
-                    
-                </ProductContainer>
-            )}
-                
-            </DetailsContainer>}
+            <DetailsContainer>
+            </DetailsContainer>
         </>
     );
 }

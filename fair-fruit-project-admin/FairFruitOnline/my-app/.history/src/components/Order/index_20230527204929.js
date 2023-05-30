@@ -1,4 +1,4 @@
-import { Container, Info, DetailsContainer, ProductContainer } from './styles';
+import { Container, Info, DetailsContainer } from './styles';
 import { DetailsSection } from 'components/DetailsSection';
 import { memo} from 'react';
 import { useOrderContext } from "common/contexts/Order";
@@ -49,9 +49,9 @@ function Order({
             </Container>
             { open && <DetailsContainer items={items}>
             {items.map(it => 
-                <ProductContainer>
+                <>
                     <div>
-                        <h2>PRODUCT</h2>
+                        <h2>ITEM</h2>
                         {it.descriptionProduct}
                     </div>
                     <div>
@@ -62,8 +62,7 @@ function Order({
                         <h2>UNIT PRICE</h2>
                         {it.unitPrice}
                     </div>
-                    
-                </ProductContainer>
+                </>
             )}
                 
             </DetailsContainer>}

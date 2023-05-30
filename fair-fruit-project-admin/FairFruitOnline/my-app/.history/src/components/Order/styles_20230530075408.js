@@ -31,7 +31,6 @@ export const Container = styled(Card)`
 export const DetailsContainer = styled(Card)`
   align-items: center;
   display: flex;
-  flex-direction: column;
   justify-content: space-between;
   padding: 25px;
   width: 100%;

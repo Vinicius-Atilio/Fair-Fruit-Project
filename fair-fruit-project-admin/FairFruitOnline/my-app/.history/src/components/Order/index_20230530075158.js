@@ -62,7 +62,42 @@ function Order({
                         <h2>UNIT PRICE</h2>
                         {it.unitPrice}
                     </div>
-                    
+                    <div>
+                        <h2>PRODUCT</h2>
+                        {it.descriptionProduct}
+                    </div>
+                    <div>
+                        <h2>QUANTITY</h2>
+                        {it.quantity}
+                    </div>
+                    <div>
+                        <h2>UNIT PRICE</h2>
+                        {it.unitPrice}
+                    </div>
+                    <div>
+                        <h2>PRODUCT</h2>
+                        {it.descriptionProduct}
+                    </div>
+                    <div>
+                        <h2>QUANTITY</h2>
+                        {it.quantity}
+                    </div>
+                    <div>
+                        <h2>UNIT PRICE</h2>
+                        {it.unitPrice}
+                    </div>
+                    <div>
+                        <h2>PRODUCT</h2>
+                        {it.descriptionProduct}
+                    </div>
+                    <div>
+                        <h2>QUANTITY</h2>
+                        {it.quantity}
+                    </div>
+                    <div>
+                        <h2>UNIT PRICE</h2>
+                        {it.unitPrice}
+                    </div>
                 </ProductContainer>
             )}
                 

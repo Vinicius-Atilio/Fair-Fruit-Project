@@ -42,8 +42,7 @@ function Orders() {
                 <List>
                     {order.map(ordersList => (
                         <Order
-                            {...ordersList}
-                            key={ordersList.code}/>))}
+                        ordersList={ordersList}/>))}
                 </List>
             }
         </Container>

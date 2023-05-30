@@ -62,7 +62,6 @@ function Order({
                         <h2>UNIT PRICE</h2>
                         {it.unitPrice}
                     </div>
-                    
                 </ProductContainer>
             )}
                 

@@ -51,18 +51,17 @@ function Order({
             {items.map(it => 
                 <ProductContainer>
                     <div>
-                        <h2>PRODUCT</h2>
+                        <h2>ITEM</h2>
                         {it.descriptionProduct}
                     </div>
                     <div>
-                        <h2>QUANTITY</h2>
-                        {it.quantity}
+                        <h2>ITEM</h2>
+                        {it.descriptionProduct}
                     </div>
                     <div>
                         <h2>UNIT PRICE</h2>
                         {it.unitPrice}
                     </div>
-                    
                 </ProductContainer>
             )}
                 

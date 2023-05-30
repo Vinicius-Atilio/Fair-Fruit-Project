@@ -31,36 +31,9 @@ export const Container = styled(Card)`
 export const DetailsContainer = styled(Card)`
   align-items: center;
   display: flex;
-  flex-direction: column;
   justify-content: space-between;
   padding: 25px;
   width: 100%;
-  margin-top: -9px;
-  div {
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-    gap: 5px;
-    > h2 {
-        color: ${titleGray};
-        font-size: 15px;
-        margin-top: 5px;
-    }
-    > h3 {
-        color: ${blue};
-        font-size: 15px;
-        margin-top: 5px;
-    }
-  }
-`;
-
-export const ProductContainer = styled.div`
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
-  padding: 25px;
-  width: 100%;
-  margin-top: -9px;
   div {
     align-items: center;
     display: flex;

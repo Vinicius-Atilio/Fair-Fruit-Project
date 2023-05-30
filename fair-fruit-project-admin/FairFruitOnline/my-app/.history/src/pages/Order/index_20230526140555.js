@@ -25,28 +25,30 @@ function Orders() {
         getOrders();
     }, [])
     
-    return ( 
-        <Container>
-            <Back onClick={history.goBack} />
-            <Header>
-                <div>
-                    <CustomIcon>
-                        <ShoppingBasketIcon color="primary"/>
-                    </CustomIcon>
-                </div>
-                <Title>
-                    <h2>My Orders</h2>
-                </Title>
-            </Header>
+    return (
+        <>
             {isLoading ? <CircularProgress color="success"/> :
+            <Container>
+                <Back onClick={history.goBack} />
+                <Header>
+                    <div>
+                        <CustomIcon>
+                            <ShoppingBasketIcon color="primary"/>
+                        </CustomIcon>
+                    </div>
+                    <Title>
+                        <h2>My Orders</h2>
+                    </Title>
+                </Header>
                 <List>
                     {order.map(ordersList => (
                         <Order
                             {...ordersList}
                             key={ordersList.code}/>))}
                 </List>
+            </Container>
             }
-        </Container>
+        </>
     );
 }
 
