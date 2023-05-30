@@ -5,12 +5,14 @@ import Global.Points.FeiraOnline.exception.InvalidPasswordException;
 import Global.Points.FeiraOnline.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
+import org.springframework.http.HttpStatus;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 import java.util.Optional;
@@ -47,7 +49,7 @@ public class UserServiceImpl implements UserDetailsService {
     }
     public User findByLogin(String username){
         return repository.findByLogin(username)
-                .orElseThrow(()->new UsernameNotFoundException("User not found in data base"));
+                .orElseThrow(()->new UsernameNotFoundException("Invalid User or Password"));
     }
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {

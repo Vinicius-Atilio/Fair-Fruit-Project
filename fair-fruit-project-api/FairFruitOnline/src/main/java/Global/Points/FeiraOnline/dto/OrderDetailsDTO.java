@@ -19,6 +19,7 @@ public class OrderDetailsDTO {
     private String clientName;
     private BigDecimal total;
     private String orderData;
+    private String payment;
     private String status;
     private List<OderDetailsItemDTO> items;
 }

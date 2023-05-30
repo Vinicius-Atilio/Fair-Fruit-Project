@@ -29,15 +29,16 @@ public class OrderServiceImpl implements OrderService {
     @Override
     @Transactional
     public Order save(OrderDTO dto) {
-        Integer idClient = dto.getClient();
+        Integer idUser = dto.getClient();
         User user = userRepository
-                .findById(idClient)
+                .findById(idUser)
                 .orElseThrow(() -> new BusinessRuleException("Client code not found."));
 
         Order order = new Order();
         order.setTotal(dto.getTotal());
         order.setOrderData(LocalDate.now());
         order.setUser(user);
+        order.setPayment(dto.getPayment());
         order.setStatus(OrderStatus.Realized);
 
         List<OrderItem> orderItems = convertItems(order, dto.getItems());
@@ -50,6 +51,11 @@ public class OrderServiceImpl implements OrderService {
     @Override
     public Optional<Order> getCompleteOrder(Integer id) {
         return repository.findByIdFetchItems(id);
+    }
+
+    @Override
+    public List<Order> getAllCompleteOrder(Integer id) {
+        return repository.findAllByIdFetchItems(id);
     }
 
     @Override

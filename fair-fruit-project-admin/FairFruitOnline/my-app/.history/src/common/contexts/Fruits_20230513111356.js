@@ -1,0 +1,57 @@
+import { createContext, useContext, useState } from 'react';
+import configAxios from "utils/config";
+
+const FruitsContext = createContext();
+FruitsContext.displayName = 'Shopping';
+
+export default function FruitsProvider({ children }) {
+    const [fruit, setFruit] = useState([]);
+    const [updatedFruitList, setUpdatedFruitList] = useState([]);
+    const [addedProducts, setAddedProducts] = useState([]);
+    return (
+        <FruitsContext.Provider
+            value={{
+                fruit,
+                setFruit,
+                updatedFruitList,
+                setUpdatedFruitList,
+                addedProducts,
+                setAddedProducts,
+            }}
+        >
+            {children}
+        </FruitsContext.Provider>
+    );
+}
+
+export function useFruitsContext() {
+    const { fruit, setFruit, updatedFruitList, setUpdatedFruitList } = useContext(FruitsContext);
+
+    async function addFruit(newFruit = {}) {
+        if (newFruit != null) {
+            try {
+                const response = await configAxios.post('/api/products', newFruit);
+                setFruit([...newFruit, response]);
+            } catch (error) {
+                console.log(error);
+            }
+        }
+    }
+
+    async function deleteFruit(productId) {
+        try {
+            await configAxios.del(`/api/products/${productId}`);
+            const updated = fruit.filter((product) => product.id !== productId);
+            setUpdatedFruitList(updated);
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    return {
+        fruit,
+        updatedFruitList,
+        addFruit,
+        deleteFruit
+    };
+}

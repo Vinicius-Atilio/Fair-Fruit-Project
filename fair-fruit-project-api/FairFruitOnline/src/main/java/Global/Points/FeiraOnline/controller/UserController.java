@@ -57,7 +57,7 @@ public class UserController {
             String token = jwtService.generateToken(user);
             return new TokenDTO(userId.getId(), user.getLogin(), token);
         } catch (UserNotFoundException | InvalidPasswordException e) {
-            throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, e.getMessage());
+            throw new RuntimeException("Invalid User or Password");
         }
     };
 
