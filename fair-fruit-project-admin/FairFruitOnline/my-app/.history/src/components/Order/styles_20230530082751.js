@@ -36,28 +36,24 @@ export const DetailsContainer = styled(Card)`
   padding: 25px;
   width: 100%;
   margin-top: -9px;
-`;
-
-export const Header = styled.header`
-  display: flex;
-  flex-direction: row;
-    > div {
-        margin-bottom: 10px;
-        margin-right: 70px;
-        > h2 {
-            color: ${titleGray};
-            font-size: 15px;
-            margin-top: 20px;
-        }
-        > h3 {
-            color: ${titleGray};
-            font-size: 26px;
-        }
+  div {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    > h2 {
+        color: ${titleGray};
+        font-size: 15px;
+        margin-top: 5px;
+        display: flex;
+        justify-content: flex-start;
     }
-    > p {
-        color: #a3a3a3;
-        font-size: 26px;
+    > h3 {
+        color: ${blue};
+        font-size: 15px;
+        margin-top: 5px;
     }
+  }
 `;
 
 export const ProductContainer = styled.div`

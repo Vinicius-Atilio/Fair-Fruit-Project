@@ -1,4 +1,4 @@
-import { Container, Header, DetailsContainer, ProductContainer } from './styles';
+import { Container, Info, DetailsContainer, ProductContainer } from './styles';
 import { DetailsSection } from 'components/DetailsSection';
 import { memo} from 'react';
 import { useOrderContext } from "common/contexts/Order";
@@ -48,36 +48,27 @@ function Order({
                 </div>
             </Container>
             { open && <DetailsContainer products={products}>
-                <Header>
-                    <div>
-                        <h2>PRODUCT(S)</h2>
-                    </div>
-                    <div>
-                        <h2>QUANTITY</h2>
-                    </div>
-                    <div>
-                        <h2>PRICE</h2>
-                    </div>
-                    <div>
-                        <h2>TOTAL</h2>
-                    </div>
-                </Header>
-            {products.map(product => 
+                <div>
+                    <h2>PRODUCT(S)</h2>
+                </div>
+            {products.map(it => 
                 <ProductContainer>
                     <div>
                         <img
-                            src={`${product.productImage}`}
-                            alt={`${product.productName}`}
+                            src={`${it.productImage}`}
+                            alt={`${it.productName}`}
                             width="80" height="70"/>
                         <div>
-                            {product.productName}
+                            {it.productName}
                         </div>
                     </div>
                     <div>
-                        {product.productQuantity}
+                        <h2>QUANTITY</h2>
+                        {it.productQuantity}
                     </div>
                     <div>
-                        {product.productPrice}
+                        <h2>UNIT PRICE</h2>
+                        {it.productPrice}
                     </div>
                     
                 </ProductContainer>

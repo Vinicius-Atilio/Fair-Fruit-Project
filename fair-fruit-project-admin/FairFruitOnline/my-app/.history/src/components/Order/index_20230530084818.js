@@ -55,12 +55,6 @@ function Order({
                     <div>
                         <h2>QUANTITY</h2>
                     </div>
-                    <div>
-                        <h2>PRICE</h2>
-                    </div>
-                    <div>
-                        <h2>TOTAL</h2>
-                    </div>
                 </Header>
             {products.map(product => 
                 <ProductContainer>
@@ -77,6 +71,7 @@ function Order({
                         {product.productQuantity}
                     </div>
                     <div>
+                        <h2>PRICE</h2>
                         {product.productPrice}
                     </div>
                     

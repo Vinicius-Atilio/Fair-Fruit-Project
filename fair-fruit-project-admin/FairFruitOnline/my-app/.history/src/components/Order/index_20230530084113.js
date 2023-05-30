@@ -49,18 +49,7 @@ function Order({
             </Container>
             { open && <DetailsContainer products={products}>
                 <Header>
-                    <div>
-                        <h2>PRODUCT(S)</h2>
-                    </div>
-                    <div>
-                        <h2>QUANTITY</h2>
-                    </div>
-                    <div>
-                        <h2>PRICE</h2>
-                    </div>
-                    <div>
-                        <h2>TOTAL</h2>
-                    </div>
+                    <h2>PRODUCT(S)</h2>
                 </Header>
             {products.map(product => 
                 <ProductContainer>
@@ -74,9 +63,11 @@ function Order({
                         </div>
                     </div>
                     <div>
+                        <h2>QUANTITY</h2>
                         {product.productQuantity}
                     </div>
                     <div>
+                        <h2>PRICE</h2>
                         {product.productPrice}
                     </div>
                     

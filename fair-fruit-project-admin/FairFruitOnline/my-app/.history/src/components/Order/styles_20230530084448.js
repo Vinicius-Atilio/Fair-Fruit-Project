@@ -39,11 +39,12 @@ export const DetailsContainer = styled(Card)`
 `;
 
 export const Header = styled.header`
-  display: flex;
-  flex-direction: row;
     > div {
+        align-items: baseline;
+        display: flex;
+        justify-content: space-between;
         margin-bottom: 10px;
-        margin-right: 70px;
+        margin-right: 450px;
         > h2 {
             color: ${titleGray};
             font-size: 15px;

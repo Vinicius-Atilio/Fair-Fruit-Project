@@ -41,7 +41,10 @@ export const DetailsContainer = styled(Card)`
 export const Header = styled.header`
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
     > div {
+        align-items: baseline;
+        
         margin-bottom: 10px;
         margin-right: 70px;
         > h2 {

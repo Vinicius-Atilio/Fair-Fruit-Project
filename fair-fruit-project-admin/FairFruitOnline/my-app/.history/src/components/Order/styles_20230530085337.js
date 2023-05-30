@@ -42,6 +42,7 @@ export const Header = styled.header`
   display: flex;
   flex-direction: row;
     > div {
+        
         margin-bottom: 10px;
         margin-right: 70px;
         > h2 {
