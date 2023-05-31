@@ -8,7 +8,7 @@ export const Container = styled(Card)`
   align-items: center;
   display: flex;
   justify-content: space-between;
-  padding: 20px;
+  padding: 25px;
   width: 100%;
   div {
     align-items: center;
@@ -23,19 +23,9 @@ export const Container = styled(Card)`
     > h3 {
         color: ${blue};
         font-size: 15px;
-        margin-top: 30px;
+        margin-top: 5px;
     }
   }
-`;
-
-export const DividerContainer = styled.div`
-  padding: 25px;
-  width: 100%;
-  margin-top: -30px;
-  > hr {
-      padding: 25px;
-      width: 100%;
-    }
 `;
 
 export const DetailsContainer = styled(Card)`
@@ -48,47 +38,17 @@ export const DetailsContainer = styled(Card)`
   margin-top: -9px;
 `;
 
-export const Header = styled.header`
+export const Header = styled.div`
   align-items: center;
   display: flex;
   justify-content: space-between;
-  padding: 21px;
+  padding: 25px;
   width: 100%;
-  margin-bottom: 10px;
-  > h2 {
-        color: ${titleGray};
-        font-size: 15px;
-        margin-top: 5px;
-  }
-  > h3 {
-        color: ${titleGray};
-        font-size: 15px;
-        margin-top: 5px;
-        margin-right: 20px;
-  }
-  div {
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-    margin-right: 32px;
-    > h2 {
-        color: ${titleGray};
-        font-size: 15px;
-        margin-top: 5px;
-    }
-  }
-`;
-
-export const ProductContainer = styled.div`
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
-  width: 85%;
-
   div {
     align-items: center;
     display: flex;
     flex-direction: column;
+    gap: 5px;
     > h2 {
         color: ${titleGray};
         font-size: 15px;
@@ -102,18 +62,26 @@ export const ProductContainer = styled.div`
   }
 `;
 
-export const ImageContainer = styled.div`
+export const ProductContainer = styled.div`
   align-items: center;
   display: flex;
   justify-content: space-between;
-  padding: 15px;
-  margin-top: -1px;
-  width: 0%;
+  padding: 25px;
+  width: 100%;
   div {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
     > h2 {
         color: ${titleGray};
         font-size: 15px;
-        margin-top: 10px;
+        margin-top: 5px;
+    }
+    > h3 {
+        color: ${blue};
+        font-size: 15px;
+        margin-top: 5px;
     }
   }
 `;

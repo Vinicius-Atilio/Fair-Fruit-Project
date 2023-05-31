@@ -1,12 +1,15 @@
-import { Container, Header, ImageContainer, DividerContainer, DetailsContainer, ProductContainer, OrderDetails, FeesDetails } from './styles';
+import { Container, Header, DetailsContainer, ProductContainer, orderDetails } from './styles';
+import { DetailsSection } from 'components/DetailsSection';
 import { memo} from 'react';
+import { useOrderContext } from "common/contexts/Order";
+import { IconButton } from '@material-ui/core';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import useDetails from "hooks/details";
 import { ExpandButton } from "components/ExpendableButton";
-import Divider from '@mui/material/Divider';
 
 function Order({
     code,
-    orderFees,
     total,
     orderData,
     status,
@@ -38,28 +41,38 @@ function Order({
                 <div>
                     <h3>Details</h3>
                     <ExpandButton open={open} toggle={toggle} />
+                    {/* <DetailsSection {...items}/> */}
+                {/* {items.map(orderDetails => (
+                    
+                ))} */}
                 </div>
             </Container>
             { open && <DetailsContainer products={products}>
                 <Header>
-                        <h2>PRODUCT</h2>
+                    <div>
+                        <h2>PRODUCT(S)</h2>
+                    </div>
+                    <div>
                         <h2>QUANTITY</h2>
+                    </div>
                     <div>
                         <h2>PRICE</h2>
                     </div>
-                        <h3>TOTAL</h3>
+                    <div>
+                        <h2>TOTAL</h2>
+                    </div>
                 </Header>
             {products.map(product => 
                 <ProductContainer>
-                    <ImageContainer>
+                    <div>
+                        <img
+                            src={`${product.productImage}`}
+                            alt={`${product.productName}`}
+                            width="80" height="70"/>
                         <div>
-                            <img
-                                src={`${product.productImage}`}
-                                alt={`${product.productName}`}
-                                width="80" height="70"/>
-                            <h2>{product.productName}</h2>
+                            {product.productName}
                         </div>
-                    </ImageContainer>
+                    </div>
                     <div>
                         {product.productQuantity}
                     </div>
@@ -69,27 +82,15 @@ function Order({
                     <div>
                         {product.productTotal}
                     </div>
+                    
                 </ProductContainer>
             )}
-            <DividerContainer>
-                <Divider />
-            </DividerContainer>
-                <FeesDetails>
-                    <div>
-                        <h2>Fees</h2>
-                    </div>
-                    <div>
-                        {orderFees}
-                    </div>
-                </FeesDetails>
-                <OrderDetails>
-                    <div>
-                        <h2>Order Total</h2>
-                    </div>
-                    <div>
-                        {total}
-                    </div>
-                </OrderDetails>
+                <div>
+                    <h2>Order Total</h2>
+                </div>
+                <div>
+                    {total}
+                </div>
             </DetailsContainer>}
         </>
     );

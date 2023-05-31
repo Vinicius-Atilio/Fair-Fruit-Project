@@ -42,24 +42,22 @@ function Order({
             </Container>
             { open && <DetailsContainer products={products}>
                 <Header>
-                        <h2>PRODUCT</h2>
-                        <h2>QUANTITY</h2>
+                    <h2>PRODUCT</h2>
+                    <h2>QUANTITY</h2>
                     <div>
                         <h2>PRICE</h2>
                     </div>
-                        <h3>TOTAL</h3>
+                    <h2>TOTAL</h2>
                 </Header>
             {products.map(product => 
                 <ProductContainer>
-                    <ImageContainer>
-                        <div>
-                            <img
-                                src={`${product.productImage}`}
-                                alt={`${product.productName}`}
-                                width="80" height="70"/>
-                            <h2>{product.productName}</h2>
-                        </div>
-                    </ImageContainer>
+                    <div>
+                        <img
+                            src={`${product.productImage}`}
+                            alt={`${product.productName}`}
+                            width="80" height="70"/>
+                        {product.productName}
+                    </div>
                     <div>
                         {product.productQuantity}
                     </div>

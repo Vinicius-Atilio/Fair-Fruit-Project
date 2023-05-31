@@ -8,7 +8,7 @@ export const Container = styled(Card)`
   align-items: center;
   display: flex;
   justify-content: space-between;
-  padding: 20px;
+  padding: 25px;
   width: 100%;
   div {
     align-items: center;
@@ -23,7 +23,7 @@ export const Container = styled(Card)`
     > h3 {
         color: ${blue};
         font-size: 15px;
-        margin-top: 30px;
+        margin-top: 5px;
     }
   }
 `;
@@ -31,7 +31,6 @@ export const Container = styled(Card)`
 export const DividerContainer = styled.div`
   padding: 25px;
   width: 100%;
-  margin-top: -30px;
   > hr {
       padding: 25px;
       width: 100%;
@@ -52,25 +51,19 @@ export const Header = styled.header`
   align-items: center;
   display: flex;
   justify-content: space-between;
-  padding: 21px;
+  padding: 20px;
   width: 100%;
-  margin-bottom: 10px;
   > h2 {
         color: ${titleGray};
         font-size: 15px;
         margin-top: 5px;
   }
-  > h3 {
-        color: ${titleGray};
-        font-size: 15px;
-        margin-top: 5px;
-        margin-right: 20px;
-  }
   div {
     align-items: center;
     display: flex;
     flex-direction: row;
-    margin-right: 32px;
+    margin-right: 20px;
+    gap: 5px;
     > h2 {
         color: ${titleGray};
         font-size: 15px;
@@ -83,12 +76,13 @@ export const ProductContainer = styled.div`
   align-items: center;
   display: flex;
   justify-content: space-between;
-  width: 85%;
-
+  padding: 25px;
+  width: 100%;
   div {
     align-items: center;
     display: flex;
     flex-direction: column;
+    gap: 5px;
     > h2 {
         color: ${titleGray};
         font-size: 15px;
@@ -106,15 +100,11 @@ export const ImageContainer = styled.div`
   align-items: center;
   display: flex;
   justify-content: space-between;
-  padding: 15px;
-  margin-top: -1px;
-  width: 0%;
+  padding: 25px;
+  width: 50%;
   div {
-    > h2 {
-        color: ${titleGray};
-        font-size: 15px;
-        margin-top: 10px;
-    }
+    align-items: flex-start;
+    gap: 5px;
   }
 `;
 

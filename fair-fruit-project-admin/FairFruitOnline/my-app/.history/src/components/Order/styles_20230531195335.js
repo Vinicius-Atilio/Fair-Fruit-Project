@@ -18,12 +18,12 @@ export const Container = styled(Card)`
     > h2 {
         color: ${titleGray};
         font-size: 15px;
-        margin-top: 5px;
+        margin-top: 30px;
     }
     > h3 {
         color: ${blue};
         font-size: 15px;
-        margin-top: 30px;
+        margin-top: 5px;
     }
   }
 `;

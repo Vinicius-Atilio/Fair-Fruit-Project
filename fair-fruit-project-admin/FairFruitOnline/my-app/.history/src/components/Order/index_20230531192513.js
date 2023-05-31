@@ -57,7 +57,7 @@ function Order({
                                 src={`${product.productImage}`}
                                 alt={`${product.productName}`}
                                 width="80" height="70"/>
-                            <h2>{product.productName}</h2>
+                            {product.productName}
                         </div>
                     </ImageContainer>
                     <div>

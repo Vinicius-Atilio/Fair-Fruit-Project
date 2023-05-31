@@ -8,7 +8,7 @@ export const Container = styled(Card)`
   align-items: center;
   display: flex;
   justify-content: space-between;
-  padding: 20px;
+  padding: 25px;
   width: 100%;
   div {
     align-items: center;
@@ -23,7 +23,7 @@ export const Container = styled(Card)`
     > h3 {
         color: ${blue};
         font-size: 15px;
-        margin-top: 30px;
+        margin-top: 5px;
     }
   }
 `;
@@ -31,7 +31,6 @@ export const Container = styled(Card)`
 export const DividerContainer = styled.div`
   padding: 25px;
   width: 100%;
-  margin-top: -30px;
   > hr {
       padding: 25px;
       width: 100%;
@@ -60,17 +59,11 @@ export const Header = styled.header`
         font-size: 15px;
         margin-top: 5px;
   }
-  > h3 {
-        color: ${titleGray};
-        font-size: 15px;
-        margin-top: 5px;
-        margin-right: 20px;
-  }
   div {
     align-items: center;
     display: flex;
     flex-direction: row;
-    margin-right: 32px;
+    margin-right: 55px;
     > h2 {
         color: ${titleGray};
         font-size: 15px;
@@ -110,11 +103,6 @@ export const ImageContainer = styled.div`
   margin-top: -1px;
   width: 0%;
   div {
-    > h2 {
-        color: ${titleGray};
-        font-size: 15px;
-        margin-top: 10px;
-    }
   }
 `;
 
