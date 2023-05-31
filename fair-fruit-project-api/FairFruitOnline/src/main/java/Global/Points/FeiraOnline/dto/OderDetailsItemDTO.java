@@ -12,7 +12,9 @@ import java.math.BigDecimal;
 @NoArgsConstructor
 @Builder
 public class OderDetailsItemDTO {
-    private String descriptionProduct;
-    private BigDecimal unitPrice;
-    private Integer quantity;
+    private String productName;
+    private String productImage;
+    private BigDecimal productPrice;
+    private BigDecimal productTotal;
+    private Integer productQuantity;
 }
