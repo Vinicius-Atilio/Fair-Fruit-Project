@@ -68,7 +68,7 @@ export const Back = styled(IconButton).attrs({
 
 export const CustomIcon = styled.div`
     display: flex;
-    margin-left: 355px;
+    margin-left: 325px;
     margin-top: 15px;
     svg {
         font-size: 3rem;
