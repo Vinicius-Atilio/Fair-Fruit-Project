@@ -48,7 +48,7 @@ public class OrderController {
     public OrderDetailsDTO getById(@PathVariable Integer id){
         return service
                 .getCompleteOrder(id)
-                .map( p -> converter(p) )
+                .map(this::converter)
                 .orElseThrow(OrderNotFoundException::new);
     }
 
@@ -58,7 +58,6 @@ public class OrderController {
                               @RequestBody OrderStatusUpdateDTO dto ){
         String newStatus = dto.getNewStatus();
         service.StatusUpdate(id, OrderStatus.valueOf(newStatus));
-
     }
 
     @GetMapping("/user/{id}")

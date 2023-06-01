@@ -27,7 +27,6 @@ import java.util.Set;
 @Entity
 @Table(name = "user")
 public class User {
-    //user
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -58,8 +57,6 @@ public class User {
     @NotEmpty(message = "{field.password.required}")
     private String password;
 
-    //user
-
     @Column(name = "balance", length = 10000)
     private Float balance;
 
@@ -69,20 +66,4 @@ public class User {
     @JsonIgnore
     @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
     private Set<Order> orders;
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", cpf='" + cpf + '\'' +
-                ", birthDate=" + birthDate +
-                ", email='" + email + '\'' +
-                ", login='" + login + '\'' +
-                ", password='" + password + '\'' +
-                ", balance=" + balance +
-                ", admin=" + admin +
-                ", orders=" + orders +
-                '}';
-    }
 }

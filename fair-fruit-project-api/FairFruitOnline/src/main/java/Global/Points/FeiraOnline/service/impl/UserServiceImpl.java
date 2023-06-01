@@ -59,10 +59,6 @@ public class UserServiceImpl implements UserDetailsService {
         String[] roles = userGP.isAdmin() ?
                 new String[]{"ADMIN", "USER"} : new String[]{"USER"};
 
-//        return new CustomUserDetailsDTO(
-//                userGP.getId(), userGP.getLogin(), userGP.getPassword(), roles
-//        );
-
         return org.springframework.security.core.userdetails.User
                 .builder()
                 .username(userGP.getLogin())

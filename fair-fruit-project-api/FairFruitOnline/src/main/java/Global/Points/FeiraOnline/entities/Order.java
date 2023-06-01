@@ -22,7 +22,6 @@ public class Order {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    //alterei de client para user
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
@@ -42,5 +41,4 @@ public class Order {
 
     @OneToMany(mappedBy = "order")
     private List<OrderItem> items;
-
 }

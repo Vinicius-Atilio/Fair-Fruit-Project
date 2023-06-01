@@ -63,17 +63,4 @@ public class JwtService {
     public String getUserLogin(String token) throws ExpiredJwtException{
         return (String) getClaims(token).getSubject();
     }
-    public static void main(String[] args) {
-        ConfigurableApplicationContext context = SpringApplication.run(FeiraOnlineApplication.class);
-        JwtService service = context.getBean(JwtService.class);
-        User user = User.builder().login("test").build();
-        String token = service.generateToken(user);
-        System.out.println(token);
-
-        boolean isValidToken = service.isValidToken(token);
-        System.out.println("is valid token? " + isValidToken);
-
-        System.out.println(service.getUserLogin(token));
-
-    }
 }

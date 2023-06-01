@@ -28,5 +28,4 @@ public class OrderItem {
 
     @Column
     private Integer quantity;
-
 }

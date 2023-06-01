@@ -7,9 +7,16 @@
     <list default="true" id="908e2ba4-1142-4493-bad2-7bb13713c65f" name="Changes" comment="refatoracao">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/controller/OrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/dto/OderDetailsItemDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/dto/OderDetailsItemDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/dto/OrderDetailsDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/dto/OrderDetailsDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/repository/Orders.java" beforeDir="false" afterPath="$PROJECT_DIR$/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/repository/Orders.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/entities/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/entities/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/entities/OrderItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/entities/OrderItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/entities/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/exception/BusinessRuleException.java" beforeDir="false" afterPath="$PROJECT_DIR$/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/exception/BusinessRuleException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/exception/ClientNotFoundException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/exception/InvalidPasswordException.java" beforeDir="false" afterPath="$PROJECT_DIR$/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/exception/InvalidPasswordException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/exception/OrderNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/exception/OrderNotFoundException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/security/jwt/JwtService.java" beforeDir="false" afterPath="$PROJECT_DIR$/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/security/jwt/JwtService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/service/impl/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/service/impl/OrderServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/FairFruitOnline/src/main/java/Global/Points/FeiraOnline/service/impl/UserServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,7 +123,8 @@
       <workItem from="1685217260230" duration="1988000" />
       <workItem from="1685230458448" duration="651000" />
       <workItem from="1685441187863" duration="3302000" />
-      <workItem from="1685536312930" duration="10268000" />
+      <workItem from="1685536312930" duration="11564000" />
+      <workItem from="1685614964823" duration="4505000" />
     </task>
     <task id="LOCAL-00001" summary="refatoracao">
       <created>1682707848148</created>
