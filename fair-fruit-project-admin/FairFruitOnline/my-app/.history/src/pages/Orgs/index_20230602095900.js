@@ -44,6 +44,7 @@ function Orgs() {
 
   useEffect(() => {
     getProducts();
+    onSubmit();
   }, [updatedFruitList]);
   
 

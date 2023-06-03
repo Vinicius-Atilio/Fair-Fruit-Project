@@ -1,4 +1,4 @@
-import { Container, Header, List, CustomIcon } from './styles';
+import { Container, Header, List } from './styles';
 import { useContext } from 'react';
 import NavBarCart from './NavBarCart';
 import NavBarFruits from './NavBarOrgs';
@@ -25,15 +25,13 @@ function FairFruit() {
             <NavBarFruits />
             <NavBarCart />
             <NavBarOrder />
-            <CustomIcon>
-                <WalletIcon style={{ color: 'green' }}/>
-                <div>
-                    ${userBalance.toFixed(2)}
-                </div>
-            </CustomIcon>
+            <div>
+                <WalletIcon style={{ color: 'green' }}/>${userBalance.toFixed(2)}
+            </div>
             <Header>
                 <div>
                     <h2> Hi {userName}!</h2>
+                    <h3></h3>
                 </div>
                 <p>Find the best products!</p>
                 <div>

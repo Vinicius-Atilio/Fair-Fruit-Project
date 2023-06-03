@@ -24,13 +24,6 @@ export const CustomIcon = styled.div`
     svg {
         font-size: 2rem;
     }
-    > div {
-        align-items: center;
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 10px;
-        margin-left: -19px;
-    }
 `;
 
 export const Header = styled.header`

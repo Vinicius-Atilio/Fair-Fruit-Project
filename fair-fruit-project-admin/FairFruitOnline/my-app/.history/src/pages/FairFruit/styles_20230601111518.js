@@ -17,19 +17,10 @@ export const Container = styled.main`
 
 export const CustomIcon = styled.div`
     display: flex;
-    align-items: flex-start;
-    flex-direction: column;
-    margin-left: 30px;
-    margin-top: -90px;
+    margin-left: 355px;
+    margin-top: 15px;
     svg {
-        font-size: 2rem;
-    }
-    > div {
-        align-items: center;
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 10px;
-        margin-left: -19px;
+        font-size: 1rem;
     }
 `;
 

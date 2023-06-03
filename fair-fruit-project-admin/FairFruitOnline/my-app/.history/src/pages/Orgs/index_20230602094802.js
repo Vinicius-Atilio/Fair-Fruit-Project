@@ -6,7 +6,7 @@ import { Button } from '@material-ui/core';
 import TextField from '@mui/material/TextField';
 import { useState } from 'react';
 import configAxios from "utils/config";
-import { useEffect, useCallback } from 'react';
+import { useEffect } from 'react';
 import CircularProgress from '@mui/material/CircularProgress';
 import { IconButton } from '@material-ui/core';
 import DeleteForeverIcon from '@material-ui/icons/DeleteForever'
@@ -16,7 +16,7 @@ import { useFruitsContext } from 'common/contexts/Fruits';
 function Orgs() {
     const {fruit, updatedFruitList, addFruit, deleteFruit, products} = useFruitsContext();
     const [isLoading, setIsLoading] = useState(false);
-    const {register, handleSubmit, reset, formState: {errors}} = useForm();
+    const {register, handleSubmit, formState: {errors}} = useForm();
 
     const history = useHistory();
 
@@ -30,17 +30,17 @@ function Orgs() {
         setIsLoading(false);
     };
 
-    const onSubmit = useCallback(async (data) => {
+    const onSubmit = async (data) => {
         setIsLoading(true);
 
-        const result = await addFruit({
+        await addFruit({
             name: data.name,
             price: data.price,
             image: data.image
         });
-        reset(result);
+        
         setIsLoading(false);
-    }, [reset]);
+  };
 
   useEffect(() => {
     getProducts();

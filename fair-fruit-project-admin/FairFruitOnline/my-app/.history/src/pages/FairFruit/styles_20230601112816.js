@@ -29,7 +29,6 @@ export const CustomIcon = styled.div`
         display: flex;
         justify-content: space-between;
         margin-bottom: 10px;
-        margin-left: -19px;
     }
 `;
 

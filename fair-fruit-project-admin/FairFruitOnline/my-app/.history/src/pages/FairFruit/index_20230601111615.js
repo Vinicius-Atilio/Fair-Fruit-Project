@@ -27,13 +27,12 @@ function FairFruit() {
             <NavBarOrder />
             <CustomIcon>
                 <WalletIcon style={{ color: 'green' }}/>
-                <div>
-                    ${userBalance.toFixed(2)}
-                </div>
+                ${userBalance.toFixed(2)}
             </CustomIcon>
             <Header>
                 <div>
                     <h2> Hi {userName}!</h2>
+                    <h3></h3>
                 </div>
                 <p>Find the best products!</p>
                 <div>
